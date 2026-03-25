@@ -5,7 +5,11 @@ enable_language(C CXX)
 # Automatically scan Hardware/* folders and create a library for each
 # ---------------------------------------------------------------------
 
-file(GLOB CHILD_DIRS RELATIVE 
+# file(GLOB CHILD_DIRS RELATIVE 
+#     ${CMAKE_CURRENT_SOURCE_DIR}/MyLib
+#     ${CMAKE_CURRENT_SOURCE_DIR}/MyLib/*
+# )
+file(GLOB CHILD_DIRS RELATIVE  
     ${CMAKE_CURRENT_SOURCE_DIR}/MyLib
     ${CMAKE_CURRENT_SOURCE_DIR}/MyLib/*
 )
@@ -36,9 +40,10 @@ foreach(DIR ${CHILD_DIRS})
 
             # Include paths for this library
             target_include_directories(${LIB_NAME} PUBLIC
-                ${CMAKE_CURRENT_SOURCE_DIR}/MyLib/${DIR}
+            ${CMAKE_CURRENT_SOURCE_DIR}/MyLib
+            ${CMAKE_CURRENT_SOURCE_DIR}/MyLib/${DIR}
 
-                ${CMAKE_SOURCE_DIR}/Core/Inc           # for main.h, HAL includes
+            ${CMAKE_SOURCE_DIR}/Core/Inc           # for main.h, HAL includes
             )
 
             # Link with CubeMX settings

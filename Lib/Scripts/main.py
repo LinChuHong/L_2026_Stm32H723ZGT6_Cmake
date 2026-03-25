@@ -2,7 +2,7 @@ import serial
 
 b = (115200,1000000)
 
-mySerial = serial.Serial("COM5",b[1],timeout=2)
+mySerial = serial.Serial("COM5",b[0],timeout=2)
 
 
 
