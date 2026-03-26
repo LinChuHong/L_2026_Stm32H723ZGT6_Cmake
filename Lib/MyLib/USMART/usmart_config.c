@@ -11,8 +11,8 @@
 #include "LCD/lcd.h"
 #include "RTC/rtc.h"
 
-extern void led_set(uint8_t sta);
-extern void test_fun(void(*ledset)(uint8_t), uint8_t sta);
+// extern void led_set(uint8_t sta);
+// extern void test_fun(void(*ledset)(uint8_t), uint8_t sta);
 
 /* 函数名列表初始化(用户自己添加)
  * 用户直接在这里输入要执行的函数名及其查找串

@@ -42,8 +42,9 @@ foreach(DIR ${CHILD_DIRS})
             target_include_directories(${LIB_NAME} PUBLIC
             ${CMAKE_CURRENT_SOURCE_DIR}/MyLib
             ${CMAKE_CURRENT_SOURCE_DIR}/MyLib/${DIR}
+            ${CMAKE_SOURCE_DIR}/Lib/ThirdParty
 
-            ${CMAKE_SOURCE_DIR}/Core/Inc           # for main.h, HAL includes
+            # ${CMAKE_SOURCE_DIR}/Core/Inc           # for main.h, HAL includes
             )
 
             # Link with CubeMX settings

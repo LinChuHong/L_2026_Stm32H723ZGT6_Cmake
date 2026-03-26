@@ -37,6 +37,9 @@ add_executable(${CMAKE_PROJECT_NAME})
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
 add_subdirectory(Lib)
+add_subdirectory(Lib/ThirdParty/QSPI)
+add_subdirectory(Lib/ThirdParty/NORFLASH)
+add_subdirectory(Lib/ThirdParty/TOUCH)
 
 # Link directories setup
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
@@ -67,5 +70,8 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 
     # Add user defined libraries
     ${MYLIB_LINK_LIBS}
+    QSPI
+    NORFLASH
+    TOUCH
     
 )

@@ -1,0 +1,1 @@
+arm-none-eabi-objcopy -O binary L_2025_Stm32H723ZGT6.elf filename.bin -> convert .elf to .bin -> 20260326(19:13)

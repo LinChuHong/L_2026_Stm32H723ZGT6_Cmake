@@ -21,7 +21,6 @@
 #include "FreeRTOS.h"
 #include "cmsis_os2.h"
 #include "crc.h"
-#include "octospi.h"
 #include "rng.h"
 #include "usart.h"
 #include "gpio.h"
@@ -114,7 +113,6 @@ int main(void)
   MX_USART1_UART_Init();
   MX_CRC_Init();
   MX_RNG_Init();
-  MX_OCTOSPI1_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
