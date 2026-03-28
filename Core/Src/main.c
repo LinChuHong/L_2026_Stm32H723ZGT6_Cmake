@@ -31,6 +31,8 @@
 #include "sys.h"
 #include "delay.h"
 #include "usart1.h"
+#include "lvgl.h"
+#include <src/tick/lv_tick.h>
 
 /* USER CODE END Includes */
 
@@ -76,7 +78,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
+  sys_cache_enable();
   /* USER CODE END 1 */
 
   /* MPU Configuration--------------------------------------------------------*/
@@ -96,7 +98,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  sys_cache_enable();
+
   delay_init(0);
 
   /* USER CODE END Init */
@@ -278,6 +280,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
+
 
   /* USER CODE END Callback 1 */
 }

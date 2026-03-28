@@ -22,7 +22,6 @@ foreach(DIR ${CHILD_DIRS})
 
 
 
-
         file(GLOB_RECURSE LIB_SOURCES
             CONFIGURE_DEPENDS
             ${CMAKE_CURRENT_SOURCE_DIR}/MyLib/${DIR}/*.c
@@ -48,7 +47,10 @@ foreach(DIR ${CHILD_DIRS})
             )
 
             # Link with CubeMX settings
-            target_link_libraries(${LIB_NAME} PUBLIC stm32cubemx)
+            target_link_libraries(${LIB_NAME} PUBLIC stm32cubemx
+            lvgl
+            lvgl_demos
+            )
 
             # Add this lib to global list so parent can link later
             list(APPEND MYLIB_LINK_LIBS ${LIB_NAME})

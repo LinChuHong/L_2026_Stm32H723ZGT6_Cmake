@@ -40,26 +40,32 @@ add_subdirectory(Lib)
 add_subdirectory(Lib/ThirdParty/QSPI)
 add_subdirectory(Lib/ThirdParty/NORFLASH)
 add_subdirectory(Lib/ThirdParty/TOUCH)
+add_subdirectory(Lib/ThirdParty/lvgl)
 
 # Link directories setup
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined library search paths
+
 )
 
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
+
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
+    
+
 )
 
 # Add project symbols (macros)
 target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined symbols
 )
+
 
 # Remove wrong libob.a library dependency when using cpp files
 list(REMOVE_ITEM CMAKE_C_IMPLICIT_LINK_LIBRARIES ob)
@@ -74,4 +80,6 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     NORFLASH
     TOUCH
     
+    lvgl
+    # lvgl_demos
 )
