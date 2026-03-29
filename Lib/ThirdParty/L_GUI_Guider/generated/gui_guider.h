@@ -21,6 +21,8 @@ typedef struct
   
 	lv_obj_t *screen;
 	bool screen_del;
+	lv_obj_t *screen_btn_1;
+	lv_obj_t *screen_btn_1_label;
 	lv_obj_t *g_kb_top_layer;
 }lv_ui;
 
@@ -51,6 +53,7 @@ extern lv_ui guider_ui;
 
 void setup_scr_screen(lv_ui *ui);
 
+LV_FONT_DECLARE(lv_font_montserratMedium_16)
 LV_FONT_DECLARE(lv_font_montserratMedium_18)
 
 

@@ -15,7 +15,7 @@
 #include "freemaster_client.h"
 #endif
 
-#include <lvgl.h>
+#include "custom.h"
 
 static void screen_event_handler (lv_event_t *e)
 {
@@ -23,7 +23,21 @@ static void screen_event_handler (lv_event_t *e)
     switch (code) {
     case LV_EVENT_SCREEN_LOADED:
     {
+        mycb(e);
+        break;
+    }
+    default:
+        break;
+    }
+}
 
+static void screen_btn_1_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_CLICKED:
+    {
+        printf("Hello, World!!!!\n");
         break;
     }
     default:
@@ -34,6 +48,7 @@ static void screen_event_handler (lv_event_t *e)
 void events_init_screen (lv_ui *ui)
 {
     lv_obj_add_event_cb(ui->screen, screen_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->screen_btn_1, screen_btn_1_event_handler, LV_EVENT_ALL, ui);
 }
 
 

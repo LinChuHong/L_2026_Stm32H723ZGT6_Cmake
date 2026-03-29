@@ -12,7 +12,6 @@ void cppCoreStart(void *argument);
 void StartTask02(void *argument);
 
 
-
 #ifdef __cplusplus
 }
 #endif

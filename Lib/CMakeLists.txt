@@ -34,22 +34,24 @@ foreach(DIR ${CHILD_DIRS})
             message(STATUS "Creating user library: ${LIB_NAME}")
 
             # Create an OBJECT library like CubeMX style
-            add_library(${LIB_NAME} OBJECT)
-            target_sources(${LIB_NAME} PRIVATE ${LIB_SOURCES})
+            add_library( ${LIB_NAME})
+            target_sources(${LIB_NAME} PUBLIC ${LIB_SOURCES})
 
             # Include paths for this library
             target_include_directories(${LIB_NAME} PUBLIC
             ${CMAKE_CURRENT_SOURCE_DIR}/MyLib
             ${CMAKE_CURRENT_SOURCE_DIR}/MyLib/${DIR}
             ${CMAKE_SOURCE_DIR}/Lib/ThirdParty
+            # ${CMAKE_SOURCE_DIR}/Lib/ThirdParty/L_GUI_Guider/custom
+            # ${CMAKE_SOURCE_DIR}/Lib/ThirdParty/L_GUI_Guider/generated
 
             # ${CMAKE_SOURCE_DIR}/Core/Inc           # for main.h, HAL includes
             )
 
             # Link with CubeMX settings
             target_link_libraries(${LIB_NAME} PUBLIC stm32cubemx
-            lvgl
-            lvgl_demos
+                lvgl
+                L_GUI_Guider
             )
 
             # Add this lib to global list so parent can link later

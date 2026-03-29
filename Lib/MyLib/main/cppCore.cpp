@@ -26,7 +26,9 @@
 #include "lvgl/lvgl.h"
 #include "main/lv_port_disp_template.h"
 #include "main/lv_port_indev_template.h"
+#include "NORFLASH/lv_fs_rawfs.h"
 #include "lv_demos.h"
+#include "L_GUI_Guider/custom/custom.h"
 
 
 
@@ -72,12 +74,13 @@ void init()
     lv_init();                                          /* lvgl系统初始化 */
     lv_port_disp_init();                                /* lvgl显示接口初始化,放在lv_init()的后面 */
     lv_port_indev_init();                               /* lvgl输入接口初始化,放在lv_init()的后面 */
+    lv_fs_rawfs_init();
     // rtc_init();                             /* 初始化RTC */
     // rtc_set_wakeup(RTC_WAKEUPCLOCK_CK_SPRE_16BITS, 0);   /* 配置WAKE UP中断,1秒钟中断一次 */
 
 
-    debugStr.push_back("Hello, World->1\r\n");
-    debugStr.push_back("Hello, World->2\r\n");
+    debugStr.push_back("Hello, World->1");
+    debugStr.push_back("Hello, World->2");
 }
 
 
@@ -85,7 +88,6 @@ void init()
 void cppCoreStart(void *argument)
 {
     
-
 
     for (;;)
     {
@@ -98,10 +100,25 @@ void cppCoreStart(void *argument)
 void StartTask02(void *argument)
 {
 
-    lv_demo_widgets();
+    // lv_demo_widgets();
+    custom_init(&guider_ui);
     for(;;)
     {
 
+        if (g_usart_rx_sta & 0x8000)        /* 串口接收完成？ */
+        {
+            uint8_t len;
+            // char *pbuf = 0;
+            len = g_usart_rx_sta & 0x3fff;  /* 得到此次接收到的数据长度 */
+            g_usart_rx_buf[len] = '\0';     /* 在末尾加入结束符. */
+            // pbuf = (char *)g_usart_rx_buf;
+            debugStr.push_back((char*)g_usart_rx_buf);
+            for (const auto& v :debugStr)
+            {
+                printf("%s\n",v.c_str());
+            }
+            g_usart_rx_sta = 0;             /* 开启下一次接收 */
+        }
         lv_timer_handler();
         osDelay(1);
     }

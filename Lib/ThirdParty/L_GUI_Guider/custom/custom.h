@@ -27,7 +27,8 @@ typedef struct
     uint8_t hppt_state;
 } custom_data;
 extern custom_data mydata;
-#define LV_ATTRIBUTE_MEM_SDRAM  __attribute__((section(".sdram")))
+
+
 void mycb(lv_event_t * e);
 void custom_init(lv_ui *ui);
 

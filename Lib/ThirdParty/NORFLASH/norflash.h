@@ -86,6 +86,10 @@ void norflash_read(uint8_t *pbuf, uint32_t addr, uint32_t datalen);          /* 
 void norflash_write_nocheck(uint8_t *pbuf, uint32_t addr, uint32_t datalen); /* 写flash,不带擦除 */
 void norflash_write(uint8_t *pbuf, uint32_t addr, uint32_t datalen);         /* 写入flash */
 
+
+
+
+
 #ifdef __cplusplus
 }
 #endif

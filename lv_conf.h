@@ -942,6 +942,19 @@
     #define LV_FS_FATFS_PATH ""         /**< Set the working directory. File/directory paths will be appended to it. */
     #define LV_FS_FATFS_CACHE_SIZE 0    /**< >0 to cache this number of bytes in lv_fs_read() */
 #endif
+/*API for RAWFS (needs to be added separately).*/
+
+#define LV_USE_FS_RAWFS 1
+#if LV_USE_FS_RAWFS
+/*Set an upper cased letter on which the drive will accessible (e.g. 'A')*/
+#define LV_FS_RAWFS_LETTER 'F'
+/*use the XIP flash*/
+#define LV_FS_RAWFS_XIP 0
+#if LV_FS_RAWFS_XIP
+/*the XIP flash address where the image binary is placed*/
+#define LV_FS_RAWFS_XIP_BASE_ADDR 
+#endif    /* LV_FS_RAWFS_XIP */
+#endif    /* LV_USE_FS_RAWFS */
 
 /** API for memory-mapped file access. */
 #define LV_USE_FS_MEMFS 0
@@ -1484,7 +1497,7 @@
     #define LV_USE_DEMO_STRESS 0
 
     /** Music player demo */
-    #define LV_USE_DEMO_MUSIC 0
+    #define LV_USE_DEMO_MUSIC 1
     #if LV_USE_DEMO_MUSIC
         #define LV_DEMO_MUSIC_SQUARE    0
         #define LV_DEMO_MUSIC_LANDSCAPE 0
