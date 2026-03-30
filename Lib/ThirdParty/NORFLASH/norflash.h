@@ -15,7 +15,9 @@
 #define __NORFLASH_H
 
 #include "sys/sys.h"
-
+#ifdef LV_USE_FS_RAWFS
+uint32_t num = 10;
+#endif
 #ifdef __cplusplus
 extern "C" {
 #endif

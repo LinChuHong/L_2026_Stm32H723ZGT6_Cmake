@@ -8,6 +8,7 @@
 */
 
 #include "lvgl.h"
+#include "lv_fs_rawfs.h"
 
 #if LV_USE_FS_RAWFS
 

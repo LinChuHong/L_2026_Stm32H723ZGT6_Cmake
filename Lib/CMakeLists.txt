@@ -34,7 +34,7 @@ foreach(DIR ${CHILD_DIRS})
             message(STATUS "Creating user library: ${LIB_NAME}")
 
             # Create an OBJECT library like CubeMX style
-            add_library( ${LIB_NAME})
+            add_library( ${LIB_NAME}  )
             target_sources(${LIB_NAME} PUBLIC ${LIB_SOURCES})
 
             # Include paths for this library

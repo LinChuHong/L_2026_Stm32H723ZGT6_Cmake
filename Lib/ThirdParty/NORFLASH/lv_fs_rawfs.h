@@ -20,14 +20,11 @@ typedef struct _rawfs_file_t {
 extern "C" {
 #endif
 
-
-
-
-
-
 void lv_fs_rawfs_init(void);
 
 #ifdef __cplusplus
 }
 #endif
+
+
 #endif
