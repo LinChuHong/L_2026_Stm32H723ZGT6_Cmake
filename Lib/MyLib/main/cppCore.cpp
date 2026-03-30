@@ -32,6 +32,7 @@
 
 
 
+#include <music/lv_demo_music.h>
 #include <src/tick/lv_tick.h>
 #include <string>
 #include "vector"
@@ -101,6 +102,7 @@ void StartTask02(void *argument)
 {
 
     // lv_demo_widgets();
+    // lv_demo_music();
     custom_init(&guider_ui);
     for(;;)
     {

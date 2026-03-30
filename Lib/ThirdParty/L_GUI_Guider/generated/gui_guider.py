@@ -253,6 +253,14 @@ screen_btn_1.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.DE
 
 screen.update_layout()
 
+def screen_event_handler(e):
+    code = e.get_code()
+    if (code == lv.EVENT.SCREEN_LOADED):
+        pass
+        
+
+screen.add_event_cb(lambda e: screen_event_handler(e), lv.EVENT.ALL, None)
+
 def screen_btn_1_event_handler(e):
     code = e.get_code()
     if (code == lv.EVENT.CLICKED):

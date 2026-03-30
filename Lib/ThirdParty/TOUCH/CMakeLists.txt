@@ -17,6 +17,7 @@ target_link_libraries(${MODULE_NAME} PUBLIC stm32cubemx
 # Allow this module to include headers from ENTIRE project
 target_include_directories(${MODULE_NAME}
     PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/Lib/ThirdParty
     ${CMAKE_SOURCE_DIR}/Lib/MyLib
 )

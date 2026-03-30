@@ -39,9 +39,9 @@ foreach(DIR ${CHILD_DIRS})
 
             # Include paths for this library
             target_include_directories(${LIB_NAME} PUBLIC
-            ${CMAKE_CURRENT_SOURCE_DIR}/MyLib
+            # ${CMAKE_CURRENT_SOURCE_DIR}/MyLib
             ${CMAKE_CURRENT_SOURCE_DIR}/MyLib/${DIR}
-            ${CMAKE_SOURCE_DIR}/Lib/ThirdParty
+            ${CMAKE_SOURCE_DIR}/Lib/ThirdParty/NORFLASH
             # ${CMAKE_SOURCE_DIR}/Lib/ThirdParty/L_GUI_Guider/custom
             # ${CMAKE_SOURCE_DIR}/Lib/ThirdParty/L_GUI_Guider/generated
 
@@ -52,6 +52,7 @@ foreach(DIR ${CHILD_DIRS})
             target_link_libraries(${LIB_NAME} PUBLIC stm32cubemx
                 lvgl
                 L_GUI_Guider
+                NORFLASH
             )
 
             # Add this lib to global list so parent can link later

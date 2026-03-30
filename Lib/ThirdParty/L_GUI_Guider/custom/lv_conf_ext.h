@@ -19,7 +19,6 @@
 
 
 /* common code  begin  */
-#include "lv_fs_rawfs.h"
 
 
 /* common code end */

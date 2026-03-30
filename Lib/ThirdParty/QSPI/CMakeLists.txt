@@ -16,4 +16,6 @@ target_link_libraries(${MODULE_NAME} PUBLIC stm32cubemx)
 target_include_directories(${MODULE_NAME}
     PUBLIC
     ${CMAKE_SOURCE_DIR}/Lib/MyLib
+    ${CMAKE_CURRENT_SOURCE_DIR}
+
 )

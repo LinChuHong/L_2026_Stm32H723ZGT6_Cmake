@@ -30,6 +30,7 @@ target_link_libraries(${MODULE_NAME} PUBLIC stm32cubemx
     NORFLASH
     lvgl
 )
+target_link_libraries(lvgl PUBLIC NORFLASH)
 # Include directories
 target_include_directories(${MODULE_NAME} PUBLIC
     ${CMAKE_SOURCE_DIR}/Lib/ThirdParty/NORFLASH
