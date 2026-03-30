@@ -64,8 +64,23 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 
 )
 target_include_directories(lvgl PUBLIC
-
+    ${MYLIB_LINK_LIBS}
+    QSPI
+    NORFLASH
+    TOUCH
+    
+    L_GUI_Guider
 )
+
+target_link_libraries(lvgl PUBLIC
+    ${MYLIB_LINK_LIBS}
+    QSPI
+    NORFLASH
+    TOUCH
+    
+    L_GUI_Guider
+)
+
 # Add project symbols (macros)
 target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined symbols

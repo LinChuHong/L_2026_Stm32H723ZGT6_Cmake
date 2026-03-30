@@ -4,7 +4,7 @@
 extern "C" {
 #endif
 
-#if LV_USE_FS_RAWFS
+// #if LV_USE_FS_RAWFS
 #include "stdint.h"
 
 typedef uint32_t rawfs_addr_t;
@@ -22,7 +22,7 @@ typedef struct _rawfs_file_t {
 
 
 void lv_fs_rawfs_init(void);
-#endif
+// #endif
 
 #ifdef __cplusplus
 }

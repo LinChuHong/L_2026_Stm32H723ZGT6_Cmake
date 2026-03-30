@@ -232,7 +232,6 @@ uint16_t norflash_read_id(void)
     {
         g_norflash_addrw = 3;   /* 如果是W25Q256, 标记32bit地址宽度 */
     }
-
     return deviceid;
 }
 
