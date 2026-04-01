@@ -1,4 +1,5 @@
 # Module name = folder name
+
 get_filename_component(MODULE_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 # Collect all source files
 file(GLOB_RECURSE MODULE_SOURCES

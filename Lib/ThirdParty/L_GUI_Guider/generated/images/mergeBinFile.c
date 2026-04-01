@@ -8,14 +8,15 @@
 */
 
 #include "lvgl.h"
-#include "lv_fs_rawfs.h"
 
 #if LV_USE_FS_RAWFS
 
-const rawfs_size_t rawfs_file_count = 2;
-rawfs_file_t rawfs_files[2] = {
+const rawfs_size_t rawfs_file_count = 4;
+rawfs_file_t rawfs_files[4] = {
 	0x0, 0, 1228812, "/Chiyo_chan.bin",
-	0x12c00c, 0, 202572, "/IMG_2066.bin",
+	0x12c00c, 0, 34032, "/IMG_2066.bin",
+	0x1344fc, 0, 39174, "/dmsler.bin",
+	0x13de02, 0, 49863, "/myself.bin",
 
 };
 

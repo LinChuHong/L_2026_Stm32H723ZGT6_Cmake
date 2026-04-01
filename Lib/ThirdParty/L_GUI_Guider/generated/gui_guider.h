@@ -23,6 +23,10 @@ typedef struct
 	bool screen_del;
 	lv_obj_t *screen_btn_1;
 	lv_obj_t *screen_btn_1_label;
+	lv_obj_t *screen_btn_2;
+	lv_obj_t *screen_btn_2_label;
+	lv_obj_t *screen_btn_3;
+	lv_obj_t *screen_btn_3_label;
 	lv_obj_t *g_kb_top_layer;
 }lv_ui;
 

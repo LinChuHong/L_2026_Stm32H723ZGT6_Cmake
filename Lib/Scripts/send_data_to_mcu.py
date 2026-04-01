@@ -2,7 +2,6 @@ import serial
 import struct
 
 
-
 def send_file(filename):
     ser = serial.Serial("COM6", 1500000, timeout=5)
     with open(filename, "rb") as f:

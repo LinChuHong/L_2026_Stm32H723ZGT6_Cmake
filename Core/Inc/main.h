@@ -56,10 +56,26 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define KEY0_Pin GPIO_PIN_1
+#define KEY0_GPIO_Port GPIOC
+#define RTP_MISO_Pin GPIO_PIN_4
+#define RTP_MISO_GPIO_Port GPIOC
 #define LED0_Pin GPIO_PIN_0
 #define LED0_GPIO_Port GPIOB
 #define LED1_Pin GPIO_PIN_1
 #define LED1_GPIO_Port GPIOB
+#define LCD_RST_Pin GPIO_PIN_2
+#define LCD_RST_GPIO_Port GPIOB
+#define CTP_SDA_RTP_MOSI_Pin GPIO_PIN_11
+#define CTP_SDA_RTP_MOSI_GPIO_Port GPIOD
+#define CTP_SCL_TRO_SCK_Pin GPIO_PIN_12
+#define CTP_SCL_TRO_SCK_GPIO_Port GPIOD
+#define CTP_INT_RTP_SCK_Pin GPIO_PIN_13
+#define CTP_INT_RTP_SCK_GPIO_Port GPIOD
+#define CTP_RSR_RTP_CS_Pin GPIO_PIN_3
+#define CTP_RSR_RTP_CS_GPIO_Port GPIOG
+#define LCD_BL_Pin GPIO_PIN_14
+#define LCD_BL_GPIO_Port GPIOG
 
 /* USER CODE BEGIN Private defines */
 

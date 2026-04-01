@@ -55,7 +55,7 @@
 osThreadId_t StartDefaultTasHandle;
 const osThreadAttr_t StartDefaultTas_attributes = {
   .name = "StartDefaultTas",
-  .stack_size = 128 * 4,
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for myTask02 */
@@ -74,6 +74,7 @@ const osThreadAttr_t myTask02_attributes = {
 void cppCoreStart(void *argument);
 void StartTask02(void *argument);
 
+extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /**
@@ -129,6 +130,8 @@ void MX_FREERTOS_Init(void) {
 /* USER CODE END Header_cppCoreStart */
 __weak void cppCoreStart(void *argument)
 {
+  /* init code for USB_DEVICE */
+  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN cppCoreStart */
   /* Infinite loop */
   for(;;)

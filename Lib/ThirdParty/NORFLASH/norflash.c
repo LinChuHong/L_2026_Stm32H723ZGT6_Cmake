@@ -430,7 +430,7 @@ void norflash_erase_chip(void)
  */
 void norflash_erase_sector(uint32_t saddr)
 {
-    //printf("fe:%x\r\n", saddr);   /* 监视flash擦除情况,测试用 */
+    // printf("fe:%x\r\n", saddr);   /* 监视flash擦除情况,测试用 */
     saddr *= 4096;
     norflash_write_enable();        /* 写使能 */
     norflash_wait_busy();           /* 等待空闲 */
@@ -441,9 +441,20 @@ void norflash_erase_sector(uint32_t saddr)
     norflash_wait_busy();           /* 等待扇区擦除完成 */
 }
 
+static uint32_t last_erased_sector = 0xFFFFFFFF;
 
+void flash_write_fast(uint32_t addr, uint8_t *data, uint16_t len)
+{
+    uint32_t sec = addr / 4096;
 
+    if (sec != last_erased_sector)
+    {
+        norflash_erase_sector(sec * 4096);
+        last_erased_sector = sec;
+    }
 
+    norflash_write_nocheck(data, addr, len);
+}
 
 
 
