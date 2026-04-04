@@ -3,8 +3,7 @@
 
 #include "main.h"
 #include "stdint.h"
-
-
+#define USEPYTHONTOSENDDATATONORFLASH 1
 
 #ifdef __cplusplus
 extern "C" {

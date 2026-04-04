@@ -235,7 +235,7 @@ screen_btn_1_label.set_width(lv.pct(100))
 screen_btn_1_label.align(lv.ALIGN.CENTER, 0, 0)
 screen_btn_1.set_style_pad_all(0, lv.STATE.DEFAULT)
 screen_btn_1.set_pos(52, 43)
-screen_btn_1.set_size(422, 160)
+screen_btn_1.set_size(140, 81)
 # Set style for screen_btn_1, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
 screen_btn_1.set_style_bg_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_btn_1.set_style_bg_color(lv.color_hex(0x2195f6), lv.PART.MAIN|lv.STATE.DEFAULT)
@@ -243,7 +243,7 @@ screen_btn_1.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEFAU
 screen_btn_1.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_btn_1.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_btn_1.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_btn_1.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\IMG_2066_422_160.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_1.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\IMG_2066_140_81.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_btn_1.set_style_bg_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_btn_1.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_btn_1.set_style_text_color(lv.color_hex(0xffffff), lv.PART.MAIN|lv.STATE.DEFAULT)
@@ -251,7 +251,177 @@ screen_btn_1.set_style_text_font(test_font("montserratMedium", 16), lv.PART.MAIN
 screen_btn_1.set_style_text_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_btn_1.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.DEFAULT)
 
+# Create screen_btn_2
+screen_btn_2 = lv.button(screen)
+screen_btn_2_label = lv.label(screen_btn_2)
+screen_btn_2_label.set_text("To_Screen1")
+screen_btn_2_label.set_long_mode(lv.label.LONG.WRAP)
+screen_btn_2_label.set_width(lv.pct(100))
+screen_btn_2_label.align(lv.ALIGN.CENTER, 0, 0)
+screen_btn_2.set_style_pad_all(0, lv.STATE.DEFAULT)
+screen_btn_2.set_pos(224, 119)
+screen_btn_2.set_size(314, 131)
+# Set style for screen_btn_2, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_btn_2.set_style_bg_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_2.set_style_bg_color(lv.color_hex(0x2195f6), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_2.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_2.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_2.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_2.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_2.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\dmsler_314_131.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_2.set_style_bg_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_2.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_2.set_style_text_color(lv.color_hex(0x6b41a4), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_2.set_style_text_font(test_font("montserratMedium", 16), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_2.set_style_text_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_2.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# Create screen_btn_3
+screen_btn_3 = lv.button(screen)
+screen_btn_3_label = lv.label(screen_btn_3)
+screen_btn_3_label.set_text("myButton")
+screen_btn_3_label.set_long_mode(lv.label.LONG.WRAP)
+screen_btn_3_label.set_width(lv.pct(100))
+screen_btn_3_label.align(lv.ALIGN.CENTER, 0, 0)
+screen_btn_3.set_style_pad_all(0, lv.STATE.DEFAULT)
+screen_btn_3.set_pos(283, 6)
+screen_btn_3.set_size(191, 87)
+# Set style for screen_btn_3, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_btn_3.set_style_bg_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_3.set_style_bg_color(lv.color_hex(0x2195f6), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_3.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_3.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_3.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_3.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_3.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\myself_191_87.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_3.set_style_bg_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_3.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_3.set_style_text_color(lv.color_hex(0xffffff), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_3.set_style_text_font(test_font("montserratMedium", 16), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_3.set_style_text_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_btn_3.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# Create screen_img_1
+screen_img_1 = lv.image(screen)
+screen_img_1.set_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\IMG_2023122011920175424181_261_220.png"))
+screen_img_1.add_flag(lv.obj.FLAG.CLICKABLE)
+screen_img_1.set_pivot(50,50)
+screen_img_1.set_rotation(0)
+screen_img_1.set_pos(1063, -154)
+screen_img_1.set_size(261, 220)
+screen_img_1.add_flag(lv.obj.FLAG.HIDDEN)
+# Set style for screen_img_1, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_img_1.set_style_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# Create screen_img_2
+screen_img_2 = lv.image(screen)
+screen_img_2.set_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\IMG_2023122011920175424335_292_248.png"))
+screen_img_2.add_flag(lv.obj.FLAG.CLICKABLE)
+screen_img_2.set_pivot(50,50)
+screen_img_2.set_rotation(0)
+screen_img_2.set_pos(1048, 127)
+screen_img_2.set_size(292, 248)
+screen_img_2.add_flag(lv.obj.FLAG.HIDDEN)
+# Set style for screen_img_2, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_img_2.set_style_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# Create screen_img_3
+screen_img_3 = lv.image(screen)
+screen_img_3.set_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Shinobu1_150_150.png"))
+screen_img_3.add_flag(lv.obj.FLAG.CLICKABLE)
+screen_img_3.set_pivot(50,50)
+screen_img_3.set_rotation(0)
+screen_img_3.set_pos(46, 164)
+screen_img_3.set_size(150, 150)
+# Set style for screen_img_3, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_img_3.set_style_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# Create screen_img_4
+screen_img_4 = lv.image(screen)
+screen_img_4.set_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Tamayo_150_150.png"))
+screen_img_4.add_flag(lv.obj.FLAG.CLICKABLE)
+screen_img_4.set_pivot(50,50)
+screen_img_4.set_rotation(0)
+screen_img_4.set_pos(840, 20)
+screen_img_4.set_size(150, 150)
+# Set style for screen_img_4, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_img_4.set_style_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# Create screen_img_5
+screen_img_5 = lv.image(screen)
+screen_img_5.set_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Maki_150_150.png"))
+screen_img_5.add_flag(lv.obj.FLAG.CLICKABLE)
+screen_img_5.set_pivot(50,50)
+screen_img_5.set_rotation(0)
+screen_img_5.set_pos(431, 329)
+screen_img_5.set_size(150, 150)
+# Set style for screen_img_5, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_img_5.set_style_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# Create screen_img_6
+screen_img_6 = lv.image(screen)
+screen_img_6.set_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Shinobu2_150_150.png"))
+screen_img_6.add_flag(lv.obj.FLAG.CLICKABLE)
+screen_img_6.set_pivot(50,50)
+screen_img_6.set_rotation(0)
+screen_img_6.set_pos(683, 431)
+screen_img_6.set_size(150, 150)
+# Set style for screen_img_6, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_img_6.set_style_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# Create screen_img_7
+screen_img_7 = lv.image(screen)
+screen_img_7.set_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Clannad_285_292.png"))
+screen_img_7.add_flag(lv.obj.FLAG.CLICKABLE)
+screen_img_7.set_pivot(50,50)
+screen_img_7.set_rotation(0)
+screen_img_7.set_pos(-293, 296)
+screen_img_7.set_size(285, 292)
+screen_img_7.add_flag(lv.obj.FLAG.HIDDEN)
+# Set style for screen_img_7, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_img_7.set_style_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+
 screen.update_layout()
+# Create screen_1
+screen_1 = lv.obj()
+g_kb_top_layer = lv.keyboard(lv.layer_top())
+g_kb_top_layer.add_event_cb(lambda e: ta_event_cb(e, g_kb_top_layer), lv.EVENT.ALL, None)
+g_kb_top_layer.add_flag(lv.obj.FLAG.HIDDEN)
+g_kb_top_layer.set_style_text_font(test_font("montserratMedium", 18), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1.set_size(1024, 600)
+screen_1.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+# Set style for screen_1, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_1.set_style_bg_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Clannad_1024_600.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1.set_style_bg_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# Create screen_1_btn_1
+screen_1_btn_1 = lv.button(screen_1)
+screen_1_btn_1_label = lv.label(screen_1_btn_1)
+screen_1_btn_1_label.set_text("To_Main_Screen\n")
+screen_1_btn_1_label.set_long_mode(lv.label.LONG.SCROLL_CIRCULAR)
+screen_1_btn_1_label.set_width(lv.pct(100))
+screen_1_btn_1_label.align(lv.ALIGN.CENTER, 0, 0)
+screen_1_btn_1.set_style_pad_all(0, lv.STATE.DEFAULT)
+screen_1_btn_1.set_pos(0, 0)
+screen_1_btn_1.set_size(72, 151)
+# Set style for screen_1_btn_1, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_1_btn_1.set_style_bg_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_bg_color(lv.color_hex(0x2195f6), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Frieren_anime_profile_72_151.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_bg_image_opa(247, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_text_color(lv.color_hex(0x4146d4), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_text_font(test_font("montserratMedium", 16), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_text_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+screen_1.update_layout()
 
 def screen_event_handler(e):
     code = e.get_code()
@@ -268,6 +438,20 @@ def screen_btn_1_event_handler(e):
         
 
 screen_btn_1.add_event_cb(lambda e: screen_btn_1_event_handler(e), lv.EVENT.ALL, None)
+
+def screen_btn_2_event_handler(e):
+    code = e.get_code()
+    if (code == lv.EVENT.PRESSED):
+        pass
+        lv.screen_load_anim(screen_1, lv.SCR_LOAD_ANIM.FADE_ON, 200, 200, False)
+screen_btn_2.add_event_cb(lambda e: screen_btn_2_event_handler(e), lv.EVENT.ALL, None)
+
+def screen_1_btn_1_event_handler(e):
+    code = e.get_code()
+    if (code == lv.EVENT.PRESSED):
+        pass
+        lv.screen_load_anim(screen, lv.SCR_LOAD_ANIM.FADE_ON, 200, 200, False)
+screen_1_btn_1.add_event_cb(lambda e: screen_1_btn_1_event_handler(e), lv.EVENT.ALL, None)
 
 # content from custom.py
 

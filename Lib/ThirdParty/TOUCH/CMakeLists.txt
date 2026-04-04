@@ -10,7 +10,11 @@ file(GLOB_RECURSE MODULE_SOURCES
 )
 # Create library
 add_library(${MODULE_NAME} ${MODULE_SOURCES})
-target_link_libraries(${MODULE_NAME} PUBLIC stm32cubemx
+target_link_libraries(${MODULE_NAME} 
+    PRIVATE 
+    stm32cubemx
+    ${MYLIB_LINK_LIBS}
+    NORFLASH
     
 )
 
@@ -18,6 +22,4 @@ target_link_libraries(${MODULE_NAME} PUBLIC stm32cubemx
 target_include_directories(${MODULE_NAME}
     PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_SOURCE_DIR}/Lib/ThirdParty
-    ${CMAKE_SOURCE_DIR}/Lib/MyLib
 )

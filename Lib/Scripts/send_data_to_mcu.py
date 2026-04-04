@@ -1,9 +1,9 @@
 import serial
 import struct
 
-
+baud = 12000000
 def send_file(filename):
-    ser = serial.Serial("COM6", 1500000, timeout=5)
+    ser = serial.Serial("COM8", baud, timeout=5)
     with open(filename, "rb") as f:
         address = 0
         while True:
@@ -11,16 +11,18 @@ def send_file(filename):
             if not chunk:
                 break
 
-            size = len(chunk)
 
             # packet = address(4) + size(2) + data
-            packet = struct.pack("<IH", address, size) + chunk
-            ser.write(packet)
-
+            # packet = struct.pack("<IH", address, size) + chunk
+            # ser.write(packet)
+            size = len(chunk)
+            ser.write(struct.pack("<H",size))
+            ser.write(chunk)
+       
             # wait for ACK
             ack = ser.read(1)
             if ack != b'\xAA':
-                print("Error at address:", hex(address))
+                print(ack)
                 break
 
             address += size

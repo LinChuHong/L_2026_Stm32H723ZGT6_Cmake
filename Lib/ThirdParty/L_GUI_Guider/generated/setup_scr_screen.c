@@ -67,10 +67,10 @@ void setup_scr_screen(lv_ui *ui)
 
     //Write codes screen_btn_2
     ui->screen_btn_2 = lv_button_create(ui->screen);
-    lv_obj_set_pos(ui->screen_btn_2, 40, 189);
-    lv_obj_set_size(ui->screen_btn_2, 214, 61);
+    lv_obj_set_pos(ui->screen_btn_2, 224, 119);
+    lv_obj_set_size(ui->screen_btn_2, 314, 131);
     ui->screen_btn_2_label = lv_label_create(ui->screen_btn_2);
-    lv_label_set_text(ui->screen_btn_2_label, "Button");
+    lv_label_set_text(ui->screen_btn_2_label, "To_Screen1");
     lv_label_set_long_mode(ui->screen_btn_2_label, LV_LABEL_LONG_WRAP);
     lv_obj_align(ui->screen_btn_2_label, LV_ALIGN_CENTER, 0, 0);
     lv_obj_set_style_pad_all(ui->screen_btn_2, 0, LV_STATE_DEFAULT);
@@ -90,14 +90,14 @@ void setup_scr_screen(lv_ui *ui)
 #endif
     lv_obj_set_style_bg_image_opa(ui->screen_btn_2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_image_recolor_opa(ui->screen_btn_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->screen_btn_2, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->screen_btn_2, lv_color_hex(0x6b41a4), LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui->screen_btn_2, &lv_font_montserratMedium_16, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui->screen_btn_2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_align(ui->screen_btn_2, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes screen_btn_3
     ui->screen_btn_3 = lv_button_create(ui->screen);
-    lv_obj_set_pos(ui->screen_btn_3, 307, 63);
+    lv_obj_set_pos(ui->screen_btn_3, 283, 6);
     lv_obj_set_size(ui->screen_btn_3, 191, 87);
     ui->screen_btn_3_label = lv_label_create(ui->screen_btn_3);
     lv_label_set_text(ui->screen_btn_3_label, "myButton");
@@ -124,6 +124,124 @@ void setup_scr_screen(lv_ui *ui)
     lv_obj_set_style_text_font(ui->screen_btn_3, &lv_font_montserratMedium_16, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui->screen_btn_3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_align(ui->screen_btn_3, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+    //Write codes screen_img_1
+    ui->screen_img_1 = lv_image_create(ui->screen);
+    lv_obj_set_pos(ui->screen_img_1, 1063, -154);
+    lv_obj_set_size(ui->screen_img_1, 261, 220);
+    lv_obj_add_flag(ui->screen_img_1, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_add_flag(ui->screen_img_1, LV_OBJ_FLAG_CLICKABLE);
+#if LV_USE_GUIDER_SIMULATOR
+    lv_image_set_src(ui->screen_img_1, "F:\\projects\\CSEE\\L_2025_Stm32H723ZGT6_Cmake\\Lib\\ThirdParty\\L_GUI_Guider\\import\\image\\IMG_2023122011920175424181.jpg");
+#else
+    lv_image_set_src(ui->screen_img_1, "F:/IMG_2023122011920175424181.bin");
+#endif
+    lv_image_set_pivot(ui->screen_img_1, 50,50);
+    lv_image_set_rotation(ui->screen_img_1, 0);
+
+    //Write style for screen_img_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_image_recolor_opa(ui->screen_img_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_image_opa(ui->screen_img_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+    //Write codes screen_img_2
+    ui->screen_img_2 = lv_image_create(ui->screen);
+    lv_obj_set_pos(ui->screen_img_2, 1048, 127);
+    lv_obj_set_size(ui->screen_img_2, 292, 248);
+    lv_obj_add_flag(ui->screen_img_2, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_add_flag(ui->screen_img_2, LV_OBJ_FLAG_CLICKABLE);
+#if LV_USE_GUIDER_SIMULATOR
+    lv_image_set_src(ui->screen_img_2, "F:\\projects\\CSEE\\L_2025_Stm32H723ZGT6_Cmake\\Lib\\ThirdParty\\L_GUI_Guider\\import\\image\\IMG_2023122011920175424335.jpg");
+#else
+    lv_image_set_src(ui->screen_img_2, "F:/IMG_2023122011920175424335.bin");
+#endif
+    lv_image_set_pivot(ui->screen_img_2, 50,50);
+    lv_image_set_rotation(ui->screen_img_2, 0);
+
+    //Write style for screen_img_2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_image_recolor_opa(ui->screen_img_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_image_opa(ui->screen_img_2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+    //Write codes screen_img_3
+    ui->screen_img_3 = lv_image_create(ui->screen);
+    lv_obj_set_pos(ui->screen_img_3, 46, 164);
+    lv_obj_set_size(ui->screen_img_3, 150, 150);
+    lv_obj_add_flag(ui->screen_img_3, LV_OBJ_FLAG_CLICKABLE);
+#if LV_USE_GUIDER_SIMULATOR
+    lv_image_set_src(ui->screen_img_3, "F:\\projects\\CSEE\\L_2025_Stm32H723ZGT6_Cmake\\Lib\\ThirdParty\\L_GUI_Guider\\import\\image\\Shinobu1.jpeg");
+#else
+    lv_image_set_src(ui->screen_img_3, "F:/Shinobu1.bin");
+#endif
+    lv_image_set_pivot(ui->screen_img_3, 50,50);
+    lv_image_set_rotation(ui->screen_img_3, 0);
+
+    //Write style for screen_img_3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_image_recolor_opa(ui->screen_img_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_image_opa(ui->screen_img_3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+    //Write codes screen_img_4
+    ui->screen_img_4 = lv_image_create(ui->screen);
+    lv_obj_set_pos(ui->screen_img_4, 840, 20);
+    lv_obj_set_size(ui->screen_img_4, 150, 150);
+    lv_obj_add_flag(ui->screen_img_4, LV_OBJ_FLAG_CLICKABLE);
+#if LV_USE_GUIDER_SIMULATOR
+    lv_image_set_src(ui->screen_img_4, "F:\\projects\\CSEE\\L_2025_Stm32H723ZGT6_Cmake\\Lib\\ThirdParty\\L_GUI_Guider\\import\\image\\Tamayo.jpg");
+#else
+    lv_image_set_src(ui->screen_img_4, "F:/Tamayo.bin");
+#endif
+    lv_image_set_pivot(ui->screen_img_4, 50,50);
+    lv_image_set_rotation(ui->screen_img_4, 0);
+
+    //Write style for screen_img_4, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_image_recolor_opa(ui->screen_img_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_image_opa(ui->screen_img_4, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+    //Write codes screen_img_5
+    ui->screen_img_5 = lv_image_create(ui->screen);
+    lv_obj_set_pos(ui->screen_img_5, 431, 329);
+    lv_obj_set_size(ui->screen_img_5, 150, 150);
+    lv_obj_add_flag(ui->screen_img_5, LV_OBJ_FLAG_CLICKABLE);
+#if LV_USE_GUIDER_SIMULATOR
+    lv_image_set_src(ui->screen_img_5, "F:\\projects\\CSEE\\L_2025_Stm32H723ZGT6_Cmake\\Lib\\ThirdParty\\L_GUI_Guider\\import\\image\\Maki.jpeg");
+#else
+    lv_image_set_src(ui->screen_img_5, "F:/Maki.bin");
+#endif
+    lv_image_set_pivot(ui->screen_img_5, 50,50);
+    lv_image_set_rotation(ui->screen_img_5, 0);
+
+    //Write style for screen_img_5, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_image_recolor_opa(ui->screen_img_5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_image_opa(ui->screen_img_5, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+    //Write codes screen_img_6
+    ui->screen_img_6 = lv_image_create(ui->screen);
+    lv_obj_set_pos(ui->screen_img_6, 683, 431);
+    lv_obj_set_size(ui->screen_img_6, 150, 150);
+    lv_obj_add_flag(ui->screen_img_6, LV_OBJ_FLAG_CLICKABLE);
+#if LV_USE_GUIDER_SIMULATOR
+    lv_image_set_src(ui->screen_img_6, "F:\\projects\\CSEE\\L_2025_Stm32H723ZGT6_Cmake\\Lib\\ThirdParty\\L_GUI_Guider\\import\\image\\Shinobu2.jpeg");
+#else
+    lv_image_set_src(ui->screen_img_6, "F:/Shinobu2.bin");
+#endif
+    lv_image_set_pivot(ui->screen_img_6, 50,50);
+    lv_image_set_rotation(ui->screen_img_6, 0);
+
+    //Write style for screen_img_6, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_image_recolor_opa(ui->screen_img_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_image_opa(ui->screen_img_6, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+    //Write codes screen_img_7
+    ui->screen_img_7 = lv_image_create(ui->screen);
+    lv_obj_set_pos(ui->screen_img_7, -293, 296);
+    lv_obj_set_size(ui->screen_img_7, 285, 292);
+    lv_obj_add_flag(ui->screen_img_7, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_add_flag(ui->screen_img_7, LV_OBJ_FLAG_CLICKABLE);
+    lv_image_set_src(ui->screen_img_7, &_Clannad_RGB565A8_285x292);
+    lv_image_set_pivot(ui->screen_img_7, 50,50);
+    lv_image_set_rotation(ui->screen_img_7, 0);
+
+    //Write style for screen_img_7, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_image_recolor_opa(ui->screen_img_7, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_image_opa(ui->screen_img_7, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //The custom code of screen.
     //lll

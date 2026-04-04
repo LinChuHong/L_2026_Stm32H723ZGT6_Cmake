@@ -1,3 +1,4 @@
+#include "ff.h"
 #include "main.h"
 #include "myh.h"
 
@@ -9,9 +10,8 @@
 #include "stm32h7xx_hal_gpio.h"
 #include "system_stm32h7xx.h"
 #include "task.h"
-#include "usb_device.h"
-#include "usbd_cdc.h"
 #include "usbd_cdc_if.h"
+#include "usb_device.h"
 
 #include "usart/usart1.h"
 #include "SDRAM/sdram.h"
@@ -26,6 +26,9 @@
 #include "delay/delay.h"
 #include "TOUCH/touch.h"
 #include "MALLOC/malloc1.h"
+#include "SDMMC/sdmmc_sdcard.h"
+#include "FATFS/exfuns/exfuns.h"
+#include "FATFS/exfuns/fattester.h"
 
 #include "lvgl/lvgl.h"
 #include "main/lv_port_disp_template.h"
@@ -35,20 +38,18 @@
 #include "L_GUI_Guider/custom/custom.h"
 #include "parser.h"
 
+
+#include <atomic>
+#include <src/misc/lv_types.h>
+#include <stdio.h>
 #include <string>
-#include "vector"
+#include <vector>
+#include <cstring>
+
 
 #include "L_Global.h"
+#include "usbd_def.h"
 
-std::vector<std::string> debugStr;
-std::vector<int> debugInt;
-
-typedef struct
-{
-    uint64_t task1;
-    uint64_t task2;
-} myTaskState;
-myTaskState myts;
 
 osMessageQueueId_t myQueue01Handle;
 const osMessageQueueAttr_t myQueue01_attributes = {
@@ -59,7 +60,6 @@ const osMessageQueueAttr_t myQueue01_attributes = {
 
 void init()
 {
-    myts = { .task1=0, .task2=0 };
     myQueue01Handle = osMessageQueueNew (16, sizeof(uint16_t), &myQueue01_attributes);
 
     led_init();                             /* 初始化LED */
@@ -75,6 +75,12 @@ void init()
     my_mem_init(SRAMDTCM);                  /* 初始化DTCM内存池(DTCM) */
     my_mem_init(SRAMITCM);                  /* 初始化ITCM内存池(ITCM) */
 
+    while (sd_init()) { }
+    exfuns_init();
+    res = f_mount(fs[0],"0:",1);
+
+    MX_USB_DEVICE_Init();    
+
     lv_init();                                          /* lvgl系统初始化 */
     lv_port_disp_init();                                /* lvgl显示接口初始化,放在lv_init()的后面 */
     lv_port_indev_init();                               /* lvgl输入接口初始化,放在lv_init()的后面 */
@@ -84,16 +90,12 @@ void init()
     // crc32_init();
 
 
-    debugStr.push_back("Hello, World->1");
-    debugStr.push_back("Hello, World->2");
 }
-
 
 
 void cppCoreStart(void *argument)
 {
 
-    MX_USB_DEVICE_Init();
     uint32_t last = DWT->CYCCNT;
     for (;;)
     {
@@ -103,16 +105,25 @@ void cppCoreStart(void *argument)
             last += SystemCoreClock;
             // CDC_Transmit_HS((uint8_t*)debugStr[0].c_str(), debugStr[0].size());
         } 
-        // process_queue();
-        if (usb_data_state.test(0) == 1 and usb_data_state.test(1) == 1 and usb_data_state.test(2) == 1)
+        // if (L_States.test(10) == 1)
+        // {
+        //     // while (CDC_Transmit_HS((uint8_t*)L_Data[0].c_str(), L_Data[0].size()) == USBD_BUSY) osDelay(1);
+        //     // L_States.reset(10);
+        // }
+
+        #if USEPYTHONTOSENDDATATONORFLASH == 1
+        if (L_States.test(6) == 1)
         {
-            // printf("linchuhonglove\n");
-            LED0_TOGGLE();
-            for (size_t i = 0; i < 3; i++)
-            {
-                usb_data_state.reset(i);
-            }
+            norflash_write(datatoflash.data(),dataLen,datatoflash.size());
+            L_States.reset(6);
+            printf("%d\n",datatoflash.size());
+            dataLen+=datatoflash.size();
+            datatoflash.clear();
+            uint8_t byte = 0xAA;
+            CDC_Transmit_HS(&byte, 1);
+
         }
+        #endif
         
         lv_tick_inc(1);
         osDelay(1);
@@ -126,7 +137,6 @@ void StartTask02(void *argument)
     // lv_demo_widgets();
     // lv_demo_music();
     custom_init(&guider_ui);
-    // norflash_erase_chip();
     for(;;)
     {
 
@@ -135,22 +145,86 @@ void StartTask02(void *argument)
             uint8_t len;
             len = g_usart_rx_sta & 0x3fff;  /* 得到此次接收到的数据长度 */
             g_usart_rx_buf[len] = '\0';     /* 在末尾加入结束符. */
-            if (strcmp((char*)g_usart_rx_buf, "erase") == 0)
-            {
-                // norflash_erase_chip();
-                // debugStr.push_back("NOR Flash Erased");
-                // printf("NOR Flash Erased\n");
-            }
-
-            // debugStr.push_back((char*)g_usart_rx_buf);
-            for (const auto& v :debugStr)
-            {
-                printf("%s\n",v.c_str());
-            }
             g_usart_rx_sta = 0;             /* 开启下一次接收 */
         }
         
         lv_timer_handler();
+        osDelay(1);
+    }
+
+}
+
+void test_write_to_norflash()
+{   
+    static uint8_t cnt = 0;
+    if (cnt == 0) res = f_open(fattester.file,"images.bin",FA_CREATE_ALWAYS | FA_WRITE);
+    cnt = 69;
+
+    #if USEPYTHONTOSENDDATATONORFLASH == 1
+    if (L_States.test(69) == 1)
+    {
+        if (res) 
+        {
+            printf("can't open file(Shakespeare.txt) Error code ->%d\n",res);
+            return;
+        }
+        res = f_write(fattester.file,datatoflash.data(),datatoflash.size(),&bw);
+        if (res != FR_OK)
+        {
+            printf("read error -> %d",res);
+        }
+
+        printf("%d\n",datatoflash.size());
+        datatoflash.clear();
+        L_States.reset(69);
+        uint8_t byte = 0xAA;
+        CDC_Transmit_HS(&byte, 1);
+        }
+    #endif
+
+    f_close(fattester.file);
+}
+void test()
+{
+    res = f_open(fattester.file,"Shakespeare.txt",FA_READ);
+    if (res) 
+    {
+        printf("can't open file(Shakespeare.txt) Error code ->%d\n",res);
+        return;
+    }
+    do
+    {
+        res = f_read(fattester.file,fattester.fatbuf,sizeof(fattester.fatbuf),&br);
+        if (res != FR_OK)
+        {
+            printf("read error -> %d",res);
+        }
+        if (br > 0)
+        {
+            while (CDC_Transmit_HS(fattester.fatbuf,br) == USBD_BUSY);
+        }
+    } while (br > 0);
+    f_close(fattester.file);
+}
+
+
+void StartTask03(void *argument)
+{
+
+    for(;;)
+    {
+        if (L_States.test(10) == 1)
+        {
+            if (std::strcmp(L_Data.at(0).c_str(),"test") == 0)
+            {
+                test();
+                // printf("%d\n",res);
+
+            }
+            printf("%s\n",L_Data.at(0).c_str());
+            L_Data.at(0).clear();
+            L_States.reset(10);
+        }
         osDelay(1);
     }
 

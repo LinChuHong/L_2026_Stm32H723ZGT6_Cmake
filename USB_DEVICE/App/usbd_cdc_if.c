@@ -265,17 +265,12 @@ static int8_t CDC_Control_HS(uint8_t cmd, uint8_t* pbuf, uint16_t length)
 static int8_t CDC_Receive_HS(uint8_t* Buf, uint32_t *Len)
 {
   /* USER CODE BEGIN 11 */
-  // printf("\n[USB RX %ld]\n", *Len);
-  for (size_t i = 0; i < *Len; i++)
-  {
-    // parser_feed(Buf[i]);
-    data_from_usb(Buf[i]);
-  }
   USBD_CDC_SetRxBuffer(&hUsbDeviceHS, &Buf[0]);
   USBD_CDC_ReceivePacket(&hUsbDeviceHS);
-  
-  
-
+  for (uint32_t i = 0; i < *Len;i++)
+  {
+    data_from_usb(Buf[i]);
+  }
   return (USBD_OK);
   /* USER CODE END 11 */
 }

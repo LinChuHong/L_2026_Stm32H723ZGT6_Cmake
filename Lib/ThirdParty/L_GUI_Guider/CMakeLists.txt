@@ -23,10 +23,9 @@ set(ALL_SOURCES
     ${GENERATED_SOURCES}
 )
 
-
 add_library(${MODULE_NAME}  ${ALL_SOURCES})
 
-target_link_libraries(${MODULE_NAME} PUBLIC stm32cubemx
+target_link_libraries(${MODULE_NAME} PRIVATE stm32cubemx
     NORFLASH
     lvgl
 )

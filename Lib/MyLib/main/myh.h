@@ -10,6 +10,7 @@ extern "C" {
 void init();
 void cppCoreStart(void *argument);
 void StartTask02(void *argument);
+void StartTask03(void *argument);
 
 
 #ifdef __cplusplus

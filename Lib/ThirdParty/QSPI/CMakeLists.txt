@@ -10,12 +10,14 @@ file(GLOB_RECURSE MODULE_SOURCES
 )
 # Create library
 add_library(${MODULE_NAME} ${MODULE_SOURCES})
-target_link_libraries(${MODULE_NAME} PUBLIC stm32cubemx)
+target_link_libraries(${MODULE_NAME} PRIVATE 
+    ${MYLIB_LINK_LIBS}
+    stm32cubemx
+)
 
 # Allow this module to include headers from ENTIRE project
 target_include_directories(${MODULE_NAME}
     PUBLIC
-    ${CMAKE_SOURCE_DIR}/Lib/MyLib
     ${CMAKE_CURRENT_SOURCE_DIR}
 
 )

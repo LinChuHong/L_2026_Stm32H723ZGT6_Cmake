@@ -27,6 +27,17 @@ typedef struct
 	lv_obj_t *screen_btn_2_label;
 	lv_obj_t *screen_btn_3;
 	lv_obj_t *screen_btn_3_label;
+	lv_obj_t *screen_img_1;
+	lv_obj_t *screen_img_2;
+	lv_obj_t *screen_img_3;
+	lv_obj_t *screen_img_4;
+	lv_obj_t *screen_img_5;
+	lv_obj_t *screen_img_6;
+	lv_obj_t *screen_img_7;
+	lv_obj_t *screen_1;
+	bool screen_1_del;
+	lv_obj_t *screen_1_btn_1;
+	lv_obj_t *screen_1_btn_1_label;
 	lv_obj_t *g_kb_top_layer;
 }lv_ui;
 
@@ -56,6 +67,8 @@ extern lv_ui guider_ui;
 
 
 void setup_scr_screen(lv_ui *ui);
+void setup_scr_screen_1(lv_ui *ui);
+LV_IMAGE_DECLARE(_Clannad_RGB565A8_285x292);
 
 LV_FONT_DECLARE(lv_font_montserratMedium_16)
 LV_FONT_DECLARE(lv_font_montserratMedium_18)

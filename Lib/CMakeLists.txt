@@ -5,10 +5,6 @@ enable_language(C CXX)
 # Automatically scan Hardware/* folders and create a library for each
 # ---------------------------------------------------------------------
 
-# file(GLOB CHILD_DIRS RELATIVE 
-#     ${CMAKE_CURRENT_SOURCE_DIR}/MyLib
-#     ${CMAKE_CURRENT_SOURCE_DIR}/MyLib/*
-# )
 file(GLOB CHILD_DIRS RELATIVE  
     ${CMAKE_CURRENT_SOURCE_DIR}/MyLib
     ${CMAKE_CURRENT_SOURCE_DIR}/MyLib/*
@@ -34,26 +30,29 @@ foreach(DIR ${CHILD_DIRS})
             message(STATUS "Creating user library: ${LIB_NAME}")
 
             # Create an OBJECT library like CubeMX style
-            add_library( ${LIB_NAME}  )
-            target_sources(${LIB_NAME} PUBLIC ${LIB_SOURCES})
+            add_library( ${LIB_NAME}  ${LIB_SOURCES})
+            # target_sources(${LIB_NAME} INTERFACE ${LIB_SOURCES})
 
-            # Include paths for this library
-            target_include_directories(${LIB_NAME} PUBLIC
-            # ${CMAKE_CURRENT_SOURCE_DIR}/MyLib
-            ${CMAKE_CURRENT_SOURCE_DIR}/MyLib/${DIR}
-            ${CMAKE_SOURCE_DIR}/Lib/ThirdParty/NORFLASH
-            # ${CMAKE_SOURCE_DIR}/Lib/ThirdParty/L_GUI_Guider/custom
-            # ${CMAKE_SOURCE_DIR}/Lib/ThirdParty/L_GUI_Guider/generated
+            target_include_directories(${LIB_NAME} 
+                PUBLIC
+                ${CMAKE_CURRENT_SOURCE_DIR}/MyLib/${DIR}
+                ${CMAKE_CURRENT_SOURCE_DIR}/MyLib
 
-            # ${CMAKE_SOURCE_DIR}/Core/Inc           # for main.h, HAL includes
             )
 
             # Link with CubeMX settings
-            target_link_libraries(${LIB_NAME} PUBLIC stm32cubemx
+            target_link_libraries(${LIB_NAME} PRIVATE 
+                stm32cubemx
                 lvgl
                 L_GUI_Guider
                 NORFLASH
+                FATFS
             )
+            
+
+
+
+
 
             # Add this lib to global list so parent can link later
             list(APPEND MYLIB_LINK_LIBS ${LIB_NAME})

@@ -42,6 +42,7 @@ add_subdirectory(Lib/ThirdParty/NORFLASH)
 add_subdirectory(Lib/ThirdParty/TOUCH)
 add_subdirectory(Lib/ThirdParty/lvgl)
 add_subdirectory(Lib/ThirdParty/L_GUI_Guider)
+add_subdirectory(Lib/ThirdParty/FATFS)
 
 
 
@@ -84,4 +85,5 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     
     lvgl
     L_GUI_Guider
+    FATFS
 )
