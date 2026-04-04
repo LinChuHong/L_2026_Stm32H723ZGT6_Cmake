@@ -11,7 +11,7 @@
 #include "L_Global.h"
 #include "usbd_def.h"
 
-std::bitset<100> L_States;
+std::bitset<1000> L_States;
 std::vector<std::string> L_Data(69,"");
 std::vector<uint8_t> datatoflash;
 uint32_t dataLen = 0;
@@ -332,6 +332,17 @@ void data_from_usb(uint8_t data)
             // little-endian decode
             expected_size = size_buf[0] | (size_buf[1] << 8);
 
+            if (expected_size == 0)
+            {
+                uint8_t done = 0xCC;
+                while (CDC_Transmit_HS(&done, 1) == USBD_BUSY);   // final ACK
+
+                L_States.set(100);           // "transfer complete" state
+
+                size_index = 0;
+                return;
+            }
+
             datatoflash.clear();
             datatoflash.reserve(expected_size);
 
@@ -347,8 +358,8 @@ void data_from_usb(uint8_t data)
     // Step 3: check if full packet received
     if (received >= expected_size)
     {
-        L_States.set(69);
 
+        L_States.set(69);
         // reset for next packet
         size_index = 0;
         expected_size = 0;

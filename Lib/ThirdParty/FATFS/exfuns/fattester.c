@@ -38,7 +38,7 @@ _m_fattester fattester;
 uint8_t mf_init(void)
 {
     fattester.file = (FIL *)mymalloc(SRAMIN, sizeof(FIL));      /* 为file申请内存 */
-    fattester.fatbuf = (uint8_t *)mymalloc(SRAMIN, 512);        /* 为fattester.fatbuf申请内存 */
+    fattester.fatbuf = (uint8_t *)mymalloc(SRAMIN, 2048);        /* 为fattester.fatbuf申请内存 */
 
     if (fattester.file && fattester.fatbuf)
     {

@@ -255,7 +255,7 @@
 	},
 	"FrontJson": [
 		{
-			"name": "screen",
+			"name": "screen_1",
 			"id": "emg7n4dm",
 			"type": "scr",
 			"version": 190,
@@ -274,45 +274,11 @@
 			"rm_flag": [],
 			"list": [
 				{
-					"name": "img_7",
-					"id": "5l4dvwm4",
-					"type": "img",
-					"left": -293,
-					"top": 296,
-					"visible": false,
-					"isLock": false,
-					"rm_flag": [],
-					"flag": [],
-					"width": 285,
-					"height": 292,
-					"default_style": false,
-					"use_fs": false,
-					"fs_type": "flash",
-					"sd_path": "",
-					"img_path": "import\\image\\Clannad.jpeg",
-					"rotate": 0,
-					"x": 50,
-					"y": 50,
-					"color_format": "RGB565A8",
-					"compress_method": "NONE",
-					"dither_algorithm": "",
-					"style": [
-						{
-							"part": "LV_PART_MAIN",
-							"state": "LV_STATE_DEFAULT",
-							"disable": false,
-							"image_recolor": "#ffffff",
-							"image_recolor_opa": 0,
-							"image_opa": 255
-						}
-					]
-				},
-				{
 					"name": "img_6",
 					"id": "n8hb1mdp",
 					"type": "img",
-					"left": 683,
-					"top": 431,
+					"left": 684,
+					"top": 440,
 					"visible": true,
 					"isLock": false,
 					"rm_flag": [],
@@ -426,74 +392,6 @@
 					"fs_type": "flash",
 					"sd_path": "",
 					"img_path": "import\\image\\Shinobu1.jpeg",
-					"rotate": 0,
-					"x": 50,
-					"y": 50,
-					"color_format": "RGB565A8",
-					"compress_method": "NONE",
-					"dither_algorithm": "",
-					"style": [
-						{
-							"part": "LV_PART_MAIN",
-							"state": "LV_STATE_DEFAULT",
-							"disable": false,
-							"image_recolor": "#ffffff",
-							"image_recolor_opa": 0,
-							"image_opa": 255
-						}
-					]
-				},
-				{
-					"name": "img_2",
-					"id": "njnzhm1f",
-					"type": "img",
-					"left": 1048,
-					"top": 127,
-					"visible": false,
-					"isLock": true,
-					"rm_flag": [],
-					"flag": [],
-					"width": 292,
-					"height": 248,
-					"default_style": false,
-					"use_fs": true,
-					"fs_type": "flash",
-					"sd_path": "",
-					"img_path": "import\\image\\IMG_2023122011920175424335.jpg",
-					"rotate": 0,
-					"x": 50,
-					"y": 50,
-					"color_format": "RGB565A8",
-					"compress_method": "NONE",
-					"dither_algorithm": "",
-					"style": [
-						{
-							"part": "LV_PART_MAIN",
-							"state": "LV_STATE_DEFAULT",
-							"disable": false,
-							"image_recolor": "#ffffff",
-							"image_recolor_opa": 0,
-							"image_opa": 255
-						}
-					]
-				},
-				{
-					"name": "img_1",
-					"id": "xv21p2rx",
-					"type": "img",
-					"left": 1063,
-					"top": -154,
-					"visible": false,
-					"isLock": false,
-					"rm_flag": [],
-					"flag": [],
-					"width": 261,
-					"height": 220,
-					"default_style": false,
-					"use_fs": true,
-					"fs_type": "flash",
-					"sd_path": "",
-					"img_path": "import\\image\\IMG_2023122011920175424181.jpg",
 					"rotate": 0,
 					"x": 50,
 					"y": 50,
@@ -725,7 +623,7 @@
 					"height": 131,
 					"default_style": false,
 					"long_mode": "LV_LABEL_LONG_WRAP",
-					"text": "To_Screen1",
+					"text": "To_Screen_2\n",
 					"toggle": false,
 					"style": [
 						{
@@ -939,7 +837,7 @@
 					"id": "7dts8o2f",
 					"type": "btn",
 					"left": 52,
-					"top": 43,
+					"top": 42,
 					"visible": true,
 					"isLock": false,
 					"rm_flag": [],
@@ -1198,10 +1096,10 @@
 					"bg_img_recolor_opa": 0
 				}
 			],
-			"layerName": "screen"
+			"layerName": "screen_1"
 		},
 		{
-			"name": "screen_1",
+			"name": "screen_2",
 			"id": "4oifz58d",
 			"type": "scr",
 			"version": 190,
@@ -1233,7 +1131,7 @@
 					"height": 151,
 					"default_style": false,
 					"long_mode": "LV_LABEL_LONG_SCROLL_CIRCULAR",
-					"text": "To_Main_Screen\n",
+					"text": "To_Screen_1\n",
 					"toggle": false,
 					"style": [
 						{
@@ -1441,6 +1339,229 @@
 							}
 						}
 					}
+				},
+				{
+					"name": "btn_2",
+					"id": "ds1fh0z8",
+					"type": "btn",
+					"left": 955,
+					"top": 448,
+					"visible": true,
+					"isLock": false,
+					"rm_flag": [],
+					"flag": [],
+					"width": 72,
+					"height": 151,
+					"default_style": false,
+					"long_mode": "LV_LABEL_LONG_SCROLL_CIRCULAR",
+					"text": "To_Screen_3",
+					"toggle": false,
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"bg_color": "#2195f6",
+							"bg_grad_color": "#2195f6",
+							"bg_opa": 255,
+							"bg_grad_dir": "LV_GRAD_DIR_NONE",
+							"bg_main_stop": 0,
+							"bg_grad_stop": 255,
+							"border_side": [
+								"LV_BORDER_SIDE_FULL"
+							],
+							"border_width": 0,
+							"border_opa": 255,
+							"border_color": "#2195f6",
+							"radius": 5,
+							"shadow_color": "#2195f6",
+							"shadow_opa": 255,
+							"shadow_width": 0,
+							"shadow_spread": 0,
+							"shadow_ofs_x": 0,
+							"shadow_ofs_y": 0,
+							"bg_img_src": "import\\image\\Frieren_anime_profile.jpeg",
+							"dither_algorithm": "",
+							"compress_method": "NONE",
+							"bg_img_storage": "flash",
+							"color_format": "RGB565A8",
+							"bg_img_opa": 247,
+							"bg_img_recolor": "#ffffff",
+							"bg_img_recolor_opa": 0,
+							"font": 16,
+							"font_family": "montserratMedium",
+							"text_color": "#4146d4",
+							"text_opa": 255,
+							"text_align": "LV_TEXT_ALIGN_CENTER"
+						},
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_FOCUSED",
+							"disable": true,
+							"bg_color": "#2195f6",
+							"bg_grad_color": "#2195f6",
+							"bg_opa": 255,
+							"bg_grad_dir": "LV_GRAD_DIR_NONE",
+							"bg_main_stop": 0,
+							"bg_grad_stop": 255,
+							"border_side": [
+								"LV_BORDER_SIDE_FULL"
+							],
+							"border_width": 0,
+							"border_color": "#2195f6",
+							"border_opa": 255,
+							"radius": 5,
+							"shadow_color": "#2195f6",
+							"shadow_opa": 255,
+							"shadow_width": 0,
+							"shadow_spread": 0,
+							"shadow_ofs_x": 0,
+							"shadow_ofs_y": 0,
+							"bg_img_src": "",
+							"dither_algorithm": "",
+							"compress_method": "NONE",
+							"bg_img_storage": "",
+							"color_format": "RGB565A8",
+							"bg_img_opa": 255,
+							"bg_img_recolor": "#ffffff",
+							"bg_img_recolor_opa": 0,
+							"font": 16,
+							"font_family": "montserratMedium",
+							"text_opa": 255,
+							"text_color": "#ffffff"
+						},
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_PRESSED",
+							"disable": true,
+							"bg_color": "#2195f6",
+							"bg_grad_color": "#2195f6",
+							"bg_opa": 255,
+							"bg_grad_dir": "LV_GRAD_DIR_NONE",
+							"bg_main_stop": 0,
+							"bg_grad_stop": 255,
+							"border_side": [
+								"LV_BORDER_SIDE_FULL"
+							],
+							"border_width": 0,
+							"border_color": "#2195f6",
+							"border_opa": 255,
+							"radius": 5,
+							"shadow_color": "#2195f6",
+							"shadow_opa": 255,
+							"shadow_width": 0,
+							"shadow_spread": 0,
+							"shadow_ofs_x": 0,
+							"shadow_ofs_y": 0,
+							"bg_img_src": "",
+							"dither_algorithm": "",
+							"compress_method": "NONE",
+							"bg_img_storage": "",
+							"color_format": "RGB565A8",
+							"bg_img_opa": 255,
+							"bg_img_recolor": "#ffffff",
+							"bg_img_recolor_opa": 0,
+							"font": 16,
+							"font_family": "montserratMedium",
+							"text_opa": 255,
+							"text_color": "#ffffff"
+						},
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_CHECKED",
+							"disable": true,
+							"bg_color": "#2195f6",
+							"bg_grad_color": "#2195f6",
+							"bg_opa": 255,
+							"bg_grad_dir": "LV_GRAD_DIR_NONE",
+							"bg_main_stop": 0,
+							"bg_grad_stop": 255,
+							"border_side": [
+								"LV_BORDER_SIDE_FULL"
+							],
+							"border_width": 0,
+							"border_opa": 255,
+							"border_color": "#2195f6",
+							"radius": 5,
+							"shadow_color": "#2195f6",
+							"shadow_opa": 255,
+							"shadow_width": 0,
+							"shadow_spread": 0,
+							"shadow_ofs_x": 0,
+							"shadow_ofs_y": 0,
+							"bg_img_src": "",
+							"dither_algorithm": "",
+							"compress_method": "NONE",
+							"bg_img_storage": "",
+							"color_format": "RGB565A8",
+							"bg_img_opa": 255,
+							"bg_img_recolor": "#ffffff",
+							"bg_img_recolor_opa": 0,
+							"font": 12,
+							"font_family": "montserratMedium",
+							"text_opa": 255,
+							"text_color": "#000000"
+						},
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DISABLED",
+							"disable": true,
+							"bg_color": "#2195f6",
+							"bg_grad_color": "#2195f6",
+							"bg_opa": 255,
+							"bg_grad_dir": "LV_GRAD_DIR_NONE",
+							"bg_main_stop": 0,
+							"bg_grad_stop": 255,
+							"border_side": [
+								"LV_BORDER_SIDE_FULL"
+							],
+							"border_width": 0,
+							"border_opa": 255,
+							"border_color": "#2195f6",
+							"radius": 5,
+							"shadow_color": "#2195f6",
+							"shadow_opa": 255,
+							"shadow_width": 0,
+							"shadow_spread": 0,
+							"shadow_ofs_x": 0,
+							"shadow_ofs_y": 0,
+							"bg_img_src": "",
+							"dither_algorithm": "",
+							"compress_method": "NONE",
+							"bg_img_storage": "",
+							"color_format": "RGB565A8",
+							"bg_img_opa": 255,
+							"bg_img_recolor": "#ffffff",
+							"bg_img_recolor_opa": 0,
+							"font": 12,
+							"font_family": "montserratMedium",
+							"text_opa": 255,
+							"text_color": "#000000"
+						}
+					],
+					"event": {
+						"widget": {
+							"pressed": {
+								"condition": [],
+								"action": [
+									{
+										"dst": "load_screen",
+										"bindCondi": "",
+										"actionList": {
+											"load_screen": {
+												"duration": 200,
+												"delay": 200,
+												"scrId": "h4n7hhbe",
+												"anim_type": "LV_SCR_LOAD_ANIM_FADE_ON",
+												"is_clean": true,
+												"is_del": true
+											}
+										}
+									}
+								]
+							}
+						}
+					}
 				}
 			],
 			"style": [
@@ -1464,7 +1585,49 @@
 					"bg_img_recolor_opa": 0
 				}
 			],
-			"layerName": "screen_1"
+			"layerName": "screen_2"
+		},
+		{
+			"name": "screen_3",
+			"id": "h4n7hhbe",
+			"type": "scr",
+			"version": 190,
+			"scrollbar_mode": "OFF",
+			"customer_code": {
+				"code_c": "",
+				"inc_c": "",
+				"code_py": "",
+				"inc_py": "",
+				"type": "screen"
+			},
+			"width": 1024,
+			"height": 600,
+			"visible": true,
+			"flag": [],
+			"rm_flag": [],
+			"list": [],
+			"style": [
+				{
+					"part": "LV_PART_MAIN",
+					"state": "LV_STATE_DEFAULT",
+					"disable": false,
+					"bg_color": "#ffffff",
+					"bg_grad_dir": "LV_GRAD_DIR_NONE",
+					"bg_main_stop": 0,
+					"bg_grad_stop": 255,
+					"bg_grad_color": "#2195f6",
+					"bg_opa": 0,
+					"bg_img_src": "import\\image\\Shinobu3.jpeg",
+					"dither_algorithm": "",
+					"compress_method": "NONE",
+					"bg_img_storage": "flash",
+					"color_format": "RGB565A8",
+					"bg_img_opa": 255,
+					"bg_img_recolor": "#ffffff",
+					"bg_img_recolor_opa": 0
+				}
+			],
+			"layerName": "screen_3"
 		}
 	],
 	"Application": {
@@ -1484,11 +1647,11 @@
 			"keyboard_font_type": "montserratMedium",
 			"keyboard_font_size": 18
 		},
-		"default_scr": "screen",
+		"default_scr": "screen_1",
 		"theme": "LV_THEME_MATERIAL_FLAG_LIGHT",
 		"screen": [
 			{
-				"name": "screen",
+				"name": "screen_1",
 				"id": "emg7n4dm",
 				"type": "scr",
 				"version": 190,
@@ -1553,7 +1716,7 @@
 				],
 				"widgets": [
 					{
-						"name": "screen_btn_1",
+						"name": "screen_1_btn_1",
 						"id": "7dts8o2f",
 						"type": "btn",
 						"visible": true,
@@ -1561,7 +1724,7 @@
 						"rm_flag": [],
 						"pos": [
 							52,
-							43
+							42
 						],
 						"size": [
 							140,
@@ -1778,7 +1941,7 @@
 						"toggle": false
 					},
 					{
-						"name": "screen_btn_2",
+						"name": "screen_1_btn_2",
 						"id": "88gabndk",
 						"type": "btn",
 						"visible": true,
@@ -1799,7 +1962,7 @@
 									"condition": [],
 									"action": [
 										{
-											"dst": "screen_1",
+											"dst": "screen_2",
 											"bindCondi": "",
 											"actionList": {
 												"load_screen": {
@@ -1813,7 +1976,7 @@
 											},
 											"dst_type": "scr",
 											"_target": {
-												"name": "screen_1",
+												"name": "screen_2",
 												"id": "4oifz58d",
 												"type": "scr",
 												"version": 190,
@@ -1845,7 +2008,7 @@
 														"height": 151,
 														"default_style": false,
 														"long_mode": "LV_LABEL_LONG_SCROLL_CIRCULAR",
-														"text": "To_Main_Screen\n",
+														"text": "To_Screen_1\n",
 														"toggle": false,
 														"style": [
 															{
@@ -2053,6 +2216,229 @@
 																}
 															}
 														}
+													},
+													{
+														"name": "btn_2",
+														"id": "ds1fh0z8",
+														"type": "btn",
+														"left": 955,
+														"top": 448,
+														"visible": true,
+														"isLock": false,
+														"rm_flag": [],
+														"flag": [],
+														"width": 72,
+														"height": 151,
+														"default_style": false,
+														"long_mode": "LV_LABEL_LONG_SCROLL_CIRCULAR",
+														"text": "To_Screen_3",
+														"toggle": false,
+														"style": [
+															{
+																"part": "LV_PART_MAIN",
+																"state": "LV_STATE_DEFAULT",
+																"disable": false,
+																"bg_color": "#2195f6",
+																"bg_grad_color": "#2195f6",
+																"bg_opa": 255,
+																"bg_grad_dir": "LV_GRAD_DIR_NONE",
+																"bg_main_stop": 0,
+																"bg_grad_stop": 255,
+																"border_side": [
+																	"LV_BORDER_SIDE_FULL"
+																],
+																"border_width": 0,
+																"border_opa": 255,
+																"border_color": "#2195f6",
+																"radius": 5,
+																"shadow_color": "#2195f6",
+																"shadow_opa": 255,
+																"shadow_width": 0,
+																"shadow_spread": 0,
+																"shadow_ofs_x": 0,
+																"shadow_ofs_y": 0,
+																"bg_img_src": "import\\image\\Frieren_anime_profile.jpeg",
+																"dither_algorithm": "",
+																"compress_method": "NONE",
+																"bg_img_storage": "flash",
+																"color_format": "RGB565A8",
+																"bg_img_opa": 247,
+																"bg_img_recolor": "#ffffff",
+																"bg_img_recolor_opa": 0,
+																"font": 16,
+																"font_family": "montserratMedium",
+																"text_color": "#4146d4",
+																"text_opa": 255,
+																"text_align": "LV_TEXT_ALIGN_CENTER"
+															},
+															{
+																"part": "LV_PART_MAIN",
+																"state": "LV_STATE_FOCUSED",
+																"disable": true,
+																"bg_color": "#2195f6",
+																"bg_grad_color": "#2195f6",
+																"bg_opa": 255,
+																"bg_grad_dir": "LV_GRAD_DIR_NONE",
+																"bg_main_stop": 0,
+																"bg_grad_stop": 255,
+																"border_side": [
+																	"LV_BORDER_SIDE_FULL"
+																],
+																"border_width": 0,
+																"border_color": "#2195f6",
+																"border_opa": 255,
+																"radius": 5,
+																"shadow_color": "#2195f6",
+																"shadow_opa": 255,
+																"shadow_width": 0,
+																"shadow_spread": 0,
+																"shadow_ofs_x": 0,
+																"shadow_ofs_y": 0,
+																"bg_img_src": "",
+																"dither_algorithm": "",
+																"compress_method": "NONE",
+																"bg_img_storage": "",
+																"color_format": "RGB565A8",
+																"bg_img_opa": 255,
+																"bg_img_recolor": "#ffffff",
+																"bg_img_recolor_opa": 0,
+																"font": 16,
+																"font_family": "montserratMedium",
+																"text_opa": 255,
+																"text_color": "#ffffff"
+															},
+															{
+																"part": "LV_PART_MAIN",
+																"state": "LV_STATE_PRESSED",
+																"disable": true,
+																"bg_color": "#2195f6",
+																"bg_grad_color": "#2195f6",
+																"bg_opa": 255,
+																"bg_grad_dir": "LV_GRAD_DIR_NONE",
+																"bg_main_stop": 0,
+																"bg_grad_stop": 255,
+																"border_side": [
+																	"LV_BORDER_SIDE_FULL"
+																],
+																"border_width": 0,
+																"border_color": "#2195f6",
+																"border_opa": 255,
+																"radius": 5,
+																"shadow_color": "#2195f6",
+																"shadow_opa": 255,
+																"shadow_width": 0,
+																"shadow_spread": 0,
+																"shadow_ofs_x": 0,
+																"shadow_ofs_y": 0,
+																"bg_img_src": "",
+																"dither_algorithm": "",
+																"compress_method": "NONE",
+																"bg_img_storage": "",
+																"color_format": "RGB565A8",
+																"bg_img_opa": 255,
+																"bg_img_recolor": "#ffffff",
+																"bg_img_recolor_opa": 0,
+																"font": 16,
+																"font_family": "montserratMedium",
+																"text_opa": 255,
+																"text_color": "#ffffff"
+															},
+															{
+																"part": "LV_PART_MAIN",
+																"state": "LV_STATE_CHECKED",
+																"disable": true,
+																"bg_color": "#2195f6",
+																"bg_grad_color": "#2195f6",
+																"bg_opa": 255,
+																"bg_grad_dir": "LV_GRAD_DIR_NONE",
+																"bg_main_stop": 0,
+																"bg_grad_stop": 255,
+																"border_side": [
+																	"LV_BORDER_SIDE_FULL"
+																],
+																"border_width": 0,
+																"border_opa": 255,
+																"border_color": "#2195f6",
+																"radius": 5,
+																"shadow_color": "#2195f6",
+																"shadow_opa": 255,
+																"shadow_width": 0,
+																"shadow_spread": 0,
+																"shadow_ofs_x": 0,
+																"shadow_ofs_y": 0,
+																"bg_img_src": "",
+																"dither_algorithm": "",
+																"compress_method": "NONE",
+																"bg_img_storage": "",
+																"color_format": "RGB565A8",
+																"bg_img_opa": 255,
+																"bg_img_recolor": "#ffffff",
+																"bg_img_recolor_opa": 0,
+																"font": 12,
+																"font_family": "montserratMedium",
+																"text_opa": 255,
+																"text_color": "#000000"
+															},
+															{
+																"part": "LV_PART_MAIN",
+																"state": "LV_STATE_DISABLED",
+																"disable": true,
+																"bg_color": "#2195f6",
+																"bg_grad_color": "#2195f6",
+																"bg_opa": 255,
+																"bg_grad_dir": "LV_GRAD_DIR_NONE",
+																"bg_main_stop": 0,
+																"bg_grad_stop": 255,
+																"border_side": [
+																	"LV_BORDER_SIDE_FULL"
+																],
+																"border_width": 0,
+																"border_opa": 255,
+																"border_color": "#2195f6",
+																"radius": 5,
+																"shadow_color": "#2195f6",
+																"shadow_opa": 255,
+																"shadow_width": 0,
+																"shadow_spread": 0,
+																"shadow_ofs_x": 0,
+																"shadow_ofs_y": 0,
+																"bg_img_src": "",
+																"dither_algorithm": "",
+																"compress_method": "NONE",
+																"bg_img_storage": "",
+																"color_format": "RGB565A8",
+																"bg_img_opa": 255,
+																"bg_img_recolor": "#ffffff",
+																"bg_img_recolor_opa": 0,
+																"font": 12,
+																"font_family": "montserratMedium",
+																"text_opa": 255,
+																"text_color": "#000000"
+															}
+														],
+														"event": {
+															"widget": {
+																"pressed": {
+																	"condition": [],
+																	"action": [
+																		{
+																			"dst": "load_screen",
+																			"bindCondi": "",
+																			"actionList": {
+																				"load_screen": {
+																					"duration": 200,
+																					"delay": 200,
+																					"scrId": "h4n7hhbe",
+																					"anim_type": "LV_SCR_LOAD_ANIM_FADE_ON",
+																					"is_clean": true,
+																					"is_del": true
+																				}
+																			}
+																		}
+																	]
+																}
+															}
+														}
 													}
 												],
 												"style": [
@@ -2076,7 +2462,7 @@
 														"bg_img_recolor_opa": 0
 													}
 												],
-												"layerName": "screen_1"
+												"layerName": "screen_2"
 											}
 										}
 									]
@@ -2267,12 +2653,12 @@
 								"text_color": "#000000"
 							}
 						],
-						"text": "To_Screen1",
+						"text": "To_Screen_2\n",
 						"long_mode": "LV_LABEL_LONG_WRAP",
 						"toggle": false
 					},
 					{
-						"name": "screen_btn_3",
+						"name": "screen_1_btn_3",
 						"id": "w5mxmhe2",
 						"type": "btn",
 						"visible": true,
@@ -2476,81 +2862,7 @@
 						"toggle": false
 					},
 					{
-						"name": "screen_img_1",
-						"id": "xv21p2rx",
-						"type": "img",
-						"visible": false,
-						"flag": [],
-						"rm_flag": [],
-						"pos": [
-							1063,
-							-154
-						],
-						"size": [
-							261,
-							220
-						],
-						"default_style": false,
-						"img_path": "import\\image\\IMG_2023122011920175424181.jpg",
-						"color_format": "RGB565A8",
-						"compress_method": "NONE",
-						"dither_algorithm": "",
-						"rotate": 0,
-						"pivot": "50,50",
-						"use_fs": true,
-						"fs_type": "flash",
-						"img_flash_path": "F:/IMG_2023122011920175424181.jpg",
-						"img_sd_path": "S:/IMG_2023122011920175424181.jpg",
-						"style": [
-							{
-								"part": "LV_PART_MAIN",
-								"state": "LV_STATE_DEFAULT",
-								"disable": false,
-								"image_recolor": "#ffffff",
-								"image_recolor_opa": 0,
-								"image_opa": 255
-							}
-						]
-					},
-					{
-						"name": "screen_img_2",
-						"id": "njnzhm1f",
-						"type": "img",
-						"visible": false,
-						"flag": [],
-						"rm_flag": [],
-						"pos": [
-							1048,
-							127
-						],
-						"size": [
-							292,
-							248
-						],
-						"default_style": false,
-						"img_path": "import\\image\\IMG_2023122011920175424335.jpg",
-						"color_format": "RGB565A8",
-						"compress_method": "NONE",
-						"dither_algorithm": "",
-						"rotate": 0,
-						"pivot": "50,50",
-						"use_fs": true,
-						"fs_type": "flash",
-						"img_flash_path": "F:/IMG_2023122011920175424335.jpg",
-						"img_sd_path": "S:/IMG_2023122011920175424335.jpg",
-						"style": [
-							{
-								"part": "LV_PART_MAIN",
-								"state": "LV_STATE_DEFAULT",
-								"disable": false,
-								"image_recolor": "#ffffff",
-								"image_recolor_opa": 0,
-								"image_opa": 255
-							}
-						]
-					},
-					{
-						"name": "screen_img_3",
+						"name": "screen_1_img_3",
 						"id": "y98a3tgt",
 						"type": "img",
 						"visible": true,
@@ -2587,7 +2899,7 @@
 						]
 					},
 					{
-						"name": "screen_img_4",
+						"name": "screen_1_img_4",
 						"id": "qrpllngz",
 						"type": "img",
 						"visible": true,
@@ -2624,7 +2936,7 @@
 						]
 					},
 					{
-						"name": "screen_img_5",
+						"name": "screen_1_img_5",
 						"id": "fg1l25ew",
 						"type": "img",
 						"visible": true,
@@ -2661,15 +2973,15 @@
 						]
 					},
 					{
-						"name": "screen_img_6",
+						"name": "screen_1_img_6",
 						"id": "n8hb1mdp",
 						"type": "img",
 						"visible": true,
 						"flag": [],
 						"rm_flag": [],
 						"pos": [
-							683,
-							431
+							684,
+							440
 						],
 						"size": [
 							150,
@@ -2696,48 +3008,11 @@
 								"image_opa": 255
 							}
 						]
-					},
-					{
-						"name": "screen_img_7",
-						"id": "5l4dvwm4",
-						"type": "img",
-						"visible": false,
-						"flag": [],
-						"rm_flag": [],
-						"pos": [
-							-293,
-							296
-						],
-						"size": [
-							285,
-							292
-						],
-						"default_style": false,
-						"img_path": "import\\image\\Clannad.jpeg",
-						"color_format": "RGB565A8",
-						"compress_method": "NONE",
-						"dither_algorithm": "",
-						"rotate": 0,
-						"pivot": "50,50",
-						"use_fs": false,
-						"fs_type": "flash",
-						"img_flash_path": "F:/Clannad.jpeg",
-						"img_sd_path": "S:/Clannad.jpeg",
-						"style": [
-							{
-								"part": "LV_PART_MAIN",
-								"state": "LV_STATE_DEFAULT",
-								"disable": false,
-								"image_recolor": "#ffffff",
-								"image_recolor_opa": 0,
-								"image_opa": 255
-							}
-						]
 					}
 				]
 			},
 			{
-				"name": "screen_1",
+				"name": "screen_2",
 				"id": "4oifz58d",
 				"type": "scr",
 				"version": 190,
@@ -2775,14 +3050,284 @@
 						"bg_img_recolor_opa": 0
 					}
 				],
-				"layerName": "screen_1",
+				"layerName": "screen_2",
 				"size": [
 					1024,
 					600
 				],
 				"widgets": [
 					{
-						"name": "screen_1_btn_1",
+						"name": "screen_2_btn_2",
+						"id": "ds1fh0z8",
+						"type": "btn",
+						"visible": true,
+						"flag": [],
+						"rm_flag": [],
+						"pos": [
+							955,
+							448
+						],
+						"size": [
+							72,
+							151
+						],
+						"default_style": false,
+						"event": {
+							"widget": {
+								"pressed": {
+									"condition": [],
+									"action": [
+										{
+											"dst": "screen_3",
+											"bindCondi": "",
+											"actionList": {
+												"load_screen": {
+													"duration": 200,
+													"delay": 200,
+													"scrId": "h4n7hhbe",
+													"anim_type": "LV_SCR_LOAD_ANIM_FADE_ON",
+													"is_clean": true,
+													"is_del": true
+												}
+											},
+											"dst_type": "scr",
+											"_target": {
+												"name": "screen_3",
+												"id": "h4n7hhbe",
+												"type": "scr",
+												"version": 190,
+												"scrollbar_mode": "OFF",
+												"customer_code": {
+													"code_c": "",
+													"inc_c": "",
+													"code_py": "",
+													"inc_py": "",
+													"type": "screen"
+												},
+												"width": 1024,
+												"height": 600,
+												"visible": true,
+												"flag": [],
+												"rm_flag": [],
+												"list": [],
+												"style": [
+													{
+														"part": "LV_PART_MAIN",
+														"state": "LV_STATE_DEFAULT",
+														"disable": false,
+														"bg_color": "#ffffff",
+														"bg_grad_dir": "LV_GRAD_DIR_NONE",
+														"bg_main_stop": 0,
+														"bg_grad_stop": 255,
+														"bg_grad_color": "#2195f6",
+														"bg_opa": 0,
+														"bg_img_src": "import\\image\\Shinobu3.jpeg",
+														"dither_algorithm": "",
+														"compress_method": "NONE",
+														"bg_img_storage": "flash",
+														"color_format": "RGB565A8",
+														"bg_img_opa": 255,
+														"bg_img_recolor": "#ffffff",
+														"bg_img_recolor_opa": 0
+													}
+												],
+												"layerName": "screen_3"
+											}
+										}
+									]
+								}
+							}
+						},
+						"text_align": "center",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"bg_color": "#2195f6",
+								"bg_grad_color": "#2195f6",
+								"bg_opa": 255,
+								"bg_grad_dir": "LV_GRAD_DIR_NONE",
+								"bg_main_stop": 0,
+								"bg_grad_stop": 255,
+								"border_side": [
+									"LV_BORDER_SIDE_FULL"
+								],
+								"border_width": 0,
+								"border_opa": 255,
+								"border_color": "#2195f6",
+								"radius": 5,
+								"shadow_color": "#2195f6",
+								"shadow_opa": 255,
+								"shadow_width": 0,
+								"shadow_spread": 0,
+								"shadow_ofs_x": 0,
+								"shadow_ofs_y": 0,
+								"bg_img_src": "import\\image\\Frieren_anime_profile.jpeg",
+								"dither_algorithm": "",
+								"compress_method": "NONE",
+								"bg_img_storage": "flash",
+								"color_format": "RGB565A8",
+								"bg_img_opa": 247,
+								"bg_img_recolor": "#ffffff",
+								"bg_img_recolor_opa": 0,
+								"font": 16,
+								"font_family": "montserratMedium",
+								"text_color": "#4146d4",
+								"text_opa": 255,
+								"text_align": "LV_TEXT_ALIGN_CENTER"
+							},
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_FOCUSED",
+								"disable": true,
+								"bg_color": "#2195f6",
+								"bg_grad_color": "#2195f6",
+								"bg_opa": 255,
+								"bg_grad_dir": "LV_GRAD_DIR_NONE",
+								"bg_main_stop": 0,
+								"bg_grad_stop": 255,
+								"border_side": [
+									"LV_BORDER_SIDE_FULL"
+								],
+								"border_width": 0,
+								"border_color": "#2195f6",
+								"border_opa": 255,
+								"radius": 5,
+								"shadow_color": "#2195f6",
+								"shadow_opa": 255,
+								"shadow_width": 0,
+								"shadow_spread": 0,
+								"shadow_ofs_x": 0,
+								"shadow_ofs_y": 0,
+								"bg_img_src": "",
+								"dither_algorithm": "",
+								"compress_method": "NONE",
+								"bg_img_storage": "",
+								"color_format": "RGB565A8",
+								"bg_img_opa": 255,
+								"bg_img_recolor": "#ffffff",
+								"bg_img_recolor_opa": 0,
+								"font": 16,
+								"font_family": "montserratMedium",
+								"text_opa": 255,
+								"text_color": "#ffffff"
+							},
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_PRESSED",
+								"disable": true,
+								"bg_color": "#2195f6",
+								"bg_grad_color": "#2195f6",
+								"bg_opa": 255,
+								"bg_grad_dir": "LV_GRAD_DIR_NONE",
+								"bg_main_stop": 0,
+								"bg_grad_stop": 255,
+								"border_side": [
+									"LV_BORDER_SIDE_FULL"
+								],
+								"border_width": 0,
+								"border_color": "#2195f6",
+								"border_opa": 255,
+								"radius": 5,
+								"shadow_color": "#2195f6",
+								"shadow_opa": 255,
+								"shadow_width": 0,
+								"shadow_spread": 0,
+								"shadow_ofs_x": 0,
+								"shadow_ofs_y": 0,
+								"bg_img_src": "",
+								"dither_algorithm": "",
+								"compress_method": "NONE",
+								"bg_img_storage": "",
+								"color_format": "RGB565A8",
+								"bg_img_opa": 255,
+								"bg_img_recolor": "#ffffff",
+								"bg_img_recolor_opa": 0,
+								"font": 16,
+								"font_family": "montserratMedium",
+								"text_opa": 255,
+								"text_color": "#ffffff"
+							},
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_CHECKED",
+								"disable": true,
+								"bg_color": "#2195f6",
+								"bg_grad_color": "#2195f6",
+								"bg_opa": 255,
+								"bg_grad_dir": "LV_GRAD_DIR_NONE",
+								"bg_main_stop": 0,
+								"bg_grad_stop": 255,
+								"border_side": [
+									"LV_BORDER_SIDE_FULL"
+								],
+								"border_width": 0,
+								"border_opa": 255,
+								"border_color": "#2195f6",
+								"radius": 5,
+								"shadow_color": "#2195f6",
+								"shadow_opa": 255,
+								"shadow_width": 0,
+								"shadow_spread": 0,
+								"shadow_ofs_x": 0,
+								"shadow_ofs_y": 0,
+								"bg_img_src": "",
+								"dither_algorithm": "",
+								"compress_method": "NONE",
+								"bg_img_storage": "",
+								"color_format": "RGB565A8",
+								"bg_img_opa": 255,
+								"bg_img_recolor": "#ffffff",
+								"bg_img_recolor_opa": 0,
+								"font": 12,
+								"font_family": "montserratMedium",
+								"text_opa": 255,
+								"text_color": "#000000"
+							},
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DISABLED",
+								"disable": true,
+								"bg_color": "#2195f6",
+								"bg_grad_color": "#2195f6",
+								"bg_opa": 255,
+								"bg_grad_dir": "LV_GRAD_DIR_NONE",
+								"bg_main_stop": 0,
+								"bg_grad_stop": 255,
+								"border_side": [
+									"LV_BORDER_SIDE_FULL"
+								],
+								"border_width": 0,
+								"border_opa": 255,
+								"border_color": "#2195f6",
+								"radius": 5,
+								"shadow_color": "#2195f6",
+								"shadow_opa": 255,
+								"shadow_width": 0,
+								"shadow_spread": 0,
+								"shadow_ofs_x": 0,
+								"shadow_ofs_y": 0,
+								"bg_img_src": "",
+								"dither_algorithm": "",
+								"compress_method": "NONE",
+								"bg_img_storage": "",
+								"color_format": "RGB565A8",
+								"bg_img_opa": 255,
+								"bg_img_recolor": "#ffffff",
+								"bg_img_recolor_opa": 0,
+								"font": 12,
+								"font_family": "montserratMedium",
+								"text_opa": 255,
+								"text_color": "#000000"
+							}
+						],
+						"text": "To_Screen_3",
+						"long_mode": "LV_LABEL_LONG_SCROLL_CIRCULAR",
+						"toggle": false
+					},
+					{
+						"name": "screen_2_btn_1",
 						"id": "53if2mlu",
 						"type": "btn",
 						"visible": true,
@@ -2803,7 +3348,7 @@
 									"condition": [],
 									"action": [
 										{
-											"dst": "screen",
+											"dst": "screen_1",
 											"bindCondi": "",
 											"actionList": {
 												"load_screen": {
@@ -2817,7 +3362,7 @@
 											},
 											"dst_type": "scr",
 											"_target": {
-												"name": "screen",
+												"name": "screen_1",
 												"id": "emg7n4dm",
 												"type": "scr",
 												"version": 190,
@@ -2836,45 +3381,11 @@
 												"rm_flag": [],
 												"list": [
 													{
-														"name": "img_7",
-														"id": "5l4dvwm4",
-														"type": "img",
-														"left": -293,
-														"top": 296,
-														"visible": false,
-														"isLock": false,
-														"rm_flag": [],
-														"flag": [],
-														"width": 285,
-														"height": 292,
-														"default_style": false,
-														"use_fs": false,
-														"fs_type": "flash",
-														"sd_path": "",
-														"img_path": "import\\image\\Clannad.jpeg",
-														"rotate": 0,
-														"x": 50,
-														"y": 50,
-														"color_format": "RGB565A8",
-														"compress_method": "NONE",
-														"dither_algorithm": "",
-														"style": [
-															{
-																"part": "LV_PART_MAIN",
-																"state": "LV_STATE_DEFAULT",
-																"disable": false,
-																"image_recolor": "#ffffff",
-																"image_recolor_opa": 0,
-																"image_opa": 255
-															}
-														]
-													},
-													{
 														"name": "img_6",
 														"id": "n8hb1mdp",
 														"type": "img",
-														"left": 683,
-														"top": 431,
+														"left": 684,
+														"top": 440,
 														"visible": true,
 														"isLock": false,
 														"rm_flag": [],
@@ -2988,74 +3499,6 @@
 														"fs_type": "flash",
 														"sd_path": "",
 														"img_path": "import\\image\\Shinobu1.jpeg",
-														"rotate": 0,
-														"x": 50,
-														"y": 50,
-														"color_format": "RGB565A8",
-														"compress_method": "NONE",
-														"dither_algorithm": "",
-														"style": [
-															{
-																"part": "LV_PART_MAIN",
-																"state": "LV_STATE_DEFAULT",
-																"disable": false,
-																"image_recolor": "#ffffff",
-																"image_recolor_opa": 0,
-																"image_opa": 255
-															}
-														]
-													},
-													{
-														"name": "img_2",
-														"id": "njnzhm1f",
-														"type": "img",
-														"left": 1048,
-														"top": 127,
-														"visible": false,
-														"isLock": true,
-														"rm_flag": [],
-														"flag": [],
-														"width": 292,
-														"height": 248,
-														"default_style": false,
-														"use_fs": true,
-														"fs_type": "flash",
-														"sd_path": "",
-														"img_path": "import\\image\\IMG_2023122011920175424335.jpg",
-														"rotate": 0,
-														"x": 50,
-														"y": 50,
-														"color_format": "RGB565A8",
-														"compress_method": "NONE",
-														"dither_algorithm": "",
-														"style": [
-															{
-																"part": "LV_PART_MAIN",
-																"state": "LV_STATE_DEFAULT",
-																"disable": false,
-																"image_recolor": "#ffffff",
-																"image_recolor_opa": 0,
-																"image_opa": 255
-															}
-														]
-													},
-													{
-														"name": "img_1",
-														"id": "xv21p2rx",
-														"type": "img",
-														"left": 1063,
-														"top": -154,
-														"visible": false,
-														"isLock": false,
-														"rm_flag": [],
-														"flag": [],
-														"width": 261,
-														"height": 220,
-														"default_style": false,
-														"use_fs": true,
-														"fs_type": "flash",
-														"sd_path": "",
-														"img_path": "import\\image\\IMG_2023122011920175424181.jpg",
 														"rotate": 0,
 														"x": 50,
 														"y": 50,
@@ -3287,7 +3730,7 @@
 														"height": 131,
 														"default_style": false,
 														"long_mode": "LV_LABEL_LONG_WRAP",
-														"text": "To_Screen1",
+														"text": "To_Screen_2\n",
 														"toggle": false,
 														"style": [
 															{
@@ -3501,7 +3944,7 @@
 														"id": "7dts8o2f",
 														"type": "btn",
 														"left": 52,
-														"top": 43,
+														"top": 42,
 														"visible": true,
 														"isLock": false,
 														"rm_flag": [],
@@ -3760,7 +4203,7 @@
 														"bg_img_recolor_opa": 0
 													}
 												],
-												"layerName": "screen"
+												"layerName": "screen_1"
 											}
 										}
 									]
@@ -3951,11 +4394,57 @@
 								"text_color": "#000000"
 							}
 						],
-						"text": "To_Main_Screen\n",
+						"text": "To_Screen_1\n",
 						"long_mode": "LV_LABEL_LONG_SCROLL_CIRCULAR",
 						"toggle": false
 					}
 				]
+			},
+			{
+				"name": "screen_3",
+				"id": "h4n7hhbe",
+				"type": "scr",
+				"version": 190,
+				"scrollbar_mode": "OFF",
+				"customer_code": {
+					"code_c": "",
+					"inc_c": "",
+					"code_py": "",
+					"inc_py": "",
+					"type": "screen"
+				},
+				"width": 1024,
+				"height": 600,
+				"visible": true,
+				"flag": [],
+				"rm_flag": [],
+				"style": [
+					{
+						"part": "LV_PART_MAIN",
+						"state": "LV_STATE_DEFAULT",
+						"disable": false,
+						"bg_color": "#ffffff",
+						"bg_grad_dir": "LV_GRAD_DIR_NONE",
+						"bg_main_stop": 0,
+						"bg_grad_stop": 255,
+						"bg_grad_color": "#2195f6",
+						"bg_opa": 0,
+						"bg_img_src": "import\\image\\Shinobu3.jpeg",
+						"dither_algorithm": "",
+						"compress_method": "NONE",
+						"bg_img_storage": "flash",
+						"color_format": "RGB565A8",
+						"bg_img_opa": 255,
+						"bg_img_recolor": "#ffffff",
+						"bg_img_recolor_opa": 0
+					}
+				],
+				"layerName": "screen_3",
+				"size": [
+					1024,
+					600
+				],
+				"widgets": []
 			}
 		]
 	}

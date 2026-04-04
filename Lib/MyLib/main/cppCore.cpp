@@ -1,4 +1,3 @@
-#include "ff.h"
 #include "main.h"
 #include "myh.h"
 
@@ -48,7 +47,6 @@
 
 
 #include "L_Global.h"
-#include "usbd_def.h"
 
 
 osMessageQueueId_t myQueue01Handle;
@@ -96,7 +94,9 @@ void init()
 void cppCoreStart(void *argument)
 {
 
-    uint32_t last = DWT->CYCCNT;
+    uint32_t last = DWT->CYCCNT; 
+    // norflash_erase_chip();
+    // printf("chip erased\n");
     for (;;)
     {
         uint32_t now = DWT->CYCCNT;
@@ -157,7 +157,7 @@ void StartTask02(void *argument)
 void test_write_to_norflash()
 {   
     static uint8_t cnt = 0;
-    if (cnt == 0) res = f_open(fattester.file,"images.bin",FA_CREATE_ALWAYS | FA_WRITE);
+    if (cnt == 0) res = f_open(fattester.file,"images.txt",FA_CREATE_ALWAYS | FA_WRITE);
     cnt = 69;
 
     #if USEPYTHONTOSENDDATATONORFLASH == 1
@@ -173,58 +173,80 @@ void test_write_to_norflash()
         {
             printf("read error -> %d",res);
         }
-
+        if (bw != datatoflash.size())
+        {
+            printf("write incomplete! expected=%u, written=%u\n",
+                datatoflash.size(), bw);
+        }
         printf("%d\n",datatoflash.size());
         datatoflash.clear();
         L_States.reset(69);
         uint8_t byte = 0xAA;
-        CDC_Transmit_HS(&byte, 1);
-        }
+        while (CDC_Transmit_HS(&byte, 1) == USBD_BUSY);
+    }
+    else if (L_States.test(100) == 1)
+    {
+        f_close(fattester.file);
+        L_States.set(99);
+        L_States.reset(100);
+    }
     #endif
 
-    f_close(fattester.file);
 }
 void test()
 {
-    res = f_open(fattester.file,"Shakespeare.txt",FA_READ);
-    if (res) 
+    if (L_States.test(99) == 1)
     {
-        printf("can't open file(Shakespeare.txt) Error code ->%d\n",res);
-        return;
+        res = f_open(fattester.file,"images.txt",FA_READ);
+        if (res) 
+        {
+            printf("can't open file(images.bin) Error code ->%d\n",res);
+            return;
+        }
+        do
+        {
+            res = f_read(fattester.file,fattester.fatbuf,2048,&br);
+            if (res != FR_OK)
+            {
+                printf("read error -> %d",res);
+            }
+            if (br > 0)
+            {
+                norflash_write(fattester.fatbuf, dataLen, br);
+                // flash_write_fast(dataLen,fattester.fatbuf, br);
+                printf("writing %u bytes to NOR flash at addr %lu\n", br, dataLen);
+                dataLen+=br;
+            }
+        } while (br > 0);
+        L_States.reset(99);
+        f_close(fattester.file);
+
     }
-    do
-    {
-        res = f_read(fattester.file,fattester.fatbuf,sizeof(fattester.fatbuf),&br);
-        if (res != FR_OK)
-        {
-            printf("read error -> %d",res);
-        }
-        if (br > 0)
-        {
-            while (CDC_Transmit_HS(fattester.fatbuf,br) == USBD_BUSY);
-        }
-    } while (br > 0);
-    f_close(fattester.file);
 }
 
 
 void StartTask03(void *argument)
 {
+   
 
     for(;;)
     {
-        if (L_States.test(10) == 1)
-        {
-            if (std::strcmp(L_Data.at(0).c_str(),"test") == 0)
-            {
-                test();
-                // printf("%d\n",res);
+        test_write_to_norflash();
+        test();
 
-            }
-            printf("%s\n",L_Data.at(0).c_str());
-            L_Data.at(0).clear();
-            L_States.reset(10);
-        }
+        // if (L_States.test(10) == 1)
+        // {
+
+        //     if (std::strcmp(L_Data.at(0).c_str(),"test") == 0)
+        //     {
+        //         test();
+        
+        //     }
+        //     printf("%s\n",L_Data.at(0).c_str());
+        //     L_Data.at(0).clear();
+        //     L_States.reset(10);
+        // }
+
         osDelay(1);
     }
 

@@ -1,1 +1,1 @@
-GEN_CSRCS += _Clannad_RGB565A8_285x292.c
+GEN_CSRCS += 
