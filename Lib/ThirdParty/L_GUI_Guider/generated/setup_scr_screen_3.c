@@ -26,13 +26,42 @@ void setup_scr_screen_3(lv_ui *ui)
     //Write style for screen_3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
     lv_obj_set_style_bg_opa(ui->screen_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 #if LV_USE_GUIDER_SIMULATOR
-    lv_obj_set_style_bg_image_src(ui->screen_3, "F:\\projects\\CSEE\\L_2025_Stm32H723ZGT6_Cmake\\Lib\\ThirdParty\\L_GUI_Guider\\import\\image\\Shinobu3.jpeg", LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_image_src(ui->screen_3, "C:/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/import/image/Shinobu3.jpeg", LV_PART_MAIN|LV_STATE_DEFAULT);
 #else
     lv_obj_set_style_bg_image_src(ui->screen_3, "F:/Shinobu3.bin", LV_PART_MAIN|LV_STATE_DEFAULT);
 #endif
     lv_obj_set_style_bg_image_opa(ui->screen_3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_image_recolor_opa(ui->screen_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
+    //Write codes screen_3_btn_1
+    ui->screen_3_btn_1 = lv_button_create(ui->screen_3);
+    lv_obj_set_pos(ui->screen_3_btn_1, 0, 0);
+    lv_obj_set_size(ui->screen_3_btn_1, 132, 66);
+    ui->screen_3_btn_1_label = lv_label_create(ui->screen_3_btn_1);
+    lv_label_set_text(ui->screen_3_btn_1_label, "To_Screen_4");
+    lv_label_set_long_mode(ui->screen_3_btn_1_label, LV_LABEL_LONG_SCROLL_CIRCULAR);
+    lv_obj_align(ui->screen_3_btn_1_label, LV_ALIGN_CENTER, 0, 0);
+    lv_obj_set_style_pad_all(ui->screen_3_btn_1, 0, LV_STATE_DEFAULT);
+    lv_obj_set_width(ui->screen_3_btn_1_label, LV_PCT(100));
+
+    //Write style for screen_3_btn_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_bg_opa(ui->screen_3_btn_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui->screen_3_btn_1, lv_color_hex(0x2195f6), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_grad_dir(ui->screen_3_btn_1, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(ui->screen_3_btn_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->screen_3_btn_1, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->screen_3_btn_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+#if LV_USE_GUIDER_SIMULATOR
+    lv_obj_set_style_bg_image_src(ui->screen_3_btn_1, "C:/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/import/image/tamayo_and_shinobu.jpg", LV_PART_MAIN|LV_STATE_DEFAULT);
+#else
+    lv_obj_set_style_bg_image_src(ui->screen_3_btn_1, "F:/tamayo_and_shinobu.bin", LV_PART_MAIN|LV_STATE_DEFAULT);
+#endif
+    lv_obj_set_style_bg_image_opa(ui->screen_3_btn_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_image_recolor_opa(ui->screen_3_btn_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->screen_3_btn_1, lv_color_hex(0x2fda64), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->screen_3_btn_1, &lv_font_montserratMedium_16, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->screen_3_btn_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->screen_3_btn_1, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //The custom code of screen_3.
 
@@ -40,4 +69,6 @@ void setup_scr_screen_3(lv_ui *ui)
     //Update current screen layout.
     lv_obj_update_layout(ui->screen_3);
 
+    //Init events for screen.
+    events_init_screen_3(ui);
 }

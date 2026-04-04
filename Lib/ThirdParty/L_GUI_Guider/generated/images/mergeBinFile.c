@@ -11,8 +11,8 @@
 
 #if LV_USE_FS_RAWFS
 
-const rawfs_size_t rawfs_file_count = 12;
-rawfs_file_t rawfs_files[12] = {
+const rawfs_size_t rawfs_file_count = 20;
+rawfs_file_t rawfs_files[20] = {
 	0x0, 0, 1228812, "/Chiyo_chan.bin",
 	0x12c00c, 0, 34032, "/IMG_2066.bin",
 	0x1344fc, 0, 123414, "/dmsler.bin",
@@ -25,6 +25,14 @@ rawfs_file_t rawfs_files[12] = {
 	0x3628c5, 0, 32628, "/Frieren_anime_profile.bin",
 	0x36a839, 0, 32628, "/Frieren_anime_profile.bin",
 	0x3727ad, 0, 1843212, "/Shinobu3.bin",
+	0x5347b9, 0, 26148, "/tamayo_and_shinobu.bin",
+	0x53addd, 0, 1843212, "/Shinobu3.bin",
+	0x6fcde9, 0, 26148, "/tamayo_and_shinobu.bin",
+	0x70340d, 0, 1843212, "/Shinobu3.bin",
+	0x8c5419, 0, 26148, "/Tamayo_1.bin",
+	0x8cba3d, 0, 1843212, "/Shinobu3.bin",
+	0xa8da49, 0, 26148, "/Tamayo_1.bin",
+	0xa9406d, 0, 26148, "/Tamayo_1.bin",
 
 };
 

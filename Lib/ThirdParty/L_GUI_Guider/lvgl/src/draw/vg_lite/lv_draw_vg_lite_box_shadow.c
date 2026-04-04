@@ -60,7 +60,7 @@ void lv_draw_vg_lite_box_shadow(lv_draw_task_t * t, const lv_draw_box_shadow_dsc
     lv_area_t draw_area;
     if(!lv_area_intersect(&draw_area, &shadow_area, &t->clip_area)) return;
 
-    LV_PROFILER_BEGIN;
+    LV_PROFILER_DRAW_BEGIN;
 
     lv_draw_border_dsc_t border_dsc;
     lv_draw_border_dsc_init(&border_dsc);
@@ -77,18 +77,19 @@ void lv_draw_vg_lite_box_shadow(lv_draw_task_t * t, const lv_draw_box_shadow_dsc
         border_dsc.radius++;
         lv_area_increase(&draw_area, 1, 1);
         lv_draw_vg_lite_border(t, &border_dsc, &draw_area);
-
-        /* fill center */
-        if(dsc->ofs_x || dsc->ofs_y) {
-            lv_draw_fill_dsc_t fill_dsc;
-            lv_draw_fill_dsc_init(&fill_dsc);
-            fill_dsc.radius = dsc->radius;
-            fill_dsc.opa = dsc->opa;
-            fill_dsc.color = dsc->color;
-            lv_draw_vg_lite_fill(t, &fill_dsc, &core_area);
-        }
     }
-    LV_PROFILER_END;
+
+    /* fill center */
+    if(dsc->ofs_x || dsc->ofs_y) {
+        lv_draw_fill_dsc_t fill_dsc;
+        lv_draw_fill_dsc_init(&fill_dsc);
+        fill_dsc.radius = dsc->radius;
+        fill_dsc.opa = dsc->opa;
+        fill_dsc.color = dsc->color;
+        lv_draw_vg_lite_fill(t, &fill_dsc, &core_area);
+    }
+
+    LV_PROFILER_DRAW_END;
 }
 
 /**********************

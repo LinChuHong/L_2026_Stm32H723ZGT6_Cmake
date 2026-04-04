@@ -1,6 +1,8 @@
 #include "lv_draw_dave2d.h"
 #if LV_USE_DRAW_DAVE2D
 
+#include "../../../misc/lv_area_private.h"
+
 void lv_draw_dave2d_fill(lv_draw_task_t * t, const lv_draw_fill_dsc_t * dsc, const lv_area_t * coords)
 {
     lv_area_t draw_area;

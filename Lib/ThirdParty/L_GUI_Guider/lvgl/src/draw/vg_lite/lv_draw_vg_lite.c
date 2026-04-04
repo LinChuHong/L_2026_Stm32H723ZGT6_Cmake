@@ -70,14 +70,16 @@ void lv_draw_vg_lite_init(void)
     unit->base_unit.dispatch_cb = draw_dispatch;
     unit->base_unit.evaluate_cb = draw_evaluate;
     unit->base_unit.delete_cb = draw_delete;
+    unit->base_unit.name = "VG_LITE";
 
     lv_vg_lite_image_dsc_init(unit);
 #if LV_USE_VECTOR_GRAPHIC
-    lv_vg_lite_grad_init(unit, LV_VG_LITE_GRAD_CACHE_CNT);
+    unit->grad_ctx = lv_vg_lite_grad_ctx_create(LV_VG_LITE_GRAD_CACHE_CNT, unit);
     lv_vg_lite_stroke_init(unit, LV_VG_LITE_STROKE_CACHE_CNT);
 #endif
     lv_vg_lite_path_init(unit);
     lv_vg_lite_decoder_init();
+    lv_draw_vg_lite_label_init(unit);
 }
 
 void lv_draw_vg_lite_deinit(void)
@@ -90,8 +92,17 @@ void lv_draw_vg_lite_deinit(void)
 
 static bool check_image_is_supported(const lv_draw_image_dsc_t * dsc)
 {
+    return lv_vg_lite_is_src_cf_supported(dsc->header.cf);
+}
+
+static bool check_arc_is_supported(const lv_draw_arc_dsc_t * dsc)
+{
+    if(dsc->img_src == NULL) {
+        return true;
+    }
+
     lv_image_header_t header;
-    lv_result_t res = lv_image_decoder_get_info(dsc->src, &header);
+    lv_result_t res = lv_image_decoder_get_info(dsc->img_src, &header);
     if(res != LV_RESULT_OK) {
         LV_LOG_TRACE("get image info failed");
         return false;
@@ -124,14 +135,19 @@ static void draw_execute(lv_draw_vg_lite_unit_t * u)
     lv_vg_lite_matrix_multiply(&u->global_matrix, &layer_matrix);
 
     /* Crop out extra pixels drawn due to scaling accuracy issues */
+    lv_area_t scissor_area = layer->phy_clip_area;
+#else
+    lv_area_t scissor_area = layer->_clip_area;
+#endif
+    lv_area_move(&scissor_area, -layer->buf_area.x1, -layer->buf_area.y1);
     if(vg_lite_query_feature(gcFEATURE_BIT_VG_SCISSOR)) {
-        lv_area_t scissor_area = layer->phy_clip_area;
-        lv_area_move(&scissor_area, -layer->buf_area.x1, -layer->buf_area.y1);
         lv_vg_lite_set_scissor_area(&scissor_area);
     }
-#endif
 
     switch(t->type) {
+        case LV_DRAW_TASK_TYPE_LETTER:
+            lv_draw_vg_lite_letter(t, t->draw_dsc, &t->area);
+            break;
         case LV_DRAW_TASK_TYPE_LABEL:
             lv_draw_vg_lite_label(t, t->draw_dsc, &t->area);
             break;
@@ -184,7 +200,7 @@ static int32_t draw_dispatch(lv_draw_unit_t * draw_unit, lv_layer_t * layer)
     }
 
     /* Try to get an ready to draw. */
-    lv_draw_task_t * t = lv_draw_get_next_available_task(layer, NULL, VG_LITE_DRAW_UNIT_ID);
+    lv_draw_task_t * t = lv_draw_get_available_task(layer, NULL, VG_LITE_DRAW_UNIT_ID);
 
     /* Return 0 is no selection, some tasks can be supported by other units. */
     if(!t || t->preferred_draw_unit_id != VG_LITE_DRAW_UNIT_ID) {
@@ -227,6 +243,7 @@ static int32_t draw_evaluate(lv_draw_unit_t * draw_unit, lv_draw_task_t * task)
     }
 
     switch(task->type) {
+        case LV_DRAW_TASK_TYPE_LETTER:
         case LV_DRAW_TASK_TYPE_LABEL:
         case LV_DRAW_TASK_TYPE_FILL:
         case LV_DRAW_TASK_TYPE_BORDER:
@@ -235,13 +252,19 @@ static int32_t draw_evaluate(lv_draw_unit_t * draw_unit, lv_draw_task_t * task)
 #endif
         case LV_DRAW_TASK_TYPE_LAYER:
         case LV_DRAW_TASK_TYPE_LINE:
-        case LV_DRAW_TASK_TYPE_ARC:
         case LV_DRAW_TASK_TYPE_TRIANGLE:
         case LV_DRAW_TASK_TYPE_MASK_RECTANGLE:
 
 #if LV_USE_VECTOR_GRAPHIC
         case LV_DRAW_TASK_TYPE_VECTOR:
 #endif
+            break;
+
+        case LV_DRAW_TASK_TYPE_ARC: {
+                if(!check_arc_is_supported(task->draw_dsc)) {
+                    return 0;
+                }
+            }
             break;
 
         case LV_DRAW_TASK_TYPE_IMAGE: {
@@ -256,9 +279,12 @@ static int32_t draw_evaluate(lv_draw_unit_t * draw_unit, lv_draw_task_t * task)
             return 0;
     }
 
-    /* The draw unit is able to draw this task. */
-    task->preference_score = 80;
-    task->preferred_draw_unit_id = VG_LITE_DRAW_UNIT_ID;
+    if(task->preference_score > 80) {
+        /* The draw unit is able to draw this task. */
+        task->preference_score = 80;
+        task->preferred_draw_unit_id = VG_LITE_DRAW_UNIT_ID;
+    }
+
     return 1;
 }
 
@@ -268,11 +294,12 @@ static int32_t draw_delete(lv_draw_unit_t * draw_unit)
 
     lv_vg_lite_image_dsc_deinit(unit);
 #if LV_USE_VECTOR_GRAPHIC
-    lv_vg_lite_grad_deinit(unit);
+    lv_vg_lite_grad_ctx_delete(unit->grad_ctx);
     lv_vg_lite_stroke_deinit(unit);
 #endif
     lv_vg_lite_path_deinit(unit);
     lv_vg_lite_decoder_deinit();
+    lv_draw_vg_lite_label_deinit(unit);
     return 1;
 }
 

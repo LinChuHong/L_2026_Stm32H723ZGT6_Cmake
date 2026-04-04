@@ -1,5 +1,5 @@
 /*
-* Copyright 2024 NXP
+* Copyright 2024-2025 NXP
 * NXP Proprietary. This software is owned or controlled by NXP and may only be used strictly in
 * accordance with the applicable license terms. By expressly accepting such terms or by downloading, installing,
 * activating and/or otherwise using the software, you are agreeing that you have read, and that you agree to
@@ -73,7 +73,7 @@ volatile int keep_running = 0;
 /**********************
  *      VARIABLES
  **********************/
-extern uint16_t simulator_icon[];
+extern uint8_t simulator_icon[];
 lv_ui guider_ui;
 
 #if LV_USE_FREEMASTER
@@ -172,7 +172,7 @@ static lv_display_t * hal_init(int32_t w, int32_t h)
 
     lv_display_t * disp = lv_sdl_window_create(w, h);
     lv_sdl_window_set_title(disp, "Simulator (C/C++)");
-    lv_sdl_window_set_icon(disp, simulator_icon);
+    lv_sdl_window_set_icon(disp, simulator_icon, 32, 32);
     lv_sdl_window_set_resizeable(disp, false);
     lv_sdl_window_set_zoom(disp, LV_GUIDER_SIMULATOR_WINDOW_ZOOM);
 

@@ -1,6 +1,9 @@
 #include "lv_draw_dave2d.h"
 #if LV_USE_DRAW_DAVE2D
 
+#include "../../lv_draw_label_private.h"
+#include "../../../misc/lv_area_private.h"
+
 static void lv_draw_dave2d_draw_letter_cb(lv_draw_task_t * t, lv_draw_glyph_dsc_t * glyph_draw_dsc,
                                           lv_draw_fill_dsc_t * fill_draw_dsc, const lv_area_t * fill_area);
 
@@ -26,7 +29,7 @@ static void lv_draw_dave2d_draw_letter_cb(lv_draw_task_t * t, lv_draw_glyph_dsc_
     int32_t y;
 
     letter_coords = *glyph_draw_dsc->letter_coords;
-    lv_draw_vg_lite_unit_t * unit = (lv_draw_vg_lite_unit_t *)t->draw_unit;
+    lv_draw_dave2d_unit_t * unit = (lv_draw_dave2d_unit_t *)t->draw_unit;
 
     bool is_common;
     is_common = lv_area_intersect(&clip_area, glyph_draw_dsc->letter_coords, &t->clip_area);
@@ -75,6 +78,7 @@ static void lv_draw_dave2d_draw_letter_cb(lv_draw_task_t * t, lv_draw_glyph_dsc_
                 }
                 break;
             case LV_FONT_GLYPH_FORMAT_A1 ... LV_FONT_GLYPH_FORMAT_A8: {
+                    glyph_draw_dsc->glyph_data = lv_font_get_glyph_bitmap(glyph_draw_dsc->g, glyph_draw_dsc->_draw_buf);
                     lv_area_t mask_area = letter_coords;
                     mask_area.x2 = mask_area.x1 + lv_draw_buf_width_to_stride(lv_area_get_width(&mask_area), LV_COLOR_FORMAT_A8) - 1;
                     //            lv_draw_sw_blend_dsc_t blend_dsc;
@@ -121,6 +125,7 @@ static void lv_draw_dave2d_draw_letter_cb(lv_draw_task_t * t, lv_draw_glyph_dsc_
                 break;
             case LV_FONT_GLYPH_FORMAT_IMAGE: {
 #if LV_USE_IMGFONT
+                    glyph_draw_dsc->glyph_data = lv_font_get_glyph_bitmap(glyph_draw_dsc->g, glyph_draw_dsc->_draw_buf);
                     lv_draw_image_dsc_t img_dsc;
                     lv_draw_image_dsc_init(&img_dsc);
                     img_dsc.rotation = 0;
