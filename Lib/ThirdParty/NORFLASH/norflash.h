@@ -14,8 +14,7 @@
 #ifndef __NORFLASH_H
 #define __NORFLASH_H
 
-#include "sys/sys.h"
-
+#include "main.h"
 #ifdef __cplusplus
 extern "C" {
 #endif

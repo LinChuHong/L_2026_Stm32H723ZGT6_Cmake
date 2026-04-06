@@ -11,7 +11,6 @@ add_library( ${LITTLEFS} ${SOURCE} )
 
 target_link_libraries(${LITTLEFS} PRIVATE
     stm32cubemx
-    ${MYLIB_LINK_LIBS}
     NORFLASH
 )
 

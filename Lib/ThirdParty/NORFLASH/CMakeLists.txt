@@ -16,6 +16,7 @@ target_link_libraries(${MODULE_NAME} PRIVATE
     lvgl
     L_GUI_Guider
     QSPI
+    FATFS
 )
 
 # Allow this module to include headers from ENTIRE project

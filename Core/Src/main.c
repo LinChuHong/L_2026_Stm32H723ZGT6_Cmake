@@ -23,6 +23,8 @@
 #include "crc.h"
 #include "dma.h"
 #include "rng.h"
+#include "stm32h723xx.h"
+#include "tim.h"
 #include "usart.h"
 #include "usb_device.h"
 #include "gpio.h"
@@ -34,6 +36,9 @@
 #include "delay.h"
 #include "usart1.h"
 #include "lvgl.h"
+#include "led.h"
+#include "custom.h"
+#include <src/tick/lv_tick.h>
 
 /* USER CODE END Includes */
 
@@ -118,6 +123,8 @@ int main(void)
   MX_CRC_Init();
   MX_RNG_Init();
   MX_USART1_UART_Init();
+  MX_TIM1_Init();
+  MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -253,11 +260,19 @@ void MPU_Config(void)
   /** Initializes and configures the Region and the memory to be protected
   */
   MPU_InitStruct.Number = MPU_REGION_NUMBER2;
+  MPU_InitStruct.BaseAddress = 0x30000000;
+  MPU_InitStruct.Size = MPU_REGION_SIZE_32KB;
+  MPU_InitStruct.AccessPermission = MPU_REGION_FULL_ACCESS;
+  MPU_InitStruct.IsCacheable = MPU_ACCESS_NOT_CACHEABLE;
+
+  HAL_MPU_ConfigRegion(&MPU_InitStruct);
+
+  /** Initializes and configures the Region and the memory to be protected
+  */
+  MPU_InitStruct.Number = MPU_REGION_NUMBER3;
   MPU_InitStruct.BaseAddress = 0xC0000000;
   MPU_InitStruct.Size = MPU_REGION_SIZE_32MB;
-  MPU_InitStruct.AccessPermission = MPU_REGION_FULL_ACCESS;
   MPU_InitStruct.DisableExec = MPU_INSTRUCTION_ACCESS_DISABLE;
-  MPU_InitStruct.IsCacheable = MPU_ACCESS_NOT_CACHEABLE;
 
   HAL_MPU_ConfigRegion(&MPU_InitStruct);
   /* Enables the MPU */
@@ -283,6 +298,15 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
+  if (htim->Instance == TIM1)
+  {
+    mydata.barValue+=5;
+    if (mydata.barValue >= 100) mydata.barValue = 0;
+  }
+  if (htim->Instance == TIM6) 
+  {
+    lv_tick_inc(1);
+  }
 
 
   /* USER CODE END Callback 1 */

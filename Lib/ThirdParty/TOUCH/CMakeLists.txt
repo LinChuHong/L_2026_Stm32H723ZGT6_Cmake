@@ -14,7 +14,6 @@ target_link_libraries(${MODULE_NAME}
     PRIVATE 
     stm32cubemx
     ${MYLIB_LINK_LIBS}
-    NORFLASH
     
 )
 

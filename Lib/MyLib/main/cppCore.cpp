@@ -39,7 +39,10 @@
 
 
 #include <atomic>
+#include <src/core/lv_obj_pos.h>
+#include <src/misc/lv_anim.h>
 #include <src/misc/lv_types.h>
+#include <src/widgets/bar/lv_bar.h>
 #include <stdio.h>
 #include <string>
 #include <vector>
@@ -76,9 +79,7 @@ void init()
     while (sd_init()) { }
     exfuns_init();
     res = f_mount(fs[0],"0:",1);
-
     MX_USB_DEVICE_Init();    
-
     lv_init();                                          /* lvgl系统初始化 */
     lv_port_disp_init();                                /* lvgl显示接口初始化,放在lv_init()的后面 */
     lv_port_indev_init();                               /* lvgl输入接口初始化,放在lv_init()的后面 */
@@ -125,7 +126,6 @@ void cppCoreStart(void *argument)
         }
         #endif
         
-        lv_tick_inc(1);
         osDelay(1);
     }
 
@@ -136,6 +136,7 @@ void StartTask02(void *argument)
 
     // lv_demo_widgets();
     // lv_demo_music();
+    setup_ui(&guider_ui);
     custom_init(&guider_ui);
     for(;;)
     {
@@ -146,108 +147,31 @@ void StartTask02(void *argument)
             len = g_usart_rx_sta & 0x3fff;  /* 得到此次接收到的数据长度 */
             g_usart_rx_buf[len] = '\0';     /* 在末尾加入结束符. */
             g_usart_rx_sta = 0;             /* 开启下一次接收 */
+            if (std::strcmp((const char*)g_usart_rx_buf, "test") == 0)
+            {
+                L_States.set(90);
+                printf("L_States.set(90)\n");
+            }
         }
-        
+     
+       
         lv_timer_handler();
         osDelay(1);
     }
 
 }
 
-void test_write_to_norflash()
-{   
-    static uint8_t cnt = 0;
-    if (cnt == 0) res = f_open(fattester.file,"images.txt",FA_CREATE_ALWAYS | FA_WRITE);
-    cnt = 69;
-
-    #if USEPYTHONTOSENDDATATONORFLASH == 1
-    if (L_States.test(69) == 1)
-    {
-        if (res) 
-        {
-            printf("can't open file(Shakespeare.txt) Error code ->%d\n",res);
-            return;
-        }
-        res = f_write(fattester.file,datatoflash.data(),datatoflash.size(),&bw);
-        if (res != FR_OK)
-        {
-            printf("read error -> %d",res);
-        }
-        if (bw != datatoflash.size())
-        {
-            printf("write incomplete! expected=%u, written=%u\n",
-                datatoflash.size(), bw);
-        }
-        printf("%d\n",datatoflash.size());
-        datatoflash.clear();
-        L_States.reset(69);
-        uint8_t byte = 0xAA;
-        while (CDC_Transmit_HS(&byte, 1) == USBD_BUSY);
-    }
-    else if (L_States.test(100) == 1)
-    {
-        f_close(fattester.file);
-        L_States.set(99);
-        L_States.reset(100);
-    }
-    #endif
-
-}
-void test()
-{
-    if (L_States.test(99) == 1)
-    {
-        res = f_open(fattester.file,"images.txt",FA_READ);
-        if (res) 
-        {
-            printf("can't open file(images.bin) Error code ->%d\n",res);
-            return;
-        }
-        do
-        {
-            res = f_read(fattester.file,fattester.fatbuf,2048,&br);
-            if (res != FR_OK)
-            {
-                printf("read error -> %d",res);
-            }
-            if (br > 0)
-            {
-                norflash_write(fattester.fatbuf, dataLen, br);
-                // flash_write_fast(dataLen,fattester.fatbuf, br);
-                printf("writing %u bytes to NOR flash at addr %lu\n", br, dataLen);
-                dataLen+=br;
-            }
-        } while (br > 0);
-        L_States.reset(99);
-        f_close(fattester.file);
-
-    }
-}
-
 
 void StartTask03(void *argument)
 {
-   
+
 
     for(;;)
     {
-        test_write_to_norflash();
-        test();
-
-        // if (L_States.test(10) == 1)
-        // {
-
-        //     if (std::strcmp(L_Data.at(0).c_str(),"test") == 0)
-        //     {
-        //         test();
-        
-        //     }
-        //     printf("%s\n",L_Data.at(0).c_str());
-        //     L_Data.at(0).clear();
-        //     L_States.reset(10);
-        // }
-
+ 
         osDelay(1);
     }
 
 }
+
+

@@ -11,6 +11,7 @@
  ****************************************************************************************************
  */
  
+ #include "sys/sys.h"
 #include "QSPI/qspi.h"
 #include "cmsis_os2.h"
 #include "delay/delay.h"

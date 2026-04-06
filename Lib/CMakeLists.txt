@@ -47,6 +47,7 @@ foreach(DIR ${CHILD_DIRS})
                 L_GUI_Guider
                 NORFLASH
                 FATFS
+                littlefs
             )
             
 

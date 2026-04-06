@@ -129,7 +129,7 @@ uint8_t gt9xxx_init(void)
     gt9xxx_rd_reg(GT9XXX_PID_REG, temp, 4);    /* 读取产品ID */
     temp[4] = 0;
     
-    printf("CTP ID:%s\r\n", temp);             /* 打印ID */
+    // printf("CTP ID:%s\r\n", temp);             /* 打印ID */
     /* 判断一下是否是特定的触摸屏 */
     if (strcmp((char *)temp, "911") && strcmp((char *)temp, "9147") && strcmp((char *)temp, "1158") && strcmp((char *)temp, "9271") && strcmp((char *)temp, "967"))
     {

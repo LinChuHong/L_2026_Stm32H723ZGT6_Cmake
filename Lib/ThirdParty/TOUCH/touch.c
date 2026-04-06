@@ -17,7 +17,6 @@
 #include "stdlib.h"
 #include "LCD/lcd.h"
 #include "touch.h"
-#include "NORFLASH/norflash.h"
 #include "delay/delay.h"
 
 

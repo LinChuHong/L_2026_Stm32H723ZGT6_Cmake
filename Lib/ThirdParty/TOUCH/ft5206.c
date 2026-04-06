@@ -121,7 +121,7 @@ uint8_t ft5206_init(void)
 
     if ((temp[0] == 0X30 && temp[1] == 0X03) || temp[1] == 0X01 || temp[1] == 0X02 || (temp[0] == 0x0 && temp[1] == 0X0))   /* 版本:0X3003/0X0001/0X0002/CST340 */
     {
-        printf("CTP ID:%x\r\n", ((uint16_t)temp[0] << 8) + temp[1]);
+        // printf("CTP ID:%x\r\n", ((uint16_t)temp[0] << 8) + temp[1]);
         return 0;
     }
 

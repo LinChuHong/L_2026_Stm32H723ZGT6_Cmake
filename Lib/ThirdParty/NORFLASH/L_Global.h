@@ -1,6 +1,6 @@
 #pragma once
 // for header file for .cpp files
-
+#include "main.h"
 #include "vector"
 #include "string"
 #include "bitset"

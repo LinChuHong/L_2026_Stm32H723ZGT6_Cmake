@@ -3,7 +3,8 @@ import struct
 
 # baud = 12000000
 baud = 12000000
-port = "/dev/tty.usbmodem3160356F32331"
+# port = "/dev/tty.usbmodem3160356F32331"
+port = "COM8"
 
 def send_file(filename):
     ser = serial.Serial(port, baud, timeout=5)
@@ -45,6 +46,6 @@ def send_file(filename):
     print("DONE")
 
 # Windows
-# send_file("F:/projects/CSEE/L_2025_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/images/mergeBinFile.bin")
+send_file("F:/projects/CSEE/L_2025_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/images/mergeBinFile.bin")
 # macOS
-send_file("Lib/ThirdParty/L_GUI_Guider/generated/images/mergeBinFile.bin")
+# send_file("Lib/ThirdParty/L_GUI_Guider/generated/images/mergeBinFile.bin")

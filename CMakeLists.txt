@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.22)
+CMake_minimum_required(VERSION 3.22)
 
 #
 # This file is generated only once,
@@ -43,6 +43,7 @@ add_subdirectory(Lib/ThirdParty/TOUCH)
 add_subdirectory(Lib/ThirdParty/lvgl)
 add_subdirectory(Lib/ThirdParty/L_GUI_Guider)
 add_subdirectory(Lib/ThirdParty/FATFS)
+add_subdirectory(Lib/ThirdParty/littlefs)
 
 
 
@@ -86,4 +87,5 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     lvgl
     L_GUI_Guider
     FATFS
+    littlefs
 )

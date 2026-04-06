@@ -10,12 +10,14 @@
 /*********************
  *      INCLUDES
  *********************/
+#include <src/misc/lv_event.h>
 #include <src/widgets/label/lv_label.h>
 #include <stdio.h>
 #include "lvgl.h"
 #include "custom.h"
 #include <custom_events_cb.h>
 #include <gui_guider.h>
+#include <string.h>
 
 /*********************
  *      DEFINES
@@ -59,13 +61,39 @@ static void timer_cb(lv_timer_t *t)
         }
     }
 }
+void gesture_event_cb(lv_event_t * e)
+{
+    lv_dir_t dir = lv_indev_get_gesture_dir(lv_indev_get_act());
 
+    switch(dir)
+    {
+        case LV_DIR_LEFT:
+            printf("Swipe Left\n");
+            break;
+
+        case LV_DIR_RIGHT:
+            printf("Swipe Right\n");
+            break;
+
+        case LV_DIR_TOP:
+            printf("Swipe Up\n");
+            break;
+
+        case LV_DIR_BOTTOM:
+            printf("Swipe Down\n");
+            break;
+
+        default:
+            break;
+    }
+}
 void custom_init(lv_ui *ui)
 {
     
     /* Add your codes here */
     // lv_obj_add_event_cb(ui->g_kb_top_layer,mycb,LV_EVENT_ALL,ui);
     screen_timer = lv_timer_create(timer_cb,1000,ui);
+    lv_obj_add_event_cb(guider_ui.screen_3,gesture_event_cb,LV_EVENT_GESTURE,NULL);
 }
 
 #if USEMYCBINC == 1
