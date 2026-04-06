@@ -28,7 +28,7 @@ void setup_scr_screen_1(lv_ui *ui)
     lv_obj_set_style_bg_color(ui->screen_1, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_grad_dir(ui->screen_1, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
 #if LV_USE_GUIDER_SIMULATOR
-    lv_obj_set_style_bg_image_src(ui->screen_1, "C:/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/import/image/Chiyo_chan.jpg", LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_image_src(ui->screen_1, "F:\\projects\\CSEE\\L_2025_Stm32H723ZGT6_Cmake\\Lib\\ThirdParty\\L_GUI_Guider\\import\\image\\Chiyo_chan.jpg", LV_PART_MAIN|LV_STATE_DEFAULT);
 #else
     lv_obj_set_style_bg_image_src(ui->screen_1, "F:/Chiyo_chan.bin", LV_PART_MAIN|LV_STATE_DEFAULT);
 #endif
@@ -54,7 +54,7 @@ void setup_scr_screen_1(lv_ui *ui)
     lv_obj_set_style_radius(ui->screen_1_btn_1, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->screen_1_btn_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 #if LV_USE_GUIDER_SIMULATOR
-    lv_obj_set_style_bg_image_src(ui->screen_1_btn_1, "C:/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/import/image/IMG_2066.JPG", LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_image_src(ui->screen_1_btn_1, "F:\\projects\\CSEE\\L_2025_Stm32H723ZGT6_Cmake\\Lib\\ThirdParty\\L_GUI_Guider\\import\\image\\IMG_2066.JPG", LV_PART_MAIN|LV_STATE_DEFAULT);
 #else
     lv_obj_set_style_bg_image_src(ui->screen_1_btn_1, "F:/IMG_2066.bin", LV_PART_MAIN|LV_STATE_DEFAULT);
 #endif
@@ -84,7 +84,7 @@ void setup_scr_screen_1(lv_ui *ui)
     lv_obj_set_style_radius(ui->screen_1_btn_2, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->screen_1_btn_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 #if LV_USE_GUIDER_SIMULATOR
-    lv_obj_set_style_bg_image_src(ui->screen_1_btn_2, "C:/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/import/image/dmsler.png", LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_image_src(ui->screen_1_btn_2, "F:\\projects\\CSEE\\L_2025_Stm32H723ZGT6_Cmake\\Lib\\ThirdParty\\L_GUI_Guider\\import\\image\\dmsler.png", LV_PART_MAIN|LV_STATE_DEFAULT);
 #else
     lv_obj_set_style_bg_image_src(ui->screen_1_btn_2, "F:/dmsler.bin", LV_PART_MAIN|LV_STATE_DEFAULT);
 #endif
@@ -114,7 +114,7 @@ void setup_scr_screen_1(lv_ui *ui)
     lv_obj_set_style_radius(ui->screen_1_btn_3, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->screen_1_btn_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 #if LV_USE_GUIDER_SIMULATOR
-    lv_obj_set_style_bg_image_src(ui->screen_1_btn_3, "C:/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/import/image/myself.jpg", LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_image_src(ui->screen_1_btn_3, "F:\\projects\\CSEE\\L_2025_Stm32H723ZGT6_Cmake\\Lib\\ThirdParty\\L_GUI_Guider\\import\\image\\myself.jpg", LV_PART_MAIN|LV_STATE_DEFAULT);
 #else
     lv_obj_set_style_bg_image_src(ui->screen_1_btn_3, "F:/myself.bin", LV_PART_MAIN|LV_STATE_DEFAULT);
 #endif
@@ -131,7 +131,7 @@ void setup_scr_screen_1(lv_ui *ui)
     lv_obj_set_size(ui->screen_1_img_3, 150, 150);
     lv_obj_add_flag(ui->screen_1_img_3, LV_OBJ_FLAG_CLICKABLE);
 #if LV_USE_GUIDER_SIMULATOR
-    lv_image_set_src(ui->screen_1_img_3, "C:/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/import/image/Shinobu1.jpeg");
+    lv_image_set_src(ui->screen_1_img_3, "F:\\projects\\CSEE\\L_2025_Stm32H723ZGT6_Cmake\\Lib\\ThirdParty\\L_GUI_Guider\\import\\image\\Shinobu1.jpeg");
 #else
     lv_image_set_src(ui->screen_1_img_3, "F:/Shinobu1.bin");
 #endif
@@ -148,7 +148,7 @@ void setup_scr_screen_1(lv_ui *ui)
     lv_obj_set_size(ui->screen_1_img_4, 150, 150);
     lv_obj_add_flag(ui->screen_1_img_4, LV_OBJ_FLAG_CLICKABLE);
 #if LV_USE_GUIDER_SIMULATOR
-    lv_image_set_src(ui->screen_1_img_4, "C:/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/import/image/Tamayo.jpg");
+    lv_image_set_src(ui->screen_1_img_4, "F:\\projects\\CSEE\\L_2025_Stm32H723ZGT6_Cmake\\Lib\\ThirdParty\\L_GUI_Guider\\import\\image\\Tamayo.jpg");
 #else
     lv_image_set_src(ui->screen_1_img_4, "F:/Tamayo.bin");
 #endif
@@ -165,7 +165,7 @@ void setup_scr_screen_1(lv_ui *ui)
     lv_obj_set_size(ui->screen_1_img_5, 150, 150);
     lv_obj_add_flag(ui->screen_1_img_5, LV_OBJ_FLAG_CLICKABLE);
 #if LV_USE_GUIDER_SIMULATOR
-    lv_image_set_src(ui->screen_1_img_5, "C:/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/import/image/Maki.jpeg");
+    lv_image_set_src(ui->screen_1_img_5, "F:\\projects\\CSEE\\L_2025_Stm32H723ZGT6_Cmake\\Lib\\ThirdParty\\L_GUI_Guider\\import\\image\\Maki.jpeg");
 #else
     lv_image_set_src(ui->screen_1_img_5, "F:/Maki.bin");
 #endif
@@ -182,7 +182,7 @@ void setup_scr_screen_1(lv_ui *ui)
     lv_obj_set_size(ui->screen_1_img_6, 150, 150);
     lv_obj_add_flag(ui->screen_1_img_6, LV_OBJ_FLAG_CLICKABLE);
 #if LV_USE_GUIDER_SIMULATOR
-    lv_image_set_src(ui->screen_1_img_6, "C:/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/import/image/Shinobu2.jpeg");
+    lv_image_set_src(ui->screen_1_img_6, "F:\\projects\\CSEE\\L_2025_Stm32H723ZGT6_Cmake\\Lib\\ThirdParty\\L_GUI_Guider\\import\\image\\Shinobu2.jpeg");
 #else
     lv_image_set_src(ui->screen_1_img_6, "F:/Shinobu2.bin");
 #endif

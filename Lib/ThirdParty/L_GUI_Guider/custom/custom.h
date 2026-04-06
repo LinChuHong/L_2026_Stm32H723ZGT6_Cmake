@@ -23,8 +23,9 @@ typedef struct
 {
     char zen[1024]; // get zen from api.github.com/zen
     uint8_t led_state;
-    uint8_t screen_state; // avoid accessing the objs already deleted by the load_screen
+    volatile uint8_t screen_state; // avoid accessing the objs already deleted by the load_screen
     uint8_t hppt_state;
+    volatile uint32_t barValue;
 } custom_data;
 extern custom_data mydata;
 

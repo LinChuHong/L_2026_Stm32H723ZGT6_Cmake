@@ -26,7 +26,7 @@ void setup_scr_screen_6(lv_ui *ui)
     //Write style for screen_6, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
     lv_obj_set_style_bg_opa(ui->screen_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 #if LV_USE_GUIDER_SIMULATOR
-    lv_obj_set_style_bg_image_src(ui->screen_6, "C:/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/import/image/Shinobu3.jpeg", LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_image_src(ui->screen_6, "F:\\projects\\CSEE\\L_2025_Stm32H723ZGT6_Cmake\\Lib\\ThirdParty\\L_GUI_Guider\\import\\image\\Shinobu3.jpeg", LV_PART_MAIN|LV_STATE_DEFAULT);
 #else
     lv_obj_set_style_bg_image_src(ui->screen_6, "F:/Shinobu3.bin", LV_PART_MAIN|LV_STATE_DEFAULT);
 #endif
@@ -52,7 +52,7 @@ void setup_scr_screen_6(lv_ui *ui)
     lv_obj_set_style_radius(ui->screen_6_btn_1, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->screen_6_btn_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 #if LV_USE_GUIDER_SIMULATOR
-    lv_obj_set_style_bg_image_src(ui->screen_6_btn_1, "C:/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/import/image/Tamayo_1.jpg", LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_image_src(ui->screen_6_btn_1, "F:\\projects\\CSEE\\L_2025_Stm32H723ZGT6_Cmake\\Lib\\ThirdParty\\L_GUI_Guider\\import\\image\\Tamayo_1.jpg", LV_PART_MAIN|LV_STATE_DEFAULT);
 #else
     lv_obj_set_style_bg_image_src(ui->screen_6_btn_1, "F:/Tamayo_1.bin", LV_PART_MAIN|LV_STATE_DEFAULT);
 #endif
@@ -68,7 +68,7 @@ void setup_scr_screen_6(lv_ui *ui)
     lv_obj_set_pos(ui->screen_6_btn_2, 50, 226);
     lv_obj_set_size(ui->screen_6_btn_2, 132, 66);
     ui->screen_6_btn_2_label = lv_label_create(ui->screen_6_btn_2);
-    lv_label_set_text(ui->screen_6_btn_2_label, "To_Screen_1");
+    lv_label_set_text(ui->screen_6_btn_2_label, "To_Sc");
     lv_label_set_long_mode(ui->screen_6_btn_2_label, LV_LABEL_LONG_SCROLL_CIRCULAR);
     lv_obj_align(ui->screen_6_btn_2_label, LV_ALIGN_CENTER, 0, 0);
     lv_obj_set_style_pad_all(ui->screen_6_btn_2, 0, LV_STATE_DEFAULT);
@@ -82,7 +82,7 @@ void setup_scr_screen_6(lv_ui *ui)
     lv_obj_set_style_radius(ui->screen_6_btn_2, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->screen_6_btn_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 #if LV_USE_GUIDER_SIMULATOR
-    lv_obj_set_style_bg_image_src(ui->screen_6_btn_2, "C:/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/import/image/Tamayo_1.jpg", LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_image_src(ui->screen_6_btn_2, "F:\\projects\\CSEE\\L_2025_Stm32H723ZGT6_Cmake\\Lib\\ThirdParty\\L_GUI_Guider\\import\\image\\Tamayo_1.jpg", LV_PART_MAIN|LV_STATE_DEFAULT);
 #else
     lv_obj_set_style_bg_image_src(ui->screen_6_btn_2, "F:/Tamayo_1.bin", LV_PART_MAIN|LV_STATE_DEFAULT);
 #endif

@@ -1,3 +1,6 @@
 [submodule "Lib/ThirdParty/lvgl"]
 	path = Lib/ThirdParty/lvgl
 	url = https://github.com/lvgl/lvgl.git
+[submodule "Lib/ThirdParty/littlefs/source"]
+	path = Lib/ThirdParty/littlefs/source
+	url = https://github.com/littlefs-project/littlefs.git

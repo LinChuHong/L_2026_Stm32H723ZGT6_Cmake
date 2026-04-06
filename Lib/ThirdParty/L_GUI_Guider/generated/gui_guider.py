@@ -222,7 +222,7 @@ screen_1.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
 screen_1.set_style_bg_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_1.set_style_bg_color(lv.color_hex(0xffffff), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_1.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_1.set_style_bg_image_src(load_image(r"/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/MicroPython/Chiyo_chan_1024_600.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Chiyo_chan_1024_600.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_1.set_style_bg_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_1.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 
@@ -243,7 +243,7 @@ screen_1_btn_1.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEF
 screen_1_btn_1.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_1_btn_1.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_1_btn_1.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_1_btn_1.set_style_bg_image_src(load_image(r"/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/MicroPython/IMG_2066_140_81.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\IMG_2066_140_81.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_1_btn_1.set_style_bg_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_1_btn_1.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_1_btn_1.set_style_text_color(lv.color_hex(0xffffff), lv.PART.MAIN|lv.STATE.DEFAULT)
@@ -268,7 +268,7 @@ screen_1_btn_2.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEF
 screen_1_btn_2.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_1_btn_2.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_1_btn_2.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_1_btn_2.set_style_bg_image_src(load_image(r"/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/MicroPython/dmsler_314_131.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_2.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\dmsler_314_131.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_1_btn_2.set_style_bg_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_1_btn_2.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_1_btn_2.set_style_text_color(lv.color_hex(0x6b41a4), lv.PART.MAIN|lv.STATE.DEFAULT)
@@ -293,7 +293,7 @@ screen_1_btn_3.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEF
 screen_1_btn_3.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_1_btn_3.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_1_btn_3.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_1_btn_3.set_style_bg_image_src(load_image(r"/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/MicroPython/myself_191_87.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_3.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\myself_191_87.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_1_btn_3.set_style_bg_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_1_btn_3.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_1_btn_3.set_style_text_color(lv.color_hex(0xffffff), lv.PART.MAIN|lv.STATE.DEFAULT)
@@ -303,7 +303,7 @@ screen_1_btn_3.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.
 
 # Create screen_1_img_3
 screen_1_img_3 = lv.image(screen_1)
-screen_1_img_3.set_src(load_image(r"/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/MicroPython/Shinobu1_150_150.png"))
+screen_1_img_3.set_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Shinobu1_150_150.png"))
 screen_1_img_3.add_flag(lv.obj.FLAG.CLICKABLE)
 screen_1_img_3.set_pivot(50,50)
 screen_1_img_3.set_rotation(0)
@@ -314,7 +314,7 @@ screen_1_img_3.set_style_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 
 # Create screen_1_img_4
 screen_1_img_4 = lv.image(screen_1)
-screen_1_img_4.set_src(load_image(r"/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/MicroPython/Tamayo_150_150.png"))
+screen_1_img_4.set_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Tamayo_150_150.png"))
 screen_1_img_4.add_flag(lv.obj.FLAG.CLICKABLE)
 screen_1_img_4.set_pivot(50,50)
 screen_1_img_4.set_rotation(0)
@@ -325,7 +325,7 @@ screen_1_img_4.set_style_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 
 # Create screen_1_img_5
 screen_1_img_5 = lv.image(screen_1)
-screen_1_img_5.set_src(load_image(r"/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/MicroPython/Maki_150_150.png"))
+screen_1_img_5.set_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Maki_150_150.png"))
 screen_1_img_5.add_flag(lv.obj.FLAG.CLICKABLE)
 screen_1_img_5.set_pivot(50,50)
 screen_1_img_5.set_rotation(0)
@@ -336,7 +336,7 @@ screen_1_img_5.set_style_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 
 # Create screen_1_img_6
 screen_1_img_6 = lv.image(screen_1)
-screen_1_img_6.set_src(load_image(r"/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/MicroPython/Shinobu2_150_150.png"))
+screen_1_img_6.set_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Shinobu2_150_150.png"))
 screen_1_img_6.add_flag(lv.obj.FLAG.CLICKABLE)
 screen_1_img_6.set_pivot(50,50)
 screen_1_img_6.set_rotation(0)
@@ -356,7 +356,7 @@ screen_2.set_size(1024, 600)
 screen_2.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
 # Set style for screen_2, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
 screen_2.set_style_bg_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_2.set_style_bg_image_src(load_image(r"/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/MicroPython/Clannad_1024_600.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_2.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Clannad_1024_600.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_2.set_style_bg_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_2.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 
@@ -377,7 +377,7 @@ screen_2_btn_2.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEF
 screen_2_btn_2.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_2_btn_2.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_2_btn_2.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_2_btn_2.set_style_bg_image_src(load_image(r"/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/MicroPython/Frieren_anime_profile_72_151.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_2_btn_2.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Frieren_anime_profile_72_151.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_2_btn_2.set_style_bg_image_opa(247, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_2_btn_2.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_2_btn_2.set_style_text_color(lv.color_hex(0x4146d4), lv.PART.MAIN|lv.STATE.DEFAULT)
@@ -402,7 +402,7 @@ screen_2_btn_1.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEF
 screen_2_btn_1.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_2_btn_1.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_2_btn_1.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_2_btn_1.set_style_bg_image_src(load_image(r"/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/MicroPython/Frieren_anime_profile_72_151.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_2_btn_1.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Frieren_anime_profile_72_151.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_2_btn_1.set_style_bg_image_opa(247, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_2_btn_1.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_2_btn_1.set_style_text_color(lv.color_hex(0x4146d4), lv.PART.MAIN|lv.STATE.DEFAULT)
@@ -421,7 +421,7 @@ screen_3.set_size(1024, 600)
 screen_3.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
 # Set style for screen_3, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
 screen_3.set_style_bg_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_3.set_style_bg_image_src(load_image(r"/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/MicroPython/Shinobu3_1024_600.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Shinobu3_1024_600.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_3.set_style_bg_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_3.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 
@@ -442,13 +442,242 @@ screen_3_btn_1.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEF
 screen_3_btn_1.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_3_btn_1.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_3_btn_1.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_3_btn_1.set_style_bg_image_src(load_image(r"/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/MicroPython/tamayo_and_shinobu_132_66.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_1.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\tamayo_and_shinobu_132_66.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_3_btn_1.set_style_bg_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_3_btn_1.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_3_btn_1.set_style_text_color(lv.color_hex(0x2fda64), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_3_btn_1.set_style_text_font(test_font("montserratMedium", 16), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_3_btn_1.set_style_text_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_3_btn_1.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# Create screen_3_bar_1
+screen_3_bar_1 = lv.bar(screen_3)
+screen_3_bar_1.set_style_anim_duration(1000, 0)
+screen_3_bar_1.set_mode(lv.bar.MODE.NORMAL)
+screen_3_bar_1.set_range(0, 100)
+screen_3_bar_1.set_value(, lv.ANIM.ON)
+screen_3_bar_1.set_pos(89, 105)
+screen_3_bar_1.set_size(90, 20)
+# Set style for screen_3_bar_1, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_3_bar_1.set_style_bg_opa(60, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_bar_1.set_style_bg_color(lv.color_hex(0x2195f6), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_bar_1.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_bar_1.set_style_radius(10, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_bar_1.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+# Set style for screen_3_bar_1, Part: lv.PART.INDICATOR, State: lv.STATE.DEFAULT.
+screen_3_bar_1.set_style_bg_opa(255, lv.PART.INDICATOR|lv.STATE.DEFAULT)
+screen_3_bar_1.set_style_bg_color(lv.color_hex(0x2195f6), lv.PART.INDICATOR|lv.STATE.DEFAULT)
+screen_3_bar_1.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.INDICATOR|lv.STATE.DEFAULT)
+screen_3_bar_1.set_style_radius(10, lv.PART.INDICATOR|lv.STATE.DEFAULT)
+
+# Create screen_3_label_1
+screen_3_label_1 = lv.label(screen_3)
+screen_3_label_1.set_text("Write_To_SD_Card")
+screen_3_label_1.set_long_mode(lv.label.LONG.SCROLL_CIRCULAR)
+screen_3_label_1.set_width(lv.pct(100))
+screen_3_label_1.set_pos(83, 133)
+screen_3_label_1.set_size(100, 32)
+# Set style for screen_3_label_1, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_3_label_1.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_1.set_style_radius(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_1.set_style_text_color(lv.color_hex(0x000000), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_1.set_style_text_font(test_font("montserratMedium", 16), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_1.set_style_text_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_1.set_style_text_letter_space(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_1.set_style_text_line_space(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_1.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_1.set_style_bg_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_1.set_style_pad_top(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_1.set_style_pad_right(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_1.set_style_pad_bottom(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_1.set_style_pad_left(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_1.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# Create screen_3_btn_2
+screen_3_btn_2 = lv.button(screen_3)
+screen_3_btn_2_label = lv.label(screen_3_btn_2)
+screen_3_btn_2_label.set_text("Start_Writing")
+screen_3_btn_2_label.set_long_mode(lv.label.LONG.SCROLL_CIRCULAR)
+screen_3_btn_2_label.set_width(lv.pct(100))
+screen_3_btn_2_label.align(lv.ALIGN.CENTER, 0, 0)
+screen_3_btn_2.set_style_pad_all(0, lv.STATE.DEFAULT)
+screen_3_btn_2.set_pos(33, 162)
+screen_3_btn_2.set_size(100, 50)
+# Set style for screen_3_btn_2, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_3_btn_2.set_style_bg_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_2.set_style_bg_color(lv.color_hex(0x2195f6), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_2.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_2.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_2.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_2.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_2.set_style_text_color(lv.color_hex(0xffffff), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_2.set_style_text_font(test_font("montserratMedium", 16), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_2.set_style_text_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_2.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# Create screen_3_btn_3
+screen_3_btn_3 = lv.button(screen_3)
+screen_3_btn_3_label = lv.label(screen_3_btn_3)
+screen_3_btn_3_label.set_text("Button")
+screen_3_btn_3_label.set_long_mode(lv.label.LONG.WRAP)
+screen_3_btn_3_label.set_width(lv.pct(100))
+screen_3_btn_3_label.align(lv.ALIGN.CENTER, 0, 0)
+screen_3_btn_3.set_style_pad_all(0, lv.STATE.DEFAULT)
+screen_3_btn_3.set_pos(151, 162)
+screen_3_btn_3.set_size(100, 50)
+# Set style for screen_3_btn_3, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_3_btn_3.set_style_bg_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_3.set_style_bg_color(lv.color_hex(0x2195f6), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_3.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_3.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_3.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_3.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_3.set_style_text_color(lv.color_hex(0xffffff), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_3.set_style_text_font(test_font("montserratMedium", 16), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_3.set_style_text_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_3.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# Create screen_3_bar_2
+screen_3_bar_2 = lv.bar(screen_3)
+screen_3_bar_2.set_style_anim_duration(1000, 0)
+screen_3_bar_2.set_mode(lv.bar.MODE.NORMAL)
+screen_3_bar_2.set_range(0, 100)
+screen_3_bar_2.set_value(, lv.ANIM.ON)
+screen_3_bar_2.set_pos(89, 233)
+screen_3_bar_2.set_size(90, 20)
+# Set style for screen_3_bar_2, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_3_bar_2.set_style_bg_opa(60, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_bar_2.set_style_bg_color(lv.color_hex(0x2195f6), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_bar_2.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_bar_2.set_style_radius(10, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_bar_2.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+# Set style for screen_3_bar_2, Part: lv.PART.INDICATOR, State: lv.STATE.DEFAULT.
+screen_3_bar_2.set_style_bg_opa(255, lv.PART.INDICATOR|lv.STATE.DEFAULT)
+screen_3_bar_2.set_style_bg_color(lv.color_hex(0x2195f6), lv.PART.INDICATOR|lv.STATE.DEFAULT)
+screen_3_bar_2.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.INDICATOR|lv.STATE.DEFAULT)
+screen_3_bar_2.set_style_radius(10, lv.PART.INDICATOR|lv.STATE.DEFAULT)
+
+# Create screen_3_label_2
+screen_3_label_2 = lv.label(screen_3)
+screen_3_label_2.set_text("Write_To_Norflash")
+screen_3_label_2.set_long_mode(lv.label.LONG.SCROLL_CIRCULAR)
+screen_3_label_2.set_width(lv.pct(100))
+screen_3_label_2.set_pos(83, 265)
+screen_3_label_2.set_size(100, 32)
+# Set style for screen_3_label_2, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_3_label_2.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_2.set_style_radius(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_2.set_style_text_color(lv.color_hex(0x000000), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_2.set_style_text_font(test_font("montserratMedium", 16), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_2.set_style_text_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_2.set_style_text_letter_space(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_2.set_style_text_line_space(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_2.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_2.set_style_bg_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_2.set_style_pad_top(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_2.set_style_pad_right(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_2.set_style_pad_bottom(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_2.set_style_pad_left(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_label_2.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# Create screen_3_btn_5
+screen_3_btn_5 = lv.button(screen_3)
+screen_3_btn_5_label = lv.label(screen_3_btn_5)
+screen_3_btn_5_label.set_text("Start_Writing")
+screen_3_btn_5_label.set_long_mode(lv.label.LONG.SCROLL_CIRCULAR)
+screen_3_btn_5_label.set_width(lv.pct(100))
+screen_3_btn_5_label.align(lv.ALIGN.CENTER, 0, 0)
+screen_3_btn_5.set_style_pad_all(0, lv.STATE.DEFAULT)
+screen_3_btn_5.set_pos(33, 297)
+screen_3_btn_5.set_size(100, 50)
+# Set style for screen_3_btn_5, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_3_btn_5.set_style_bg_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_5.set_style_bg_color(lv.color_hex(0x2195f6), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_5.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_5.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_5.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_5.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_5.set_style_text_color(lv.color_hex(0xffffff), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_5.set_style_text_font(test_font("montserratMedium", 16), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_5.set_style_text_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_5.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# Create screen_3_btn_4
+screen_3_btn_4 = lv.button(screen_3)
+screen_3_btn_4_label = lv.label(screen_3_btn_4)
+screen_3_btn_4_label.set_text("Button")
+screen_3_btn_4_label.set_long_mode(lv.label.LONG.WRAP)
+screen_3_btn_4_label.set_width(lv.pct(100))
+screen_3_btn_4_label.align(lv.ALIGN.CENTER, 0, 0)
+screen_3_btn_4.set_style_pad_all(0, lv.STATE.DEFAULT)
+screen_3_btn_4.set_pos(151, 297)
+screen_3_btn_4.set_size(100, 50)
+# Set style for screen_3_btn_4, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_3_btn_4.set_style_bg_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_4.set_style_bg_color(lv.color_hex(0x2195f6), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_4.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_4.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_4.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_4.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_4.set_style_text_color(lv.color_hex(0xffffff), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_4.set_style_text_font(test_font("montserratMedium", 16), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_4.set_style_text_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_btn_4.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# Create screen_3_msgbox_1
+screen_3_msgbox_1 = lv.msgbox(screen_3)
+screen_3_msgbox_1.add_title("Title")
+screen_3_msgbox_1.add_text("content")
+screen_3_msgbox_1_btn_0 = screen_3_msgbox_1.add_footer_button("Apply")
+screen_3_msgbox_1_btn_0.set_size(60, 30)
+screen_3_msgbox_1_btn_1 = screen_3_msgbox_1.add_footer_button("Close")
+screen_3_msgbox_1_btn_1.set_size(60, 30)
+screen_3_msgbox_1.align_to(screen_3, lv.ALIGN.TOP_LEFT, 372, 221)
+screen_3_msgbox_1.set_pos(372, 221)
+screen_3_msgbox_1.set_size(280, 150)
+screen_3_msgbox_1.add_flag(lv.obj.FLAG.HIDDEN)
+screen_3_msgbox_1.add_flag(lv.obj.FLAG.HIDDEN)
+# Set style for screen_3_msgbox_1, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_3_msgbox_1.set_style_bg_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_msgbox_1.set_style_bg_color(lv.color_hex(0xffffff), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_msgbox_1.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_msgbox_1.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_msgbox_1.set_style_radius(4, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_msgbox_1.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+# Set style for screen_3_msgbox_1, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+style_screen_3_msgbox_1_extra_title_main_default = lv.style_t()
+style_screen_3_msgbox_1_extra_title_main_default.init()
+style_screen_3_msgbox_1_extra_title_main_default.set_bg_opa(255)
+style_screen_3_msgbox_1_extra_title_main_default.set_bg_color(lv.color_hex(0xffffff))
+style_screen_3_msgbox_1_extra_title_main_default.set_bg_grad_dir(lv.GRAD_DIR.NONE)
+style_screen_3_msgbox_1_extra_title_main_default.set_text_color(lv.color_hex(0x4e4e4e))
+style_screen_3_msgbox_1_extra_title_main_default.set_text_font(test_font("montserratMedium", 12))
+style_screen_3_msgbox_1_extra_title_main_default.set_text_opa(255)
+style_screen_3_msgbox_1_extra_title_main_default.set_text_letter_space(0)
+style_screen_3_msgbox_1_extra_title_main_default.set_text_line_space(15)
+screen_3_msgbox_1.get_header().add_style(style_screen_3_msgbox_1_extra_title_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+# Set style for screen_3_msgbox_1, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+style_screen_3_msgbox_1_extra_content_main_default = lv.style_t()
+style_screen_3_msgbox_1_extra_content_main_default.init()
+style_screen_3_msgbox_1_extra_content_main_default.set_text_color(lv.color_hex(0x4e4e4e))
+style_screen_3_msgbox_1_extra_content_main_default.set_text_font(test_font("montserratMedium", 12))
+style_screen_3_msgbox_1_extra_content_main_default.set_text_opa(255)
+style_screen_3_msgbox_1_extra_content_main_default.set_text_letter_space(0)
+style_screen_3_msgbox_1_extra_content_main_default.set_text_line_space(10)
+screen_3_msgbox_1.get_content().add_style(style_screen_3_msgbox_1_extra_content_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+# Set style for screen_3_msgbox_1, Part: lv.PART.ITEMS, State: lv.STATE.DEFAULT.
+style_screen_3_msgbox_1_extra_btns_items_default = lv.style_t()
+style_screen_3_msgbox_1_extra_btns_items_default.init()
+style_screen_3_msgbox_1_extra_btns_items_default.set_bg_opa(255)
+style_screen_3_msgbox_1_extra_btns_items_default.set_bg_color(lv.color_hex(0xe6e6e6))
+style_screen_3_msgbox_1_extra_btns_items_default.set_bg_grad_dir(lv.GRAD_DIR.NONE)
+style_screen_3_msgbox_1_extra_btns_items_default.set_border_width(0)
+style_screen_3_msgbox_1_extra_btns_items_default.set_radius(10)
+style_screen_3_msgbox_1_extra_btns_items_default.set_text_color(lv.color_hex(0x4e4e4e))
+style_screen_3_msgbox_1_extra_btns_items_default.set_text_font(test_font("montserratMedium", 12))
+style_screen_3_msgbox_1_extra_btns_items_default.set_text_opa(255)
+screen_3_msgbox_1_btn_0.add_style(style_screen_3_msgbox_1_extra_btns_items_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_3_msgbox_1_btn_1.add_style(style_screen_3_msgbox_1_extra_btns_items_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
 screen_3.update_layout()
 # Create screen_4
@@ -461,7 +690,7 @@ screen_4.set_size(1024, 600)
 screen_4.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
 # Set style for screen_4, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
 screen_4.set_style_bg_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_4.set_style_bg_image_src(load_image(r"/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/MicroPython/Shinobu3_1024_600.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_4.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Shinobu3_1024_600.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_4.set_style_bg_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_4.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 
@@ -482,7 +711,7 @@ screen_4_btn_1.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEF
 screen_4_btn_1.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_4_btn_1.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_4_btn_1.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_4_btn_1.set_style_bg_image_src(load_image(r"/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/MicroPython/tamayo_and_shinobu_132_66.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_4_btn_1.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\tamayo_and_shinobu_132_66.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_4_btn_1.set_style_bg_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_4_btn_1.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_4_btn_1.set_style_text_color(lv.color_hex(0x2fda64), lv.PART.MAIN|lv.STATE.DEFAULT)
@@ -501,7 +730,7 @@ screen_5.set_size(1024, 600)
 screen_5.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
 # Set style for screen_5, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
 screen_5.set_style_bg_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_5.set_style_bg_image_src(load_image(r"/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/MicroPython/Shinobu3_1024_600.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_5.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Shinobu3_1024_600.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_5.set_style_bg_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_5.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 
@@ -522,7 +751,7 @@ screen_5_btn_1.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEF
 screen_5_btn_1.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_5_btn_1.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_5_btn_1.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_5_btn_1.set_style_bg_image_src(load_image(r"/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/MicroPython/Tamayo_1_132_66.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_5_btn_1.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Tamayo_1_132_66.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_5_btn_1.set_style_bg_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_5_btn_1.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_5_btn_1.set_style_text_color(lv.color_hex(0x2fda64), lv.PART.MAIN|lv.STATE.DEFAULT)
@@ -541,7 +770,7 @@ screen_6.set_size(1024, 600)
 screen_6.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
 # Set style for screen_6, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
 screen_6.set_style_bg_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_6.set_style_bg_image_src(load_image(r"/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/MicroPython/Shinobu3_1024_600.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_6.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Shinobu3_1024_600.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_6.set_style_bg_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_6.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 
@@ -562,13 +791,38 @@ screen_6_btn_1.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEF
 screen_6_btn_1.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_6_btn_1.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_6_btn_1.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_6_btn_1.set_style_bg_image_src(load_image(r"/Users/linchuhong/Desktop/L_2026_Stm32H723ZGT6_Cmake/Lib/ThirdParty/L_GUI_Guider/generated/MicroPython/Tamayo_1_132_66.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_6_btn_1.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Tamayo_1_132_66.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_6_btn_1.set_style_bg_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_6_btn_1.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_6_btn_1.set_style_text_color(lv.color_hex(0x2fda64), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_6_btn_1.set_style_text_font(test_font("montserratMedium", 16), lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_6_btn_1.set_style_text_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_6_btn_1.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# Create screen_6_btn_2
+screen_6_btn_2 = lv.button(screen_6)
+screen_6_btn_2_label = lv.label(screen_6_btn_2)
+screen_6_btn_2_label.set_text("To_Sc")
+screen_6_btn_2_label.set_long_mode(lv.label.LONG.SCROLL_CIRCULAR)
+screen_6_btn_2_label.set_width(lv.pct(100))
+screen_6_btn_2_label.align(lv.ALIGN.CENTER, 0, 0)
+screen_6_btn_2.set_style_pad_all(0, lv.STATE.DEFAULT)
+screen_6_btn_2.set_pos(50, 226)
+screen_6_btn_2.set_size(132, 66)
+# Set style for screen_6_btn_2, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_6_btn_2.set_style_bg_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_6_btn_2.set_style_bg_color(lv.color_hex(0x2195f6), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_6_btn_2.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_6_btn_2.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_6_btn_2.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_6_btn_2.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_6_btn_2.set_style_bg_image_src(load_image(r"F:\projects\CSEE\L_2025_Stm32H723ZGT6_Cmake\Lib\ThirdParty\L_GUI_Guider\generated\MicroPython\Tamayo_1_132_66.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_6_btn_2.set_style_bg_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_6_btn_2.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_6_btn_2.set_style_text_color(lv.color_hex(0x2fda64), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_6_btn_2.set_style_text_font(test_font("montserratMedium", 16), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_6_btn_2.set_style_text_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_6_btn_2.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.DEFAULT)
 
 screen_6.update_layout()
 
@@ -595,6 +849,13 @@ def screen_1_btn_2_event_handler(e):
         lv.screen_load_anim(screen_2, lv.SCR_LOAD_ANIM.FADE_ON, 200, 200, False)
 screen_1_btn_2.add_event_cb(lambda e: screen_1_btn_2_event_handler(e), lv.EVENT.ALL, None)
 
+def screen_1_btn_3_event_handler(e):
+    code = e.get_code()
+    if (code == lv.EVENT.PRESSED):
+        pass
+        lv.screen_load_anim(screen_3, lv.SCR_LOAD_ANIM.OVER_TOP, 200, 200, False)
+screen_1_btn_3.add_event_cb(lambda e: screen_1_btn_3_event_handler(e), lv.EVENT.ALL, None)
+
 def screen_2_btn_2_event_handler(e):
     code = e.get_code()
     if (code == lv.EVENT.PRESSED):
@@ -616,6 +877,30 @@ def screen_3_btn_1_event_handler(e):
         lv.screen_load_anim(screen_4, lv.SCR_LOAD_ANIM.MOVE_TOP, 200, 200, False)
 screen_3_btn_1.add_event_cb(lambda e: screen_3_btn_1_event_handler(e), lv.EVENT.ALL, None)
 
+def screen_3_btn_2_event_handler(e):
+    code = e.get_code()
+    if (code == lv.EVENT.PRESSED):
+        pass
+        screen_3_msgbox_1.remove_flag(lv.obj.FLAG.HIDDEN)
+        
+screen_3_btn_2.add_event_cb(lambda e: screen_3_btn_2_event_handler(e), lv.EVENT.ALL, None)
+
+def screen_3_msgbox_1_item1_event_handler(e):
+    code = e.get_code()
+    if (code == lv.EVENT.PRESSED):
+        pass
+        screen_3_msgbox_1.add_flag(lv.obj.FLAG.HIDDEN)
+        
+screen_3_msgbox_1_item1.add_event_cb(lambda e: screen_3_msgbox_1_item1_event_handler(e), lv.EVENT.ALL, None)
+
+def screen_3_msgbox_1_item2_event_handler(e):
+    code = e.get_code()
+    if (code == lv.EVENT.PRESSED):
+        pass
+        screen_3_msgbox_1.add_flag(lv.obj.FLAG.HIDDEN)
+        
+screen_3_msgbox_1_item2.add_event_cb(lambda e: screen_3_msgbox_1_item2_event_handler(e), lv.EVENT.ALL, None)
+
 def screen_4_btn_1_event_handler(e):
     code = e.get_code()
     if (code == lv.EVENT.PRESSED):
@@ -630,13 +915,6 @@ def screen_5_btn_1_event_handler(e):
         lv.screen_load_anim(screen_6, lv.SCR_LOAD_ANIM.MOVE_RIGHT, 200, 200, False)
 screen_5_btn_1.add_event_cb(lambda e: screen_5_btn_1_event_handler(e), lv.EVENT.ALL, None)
 
-def screen_6_event_handler(e):
-    code = e.get_code()
-    if (code == lv.EVENT.PRESSED):
-        pass
-        lv.screen_load_anim(screen_1, lv.SCR_LOAD_ANIM.OVER_BOTTOM, 200, 200, False)
-screen_6.add_event_cb(lambda e: screen_6_event_handler(e), lv.EVENT.ALL, None)
-
 def screen_6_btn_1_event_handler(e):
     code = e.get_code()
     if (code == lv.EVENT.PRESSED):
@@ -647,7 +925,7 @@ screen_6_btn_1.add_event_cb(lambda e: screen_6_btn_1_event_handler(e), lv.EVENT.
 # content from custom.py
 
 # Load the default screen
-lv.screen_load(screen_1)
+lv.screen_load(screen_3)
 
 if __name__ == '__main__':
     while True:

@@ -12,9 +12,12 @@
  */
  
 #include "QSPI/qspi.h"
+#include "cmsis_os2.h"
 #include "delay/delay.h"
 #include "usart/usart1.h"
 #include "norflash.h"
+
+#include "FreeRTOS.h"
 
 
 uint16_t g_norflash_type = W25Q128;     /* 默认是W25Q128 */
@@ -68,7 +71,7 @@ void norflash_init(void)
  */
 static void norflash_wait_busy(void)
 {
-    while ((norflash_read_sr(1) & 0x01) == 0x01);   /* 等待BUSY位清空 */
+    while ((norflash_read_sr(1) & 0x01) == 0x01) osDelay(1);   /* 等待BUSY位清空 */
 }
 
 /**
@@ -449,7 +452,7 @@ void flash_write_fast(uint32_t addr, uint8_t *data, uint16_t len)
 
     if (sec != last_erased_sector)
     {
-        norflash_erase_sector(sec * 4096);
+        norflash_erase_sector(sec);
         last_erased_sector = sec;
     }
 

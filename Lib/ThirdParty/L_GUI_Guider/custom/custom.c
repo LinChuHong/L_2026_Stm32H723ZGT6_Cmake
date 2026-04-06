@@ -10,6 +10,7 @@
 /*********************
  *      INCLUDES
  *********************/
+#include <src/widgets/label/lv_label.h>
 #include <stdio.h>
 #include "lvgl.h"
 #include "custom.h"
@@ -25,8 +26,9 @@ custom_data mydata =
 {
     .led_state    = 1,
     .zen          = "hello, world",
-    .screen_state = 0,
-    .hppt_state = 0  
+    .screen_state = 3,
+    .hppt_state = 0,
+    .barValue = 0
 };
 /**********************
  *      TYPEDEFS
@@ -47,20 +49,24 @@ static lv_timer_t *screen_timer = NULL;
 
 static void timer_cb(lv_timer_t *t)
 {
-
-
+    if (mydata.screen_state == 3)
+    {
+        lv_bar_set_value(guider_ui.screen_3_bar_2, mydata.barValue, LV_ANIM_ON);
+        lv_bar_set_value(guider_ui.screen_3_bar_3, mydata.barValue, LV_ANIM_ON);
+        if (mydata.barValue == 100)
+        {
+            lv_label_set_text(guider_ui.screen_3_label_1, "Data have been written to sd card");
+        }
+    }
 }
 
 void custom_init(lv_ui *ui)
 {
     
     /* Add your codes here */
-    setup_ui(ui);
-    lv_obj_add_event_cb(ui->g_kb_top_layer,mycb,LV_EVENT_ALL,ui);
+    // lv_obj_add_event_cb(ui->g_kb_top_layer,mycb,LV_EVENT_ALL,ui);
     screen_timer = lv_timer_create(timer_cb,1000,ui);
 }
-
-
 
 #if USEMYCBINC == 1
 void mycb(lv_event_t * e)

@@ -59,11 +59,26 @@ static void screen_1_btn_2_event_handler (lv_event_t *e)
     }
 }
 
+static void screen_1_btn_3_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_PRESSED:
+    {
+        ui_load_scr_animation(&guider_ui, &guider_ui.screen_3, guider_ui.screen_3_del, &guider_ui.screen_1_del, setup_scr_screen_3, LV_SCR_LOAD_ANIM_OVER_TOP, 200, 200, true, true);
+        break;
+    }
+    default:
+        break;
+    }
+}
+
 void events_init_screen_1 (lv_ui *ui)
 {
     lv_obj_add_event_cb(ui->screen_1, screen_1_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->screen_1_btn_1, screen_1_btn_1_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->screen_1_btn_2, screen_1_btn_2_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->screen_1_btn_3, screen_1_btn_3_event_handler, LV_EVENT_ALL, ui);
 }
 
 static void screen_2_btn_2_event_handler (lv_event_t *e)
@@ -73,6 +88,8 @@ static void screen_2_btn_2_event_handler (lv_event_t *e)
     case LV_EVENT_PRESSED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.screen_3, guider_ui.screen_3_del, &guider_ui.screen_2_del, setup_scr_screen_3, LV_SCR_LOAD_ANIM_FADE_ON, 200, 200, true, true);
+        mydata.screen_state = 3;
+
         break;
     }
     default:
@@ -107,6 +124,50 @@ static void screen_3_btn_1_event_handler (lv_event_t *e)
     case LV_EVENT_PRESSED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.screen_4, guider_ui.screen_4_del, &guider_ui.screen_3_del, setup_scr_screen_4, LV_SCR_LOAD_ANIM_MOVE_TOP, 200, 200, true, true);
+        mydata.screen_state = 4;
+
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+static void screen_3_btn_2_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_PRESSED:
+    {
+        lv_obj_remove_flag(guider_ui.screen_3_msgbox_1, LV_OBJ_FLAG_HIDDEN);
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+static void screen_3_msgbox_1_item0_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_PRESSED:
+    {
+        lv_obj_add_flag(guider_ui.screen_3_msgbox_1, LV_OBJ_FLAG_HIDDEN);
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+static void screen_3_msgbox_1_item1_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_PRESSED:
+    {
+        lv_obj_add_flag(guider_ui.screen_3_msgbox_1, LV_OBJ_FLAG_HIDDEN);
         break;
     }
     default:
@@ -117,6 +178,9 @@ static void screen_3_btn_1_event_handler (lv_event_t *e)
 void events_init_screen_3 (lv_ui *ui)
 {
     lv_obj_add_event_cb(ui->screen_3_btn_1, screen_3_btn_1_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->screen_3_btn_2, screen_3_btn_2_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->screen_3_msgbox_1_item0, screen_3_msgbox_1_item0_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->screen_3_msgbox_1_item1, screen_3_msgbox_1_item1_event_handler, LV_EVENT_ALL, ui);
 }
 
 static void screen_4_btn_1_event_handler (lv_event_t *e)
@@ -157,20 +221,6 @@ void events_init_screen_5 (lv_ui *ui)
     lv_obj_add_event_cb(ui->screen_5_btn_1, screen_5_btn_1_event_handler, LV_EVENT_ALL, ui);
 }
 
-static void screen_6_event_handler (lv_event_t *e)
-{
-    lv_event_code_t code = lv_event_get_code(e);
-    switch (code) {
-    case LV_EVENT_PRESSED:
-    {
-        ui_load_scr_animation(&guider_ui, &guider_ui.screen_1, guider_ui.screen_1_del, &guider_ui.screen_6_del, setup_scr_screen_1, LV_SCR_LOAD_ANIM_OVER_BOTTOM, 200, 200, true, true);
-        break;
-    }
-    default:
-        break;
-    }
-}
-
 static void screen_6_btn_1_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
@@ -187,7 +237,6 @@ static void screen_6_btn_1_event_handler (lv_event_t *e)
 
 void events_init_screen_6 (lv_ui *ui)
 {
-    lv_obj_add_event_cb(ui->screen_6, screen_6_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->screen_6_btn_1, screen_6_btn_1_event_handler, LV_EVENT_ALL, ui);
 }
 
