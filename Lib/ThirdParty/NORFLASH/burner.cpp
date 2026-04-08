@@ -1,4 +1,6 @@
 #include "burner.h"
+#include "parser.h"
+#include "usbd_cdc_if.h"
 #include "L_Global.h"
 #include "norflash.h"
 #include "FATFS/exfuns/exfuns.h"

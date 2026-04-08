@@ -48,6 +48,7 @@ foreach(DIR ${CHILD_DIRS})
                 NORFLASH
                 FATFS
                 littlefs
+                L_button
             )
             
 

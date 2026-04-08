@@ -44,6 +44,7 @@ add_subdirectory(Lib/ThirdParty/lvgl)
 add_subdirectory(Lib/ThirdParty/L_GUI_Guider)
 add_subdirectory(Lib/ThirdParty/FATFS)
 add_subdirectory(Lib/ThirdParty/littlefs)
+add_subdirectory(Lib/ThirdParty/L_button)
 
 
 
@@ -88,4 +89,5 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     L_GUI_Guider
     FATFS
     littlefs
+    L_button
 )

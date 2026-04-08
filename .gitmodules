@@ -4,3 +4,6 @@
 [submodule "Lib/ThirdParty/littlefs/source"]
 	path = Lib/ThirdParty/littlefs/source
 	url = https://github.com/littlefs-project/littlefs.git
+[submodule "Lib/ThirdParty/L_button/button"]
+	path = Lib/ThirdParty/L_button/button
+	url = https://github.com/LinChuHong/MultiButton.git

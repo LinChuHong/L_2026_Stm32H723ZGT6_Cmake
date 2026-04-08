@@ -23,7 +23,6 @@
 #include "crc.h"
 #include "dma.h"
 #include "rng.h"
-#include "stm32h723xx.h"
 #include "tim.h"
 #include "usart.h"
 #include "usb_device.h"
@@ -38,7 +37,7 @@
 #include "lvgl.h"
 #include "led.h"
 #include "custom.h"
-#include <src/tick/lv_tick.h>
+#include "button/multi_button.h"
 
 /* USER CODE END Includes */
 
@@ -291,6 +290,7 @@ void MPU_Config(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   /* USER CODE BEGIN Callback 0 */
+  static uint8_t cnt = 0;
 
   /* USER CODE END Callback 0 */
   if (htim->Instance == TIM23)
@@ -306,6 +306,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   if (htim->Instance == TIM6) 
   {
     lv_tick_inc(1);
+    cnt++; if (cnt == 5) button_ticks(); else if (cnt >= 5) cnt = 0;
   }
 
 

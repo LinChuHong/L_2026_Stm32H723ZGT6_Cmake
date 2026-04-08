@@ -39,14 +39,11 @@
 
 
 #include <atomic>
-#include <src/core/lv_obj_pos.h>
-#include <src/misc/lv_anim.h>
-#include <src/misc/lv_types.h>
-#include <src/widgets/bar/lv_bar.h>
 #include <stdio.h>
 #include <string>
 #include <vector>
 #include <cstring>
+#include "L_Buttons.h"
 
 
 #include "L_Global.h"
@@ -84,6 +81,8 @@ void init()
     lv_port_disp_init();                                /* lvgl显示接口初始化,放在lv_init()的后面 */
     lv_port_indev_init();                               /* lvgl输入接口初始化,放在lv_init()的后面 */
     lv_fs_rawfs_init();
+
+    buttons_init(); 
     // rtc_init();                             /* 初始化RTC */
     // rtc_set_wakeup(RTC_WAKEUPCLOCK_CK_SPRE_16BITS, 0);   /* 配置WAKE UP中断,1秒钟中断一次 */
     // crc32_init();
@@ -106,6 +105,7 @@ void cppCoreStart(void *argument)
             last += SystemCoreClock;
             // CDC_Transmit_HS((uint8_t*)debugStr[0].c_str(), debugStr[0].size());
         } 
+
         // if (L_States.test(10) == 1)
         // {
         //     // while (CDC_Transmit_HS((uint8_t*)L_Data[0].c_str(), L_Data[0].size()) == USBD_BUSY) osDelay(1);
@@ -125,7 +125,6 @@ void cppCoreStart(void *argument)
 
         }
         #endif
-        
         osDelay(1);
     }
 
