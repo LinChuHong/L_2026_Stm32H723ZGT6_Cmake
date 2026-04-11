@@ -49,6 +49,8 @@ extern "C" {
 #undef SDMMC_INIT_CLK_DIV
 #define SDMMC_INIT_CLK_DIV ((uint16_t)270)
 #endif
+
+
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/

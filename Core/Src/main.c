@@ -38,6 +38,7 @@
 #include "led.h"
 #include "custom.h"
 #include "button/multi_button.h"
+#include "task.h"
 
 /* USER CODE END Includes */
 
@@ -124,6 +125,7 @@ int main(void)
   MX_USART1_UART_Init();
   MX_TIM1_Init();
   MX_TIM6_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */

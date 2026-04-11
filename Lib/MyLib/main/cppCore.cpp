@@ -7,6 +7,7 @@
 #include "cmsis_os2.h"
 #include "stm32h7xx_hal.h"
 #include "stm32h7xx_hal_gpio.h"
+#include "stm32h7xx_hal_uart.h"
 #include "system_stm32h7xx.h"
 #include "task.h"
 #include "usbd_cdc_if.h"
@@ -38,7 +39,9 @@
 #include "parser.h"
 
 
-#include <atomic>
+#include <src/libs/fsdrv/lv_fsdrv.h>
+#include <src/libs/tjpgd/lv_tjpgd.h>
+#include <src/libs/tjpgd/tjpgd.h>
 #include <stdio.h>
 #include <string>
 #include <vector>
@@ -81,6 +84,7 @@ void init()
     lv_port_disp_init();                                /* lvgl显示接口初始化,放在lv_init()的后面 */
     lv_port_indev_init();                               /* lvgl输入接口初始化,放在lv_init()的后面 */
     lv_fs_rawfs_init();
+    lv_fs_fatfs_init();
 
     buttons_init(); 
     // rtc_init();                             /* 初始化RTC */
@@ -90,7 +94,7 @@ void init()
 
 }
 
-
+char temp[100];
 void cppCoreStart(void *argument)
 {
 
@@ -103,6 +107,9 @@ void cppCoreStart(void *argument)
         if ( (now - last) >= SystemCoreClock )
         {
             last += SystemCoreClock;
+            
+            sprintf(temp,"hello, esp32-s3->%d\n",69);
+            HAL_UART_Transmit_DMA(&huart2, (uint8_t*)temp, strlen(temp));
             // CDC_Transmit_HS((uint8_t*)debugStr[0].c_str(), debugStr[0].size());
         } 
 
@@ -172,5 +179,4 @@ void StartTask03(void *argument)
     }
 
 }
-
 

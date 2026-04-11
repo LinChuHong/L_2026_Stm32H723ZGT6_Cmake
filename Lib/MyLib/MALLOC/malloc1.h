@@ -48,7 +48,8 @@ extern "C" {
 
 /* mem2内存参数设定.mem2的内存池处于外部SDRAM里面 */
 #define MEM2_BLOCK_SIZE         64                              /* 内存块大小为64字节 */
-#define MEM2_MAX_SIZE           26912 * 1024                    /* 最大管理内存26912K */
+// #define MEM2_MAX_SIZE           26912 * 1024                    /* 最大管理内存26912K */
+#define MEM2_MAX_SIZE           20000 * 1024                    /* 最大管理内存26912K */
 #define MEM2_ALLOC_TABLE_SIZE   MEM2_MAX_SIZE/MEM2_BLOCK_SIZE   /* 内存表大小 */
 
 /* mem3内存参数设定.mem3是H7内部的DTCM内存,此部分内存仅CPU和MDMA可以访问!!!!!! */

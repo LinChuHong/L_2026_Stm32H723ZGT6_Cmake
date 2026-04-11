@@ -29,7 +29,7 @@ target_link_libraries(${MODULE_NAME} PRIVATE stm32cubemx
     NORFLASH
     lvgl
 )
-target_link_libraries(lvgl PUBLIC NORFLASH)
+target_link_libraries(lvgl PUBLIC NORFLASH FATFS)
 # Include directories
 target_include_directories(${MODULE_NAME} PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/custom
