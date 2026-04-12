@@ -3,6 +3,7 @@
 
 
 #include "FreeRTOS.h"
+#include "projdefs.h"
 #include "stm32h723xx.h"
 #include "cmsis_os2.h"
 #include "stm32h7xx_hal.h"
@@ -34,14 +35,12 @@
 #include "main/lv_port_disp_template.h"
 #include "main/lv_port_indev_template.h"
 #include "NORFLASH/lv_fs_rawfs.h"
+#include <src/libs/fsdrv/lv_fsdrv.h>
 #include "lv_demos.h"
 #include "L_GUI_Guider/custom/custom.h"
 #include "parser.h"
 
 
-#include <src/libs/fsdrv/lv_fsdrv.h>
-#include <src/libs/tjpgd/lv_tjpgd.h>
-#include <src/libs/tjpgd/tjpgd.h>
 #include <stdio.h>
 #include <string>
 #include <vector>
@@ -50,6 +49,7 @@
 
 
 #include "L_Global.h"
+#include "uart2_ring_buffer.h"
 
 
 osMessageQueueId_t myQueue01Handle;
@@ -86,7 +86,7 @@ void init()
     lv_fs_rawfs_init();
     lv_fs_fatfs_init();
 
-    buttons_init(); 
+    buttons_init();
     // rtc_init();                             /* 初始化RTC */
     // rtc_set_wakeup(RTC_WAKEUPCLOCK_CK_SPRE_16BITS, 0);   /* 配置WAKE UP中断,1秒钟中断一次 */
     // crc32_init();
@@ -94,13 +94,11 @@ void init()
 
 }
 
-char temp[100];
 void cppCoreStart(void *argument)
 {
 
     uint32_t last = DWT->CYCCNT; 
-    // norflash_erase_chip();
-    // printf("chip erased\n");
+ 
     for (;;)
     {
         uint32_t now = DWT->CYCCNT;
@@ -108,16 +106,7 @@ void cppCoreStart(void *argument)
         {
             last += SystemCoreClock;
             
-            sprintf(temp,"hello, esp32-s3->%d\n",69);
-            HAL_UART_Transmit_DMA(&huart2, (uint8_t*)temp, strlen(temp));
-            // CDC_Transmit_HS((uint8_t*)debugStr[0].c_str(), debugStr[0].size());
         } 
-
-        // if (L_States.test(10) == 1)
-        // {
-        //     // while (CDC_Transmit_HS((uint8_t*)L_Data[0].c_str(), L_Data[0].size()) == USBD_BUSY) osDelay(1);
-        //     // L_States.reset(10);
-        // }
 
         #if USEPYTHONTOSENDDATATONORFLASH == 1
         if (L_States.test(6) == 1)
@@ -155,8 +144,6 @@ void StartTask02(void *argument)
             g_usart_rx_sta = 0;             /* 开启下一次接收 */
             if (std::strcmp((const char*)g_usart_rx_buf, "test") == 0)
             {
-                L_States.set(90);
-                printf("L_States.set(90)\n");
             }
         }
      
@@ -174,7 +161,6 @@ void StartTask03(void *argument)
 
     for(;;)
     {
- 
         osDelay(1);
     }
 

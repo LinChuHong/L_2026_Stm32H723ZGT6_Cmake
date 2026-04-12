@@ -39,6 +39,7 @@
 #include "custom.h"
 #include "button/multi_button.h"
 #include "task.h"
+#include "uart2_ring_buffer.h"
 
 /* USER CODE END Includes */
 
@@ -127,6 +128,10 @@ int main(void)
   MX_TIM6_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+  if (UART2_RingBuffer_Init() != HAL_OK)
+  {
+    Error_Handler();
+  }
 
   /* USER CODE END 2 */
 

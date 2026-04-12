@@ -4,7 +4,7 @@
 #include <signal.h>
 #include <stdlib.h>
 #include "main.h"
-#include "stm32h7xx_hal_gpio.h"
+
 // Button instances
 static Button btn1, btn2;
 static volatile int running = 1;

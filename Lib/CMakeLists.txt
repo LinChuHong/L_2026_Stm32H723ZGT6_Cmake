@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.22)
 enable_language(C CXX)
 
+add_subdirectory(L_Sources/AI_Generated)
+
 # ---------------------------------------------------------------------
 # Automatically scan Hardware/* folders and create a library for each
 # ---------------------------------------------------------------------
@@ -49,6 +51,7 @@ foreach(DIR ${CHILD_DIRS})
                 FATFS
                 littlefs
                 L_button
+                ${AI_GENERATED_LINK_LIBS}
             )
             
 
@@ -66,6 +69,7 @@ foreach(DIR ${CHILD_DIRS})
 endforeach()
 
 # Export the library list back to the parent scope
+list(APPEND MYLIB_LINK_LIBS ${AI_GENERATED_LINK_LIBS})
 set(MYLIB_LINK_LIBS ${MYLIB_LINK_LIBS} PARENT_SCOPE)
 
 message(STATUS "mylib: auto-discovered libraries: ${MYLIB_LINK_LIBS}")

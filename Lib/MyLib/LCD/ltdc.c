@@ -248,7 +248,7 @@ void ltdc_fill(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uint32_t colo
     offline = lcdltdc.pwidth - (pex - psx + 1);   /* 行偏移:当前行最后一个像素和下一行第一个像素之间的像素数目 */
     addr = ((uint32_t)g_ltdc_framebuf[lcdltdc.activelayer] + lcdltdc.pixsize * (lcdltdc.pwidth * psy + psx));
 
-    __HAL_RCC_DMA2D_CLK_ENABLE();                             /* 使能DM2D时钟 */
+    __HAL_RCC_DMA2D_CLK_ENABLE();                             /* 使能DMA2D时钟 */
 
     DMA2D->CR &= ~(DMA2D_CR_START);                           /* 先停止DMA2D */
     DMA2D->CR = DMA2D_R2M;                                    /* 寄存器到存储器模式 */
