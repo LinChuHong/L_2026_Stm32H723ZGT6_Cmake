@@ -63,6 +63,8 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define KEY0_Pin GPIO_PIN_1
 #define KEY0_GPIO_Port GPIOC
+#define KEY1_Pin GPIO_PIN_0
+#define KEY1_GPIO_Port GPIOA
 #define RTP_MISO_Pin GPIO_PIN_4
 #define RTP_MISO_GPIO_Port GPIOC
 #define LED0_Pin GPIO_PIN_0
@@ -81,6 +83,8 @@ void Error_Handler(void);
 #define CTP_RSR_RTP_CS_GPIO_Port GPIOG
 #define LCD_BL_Pin GPIO_PIN_14
 #define LCD_BL_GPIO_Port GPIOG
+#define SPI1_Chip_Select_Pin GPIO_PIN_4
+#define SPI1_Chip_Select_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

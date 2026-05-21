@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Lib/ThirdParty/L_button/button" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Lib/ThirdParty/NORFLASH/w25qxx/Source" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Lib/ThirdParty/littlefs/source" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Lib/ThirdParty/lvgl" vcs="Git" />
+  </component>
+</project>

@@ -54,6 +54,7 @@ extern "C" {
 #define OSPIM_P1_IO3_GPIO_CLK_ENABLE()  do{ __HAL_RCC_GPIOF_CLK_ENABLE(); }while(0)   /* PF口时钟使能 */
 
 /******************************************************************************************/
+extern OSPI_HandleTypeDef g_ospi_handle;     /* OSPI句柄 */
 
 uint8_t ospi_wait_flag(uint32_t flag, uint8_t sta, uint32_t wtime);              /* OSPI等待某个状态 */
 uint8_t ospi_init(void);                                                         /* 初始化OSPI */

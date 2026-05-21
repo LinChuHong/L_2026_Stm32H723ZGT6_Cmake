@@ -87,6 +87,7 @@ void norflash_write(uint8_t *pbuf, uint32_t addr, uint32_t datalen);         /* 
 
 void flash_write_fast(uint32_t addr, uint8_t *data, uint16_t len);
 
+void ospi_enable_memory_mapped(void);
 
 
 #ifdef __cplusplus

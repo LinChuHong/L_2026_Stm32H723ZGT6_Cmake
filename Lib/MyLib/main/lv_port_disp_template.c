@@ -117,6 +117,7 @@ static void disp_init(void)
     /* 在此添加你的初始化代码 */
 	  lcd_init();         /* 初始化LCD */
     lcd_display_dir(1); /* 设置屏幕显示方向 */
+	
 }
 
 volatile bool disp_flush_enabled = true;

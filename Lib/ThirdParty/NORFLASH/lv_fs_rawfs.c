@@ -12,6 +12,7 @@
 /*********************
  *      INCLUDES
  *********************/
+#include "driver_w25qxx.h"
 #include "lvgl.h"
 // #include "../../../../NORFLASH/norflash.h"
 // #include "../../../../Lib/MyLib/main/myh.h"
@@ -22,6 +23,7 @@
 #include "norflash.h"
 #include "lv_fs_rawfs.h"
 #include "../lvgl/src/libs/fsdrv/lv_fsdrv.h"
+#include "driver_w25qxx_basic.h"
 
 
 /*********************
@@ -247,8 +249,8 @@ static lv_fs_res_t fs_read(lv_fs_drv_t * drv, void * file_p, void * buf, uint32_
     }
 
     uint32_t flash_addr = p->base + p->offset;
-
     norflash_read((uint8_t *)buf,flash_addr, btr);
+    // w25qxx_basic_read(flash_addr, (uint8_t*)buf, btr);
 
     p->offset += btr;
     *br = btr;
@@ -256,7 +258,68 @@ static lv_fs_res_t fs_read(lv_fs_drv_t * drv, void * file_p, void * buf, uint32_
     return LV_FS_RES_OK;
 }
 
+// #define OSPI_FLASH_BASE  0x90000000UL
+// static lv_fs_res_t fs_read(lv_fs_drv_t *drv,
+//                            void *file_p,
+//                            void *buf,
+//                            uint32_t btr,
+//                            uint32_t *br)
+// {
+//     LV_UNUSED(drv);
 
+//     rawfs_file_t *f = (rawfs_file_t *)file_p;
+
+//     if (f->offset + btr > f->size)
+//         btr = f->size - f->offset;
+
+//     if (btr == 0)
+//     {
+//         *br = 0;
+//         return LV_FS_RES_OK;
+//     }
+
+//     const uint8_t *src = (const uint8_t *)
+//         (OSPI_FLASH_BASE + f->base + f->offset);
+
+//     memcpy(buf, src, btr);
+
+//     f->offset += btr;
+//     *br = btr;
+
+//     return LV_FS_RES_OK;
+// }
+// static lv_fs_res_t fs_read(lv_fs_drv_t * drv,
+//                            void * file_p,
+//                            void * buf,
+//                            uint32_t btr,
+//                            uint32_t * br)
+// {
+//     LV_UNUSED(drv);
+
+//     rawfs_file_t * p = (rawfs_file_t *)file_p;
+
+//     /* Prevent reading past end of file */
+//     if(p->offset + btr > p->size) {
+//         btr = p->size - p->offset;
+
+//         if(btr == 0) {
+//             *br = 0;
+//             return LV_FS_RES_OK;
+//         }
+//     }
+
+//     /* Directly read from memory-mapped OSPI flash */
+//     const void * src = (const void *)(OSPI_FLASH_BASE +
+//                                       p->base +
+//                                       p->offset);
+
+//     memcpy(buf, src, btr);
+
+//     p->offset += btr;
+//     *br = btr;
+
+//     return LV_FS_RES_OK;
+// }
 
 /**
  * Write into a file

@@ -102,7 +102,7 @@ static void norflash_qe_enable(void)
 static void norflash_qspi_disable(void)
 {
     /* 发送退出QPI模式指令,地址为0,无数据_8位地址_无地址_4线传输指令,无空周期,0个字节数据 */
-    ospi_send_cmd(FLASH_ExitQPIMode, 0, (0 << 8) | (0 << 6) | (0 << 3) | (3 << 0), 0);
+    ospi_send_cmd(FLASH_ExitQPIMode, 0,( 0 << 8) | (0 << 6) | (0 << 3) | (3 << 0), 0);
 }
 
 /**
@@ -460,9 +460,64 @@ void flash_write_fast(uint32_t addr, uint8_t *data, uint16_t len)
     norflash_write_nocheck(data, addr, len);
 }
 
+void ospi_enable_memory_mapped(void)
+{
+    OSPI_RegularCmdTypeDef sCommand = {0};
+    OSPI_MemoryMappedTypeDef sMemMappedCfg = {0};
 
+    sCommand.OperationType = HAL_OSPI_OPTYPE_READ_CFG;
+    sCommand.FlashId = HAL_OSPI_FLASH_ID_1;
 
+    sCommand.Instruction = FLASH_FastReadQuad;
 
+    sCommand.InstructionMode = HAL_OSPI_INSTRUCTION_1_LINE;
+    sCommand.InstructionSize = HAL_OSPI_INSTRUCTION_8_BITS;
+    sCommand.InstructionDtrMode = HAL_OSPI_INSTRUCTION_DTR_DISABLE;
 
+    sCommand.AddressMode = HAL_OSPI_ADDRESS_4_LINES;
+    sCommand.AddressDtrMode = HAL_OSPI_ADDRESS_DTR_DISABLE;
 
+    if (g_norflash_addrw == 3)
+    {
+        sCommand.AddressSize = HAL_OSPI_ADDRESS_32_BITS;
+    }
+    else
+    {
+        sCommand.AddressSize = HAL_OSPI_ADDRESS_24_BITS;
+    }
 
+    sCommand.Address = 0;
+
+    sCommand.AlternateBytesMode =
+        HAL_OSPI_ALTERNATE_BYTES_NONE;
+
+    sCommand.DataMode = HAL_OSPI_DATA_4_LINES;
+    sCommand.DataDtrMode = HAL_OSPI_DATA_DTR_DISABLE;
+
+    sCommand.DummyCycles = 8;
+
+    sCommand.DQSMode = HAL_OSPI_DQS_DISABLE;
+
+    sCommand.SIOOMode =
+        HAL_OSPI_SIOO_INST_EVERY_CMD;
+
+    sCommand.NbData = 1;
+
+    if (HAL_OSPI_Command(&g_ospi_handle,
+                         &sCommand,
+                         HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    sMemMappedCfg.TimeOutActivation =
+        HAL_OSPI_TIMEOUT_COUNTER_DISABLE;
+
+    sMemMappedCfg.TimeOutPeriod = 0;
+
+    if (HAL_OSPI_MemoryMapped(&g_ospi_handle,
+                              &sMemMappedCfg) != HAL_OK)
+    {
+        Error_Handler();
+    }
+}

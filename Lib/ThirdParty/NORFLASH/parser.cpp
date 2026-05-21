@@ -359,11 +359,12 @@ void data_from_usb(uint8_t data)
     if (received >= expected_size)
     {
 
-        L_States.set(69);
+        L_States.set(6);
         // reset for next packet
         size_index = 0;
         expected_size = 0;
         received = 0;
+        osDelay(1);
     }
     #endif
 }

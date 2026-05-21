@@ -7,20 +7,7 @@
 
 // Button instances
 static Button btn1, btn2;
-static volatile int running = 1;
 
-// Simulate GPIO state for demonstration
-static int btn1_state = 0;
-static int btn2_state = 0;
-
-// Signal handler for graceful exit
-void signal_handler(int sig)
-{
-    if (sig == SIGINT) {
-        printf("\nReceived SIGINT, exiting...\n");
-        running = 0;
-    }
-}
 
 // Hardware abstraction layer function
 // This simulates reading GPIO states
@@ -30,7 +17,7 @@ uint8_t read_button_gpio(uint8_t button_id)
         case 1:
             return HAL_GPIO_ReadPin(KEY0_GPIO_Port, KEY0_Pin);
         case 2:
-            return btn2_state;
+            return HAL_GPIO_ReadPin(KEY1_GPIO_Port, KEY1_Pin);
         default:
             return 0;
     }
@@ -39,8 +26,16 @@ uint8_t read_button_gpio(uint8_t button_id)
 // Callback functions for button 1
 void btn1_single_click_handler(Button* btn, void* user_data)
 {
-    (void)btn; (void)user_data;
-    printf("[BTN1] Single Click\n");
+    (void)btn; 
+    (void)user_data;
+    if (btn->button_id == 1)
+    {
+        printf("[BTN%d] Single Click\n",btn->button_id);
+    }
+    else if (btn->button_id == 2)
+    {
+        printf("[BTN%d] Single Click\n",btn->button_id);
+    }
 }
 
 void btn1_double_click_handler(Button* btn, void* user_data)
@@ -99,24 +94,25 @@ void buttons_init(void)
     button_init(&btn1, read_button_gpio, 1, 1);
 
     // Attach event handlers for button 1
-    button_attach(&btn1, BTN_SINGLE_CLICK, btn1_single_click_handler, NULL);
+    button_attach(&btn1, BTN_SINGLE_CLICK, btn1_single_click_handler, (char*)"btn1");
     button_attach(&btn1, BTN_DOUBLE_CLICK, btn1_double_click_handler, NULL);
     button_attach(&btn1, BTN_LONG_PRESS_START, btn1_long_press_start_handler, NULL);
     button_attach(&btn1, BTN_LONG_PRESS_HOLD, btn1_long_press_hold_handler, NULL);
     button_attach(&btn1, BTN_PRESS_REPEAT, btn1_press_repeat_handler, NULL);
 
     // Initialize button 2 (active high for simulation)
-    // button_init(&btn2, read_button_gpio, 1, 2);
+    button_init(&btn2, read_button_gpio, 1, 2);
 
     // // Attach event handlers for button 2
-    // button_attach(&btn2, BTN_SINGLE_CLICK, btn2_single_click_handler, NULL);
-    // button_attach(&btn2, BTN_DOUBLE_CLICK, btn2_double_click_handler, NULL);
-    // button_attach(&btn2, BTN_PRESS_DOWN, btn2_press_down_handler, NULL);
-    // button_attach(&btn2, BTN_PRESS_UP, btn2_press_up_handler, NULL);
+    button_attach(&btn2, BTN_SINGLE_CLICK, btn1_single_click_handler, (char*)"btn2");
+    button_attach(&btn2, BTN_DOUBLE_CLICK, btn1_double_click_handler, NULL);
+    button_attach(&btn2, BTN_LONG_PRESS_START, btn1_long_press_start_handler, NULL);
+    button_attach(&btn2, BTN_LONG_PRESS_HOLD, btn1_long_press_hold_handler, NULL);
+    button_attach(&btn2, BTN_PRESS_REPEAT, btn1_press_repeat_handler, NULL);
 
     // Start button processing
     button_start(&btn1);
-    // button_start(&btn2);
+    button_start(&btn2);
 }
 
 

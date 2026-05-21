@@ -7,3 +7,6 @@
 [submodule "Lib/ThirdParty/L_button/button"]
 	path = Lib/ThirdParty/L_button/button
 	url = https://github.com/LinChuHong/MultiButton.git
+[submodule "Lib/ThirdParty/NORFLASH/w25qxx/Source"]
+	path = Lib/ThirdParty/NORFLASH/w25qxx/Source
+	url = https://github.com/libdriver/w25qxx.git

@@ -55,12 +55,12 @@ osThreadId_t StartDefaultTasHandle;
 const osThreadAttr_t StartDefaultTas_attributes = {
   .name = "StartDefaultTas",
   .stack_size = 1024 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityLow1,
 };
-/* Definitions for myTask02 */
-osThreadId_t myTask02Handle;
-const osThreadAttr_t myTask02_attributes = {
-  .name = "myTask02",
+/* Definitions for lvglTask */
+osThreadId_t lvglTaskHandle;
+const osThreadAttr_t lvglTask_attributes = {
+  .name = "lvglTask",
   .stack_size = 4096 * 4,
   .priority = (osPriority_t) osPriorityBelowNormal,
 };
@@ -69,7 +69,7 @@ osThreadId_t myTask03Handle;
 const osThreadAttr_t myTask03_attributes = {
   .name = "myTask03",
   .stack_size = 1024 * 4,
-  .priority = (osPriority_t) osPriorityBelowNormal,
+  .priority = (osPriority_t) osPriorityLow,
 };
 
 /* Private function prototypes -----------------------------------------------*/
@@ -78,7 +78,7 @@ const osThreadAttr_t myTask03_attributes = {
 /* USER CODE END FunctionPrototypes */
 
 void cppCoreStart(void *argument);
-void StartTask02(void *argument);
+void startLvglTask(void *argument);
 void StartTask03(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
@@ -115,8 +115,8 @@ void MX_FREERTOS_Init(void) {
   /* creation of StartDefaultTas */
   StartDefaultTasHandle = osThreadNew(cppCoreStart, NULL, &StartDefaultTas_attributes);
 
-  /* creation of myTask02 */
-  myTask02Handle = osThreadNew(StartTask02, NULL, &myTask02_attributes);
+  /* creation of lvglTask */
+  lvglTaskHandle = osThreadNew(startLvglTask, NULL, &lvglTask_attributes);
 
   /* creation of myTask03 */
   myTask03Handle = osThreadNew(StartTask03, NULL, &myTask03_attributes);
@@ -151,22 +151,22 @@ __weak void cppCoreStart(void *argument)
   /* USER CODE END cppCoreStart */
 }
 
-/* USER CODE BEGIN Header_StartTask02 */
+/* USER CODE BEGIN Header_startLvglTask */
 /**
-* @brief Function implementing the myTask02 thread.
+* @brief Function implementing the lvglTask thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_StartTask02 */
-__weak void StartTask02(void *argument)
+/* USER CODE END Header_startLvglTask */
+__weak void startLvglTask(void *argument)
 {
-  /* USER CODE BEGIN StartTask02 */
+  /* USER CODE BEGIN startLvglTask */
   /* Infinite loop */
   for(;;)
   {
     osDelay(1);
   }
-  /* USER CODE END StartTask02 */
+  /* USER CODE END startLvglTask */
 }
 
 /* USER CODE BEGIN Header_StartTask03 */

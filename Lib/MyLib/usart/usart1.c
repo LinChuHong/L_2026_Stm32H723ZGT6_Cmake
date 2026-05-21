@@ -16,6 +16,8 @@
 #include "sys/sys.h"
 #include "usart1.h"
 #include "usart.h"
+#include "usbd_def.h"
+#include "usbd_cdc_if.h"
 
 
 /* 如果使用os,则包括下面的头文件即可. */
@@ -84,6 +86,12 @@ int _write(int file, char *ptr, int len)
         USART1->TDR = ptr[i];
     }
     return len;
+    // (void)file;
+    // if (CDC_Transmit_HS((uint8_t *)ptr, (uint16_t)len) == USBD_OK)
+    // {
+    //     return len;
+    // }
+    // return 0;
 }
 
 #endif

@@ -1,3 +1,4 @@
+#include "driver_w25qxx.h"
 #include "main.h"
 #include "myh.h"
 
@@ -39,8 +40,10 @@
 #include "lv_demos.h"
 #include "L_GUI_Guider/custom/custom.h"
 #include "parser.h"
+#include "driver_w25qxx_basic.h"
 
 
+#include <src/misc/lv_fs.h>
 #include <stdio.h>
 #include <string>
 #include <vector>
@@ -56,13 +59,22 @@ osMessageQueueId_t myQueue01Handle;
 const osMessageQueueAttr_t myQueue01_attributes = {
   .name = "myQueue01"
 };
+typedef struct
+{
+    uint32_t cnt;
+    char name[100];
+} Data;
 
-
-
+Data wData = 
+{
+    .cnt = 69,
+    .name = "LinChuHong"
+};
+Data rData {};
 void init()
 {
     myQueue01Handle = osMessageQueueNew (16, sizeof(uint16_t), &myQueue01_attributes);
-
+    MX_USB_DEVICE_Init(); 
     led_init();                             /* 初始化LED */
     key_init();                             /* 初始化按键 */
     mpu_memory_protection();
@@ -79,18 +91,17 @@ void init()
     while (sd_init()) { }
     exfuns_init();
     res = f_mount(fs[0],"0:",1);
-    MX_USB_DEVICE_Init();    
     lv_init();                                          /* lvgl系统初始化 */
     lv_port_disp_init();                                /* lvgl显示接口初始化,放在lv_init()的后面 */
     lv_port_indev_init();                               /* lvgl输入接口初始化,放在lv_init()的后面 */
     lv_fs_rawfs_init();
     lv_fs_fatfs_init();
-
+    w25qxx_init_1(); 
     buttons_init();
+    
     // rtc_init();                             /* 初始化RTC */
     // rtc_set_wakeup(RTC_WAKEUPCLOCK_CK_SPRE_16BITS, 0);   /* 配置WAKE UP中断,1秒钟中断一次 */
     // crc32_init();
-
 
 }
 
@@ -113,12 +124,10 @@ void cppCoreStart(void *argument)
         {
             norflash_write(datatoflash.data(),dataLen,datatoflash.size());
             L_States.reset(6);
-            printf("%d\n",datatoflash.size());
             dataLen+=datatoflash.size();
             datatoflash.clear();
             uint8_t byte = 0xAA;
             CDC_Transmit_HS(&byte, 1);
-
         }
         #endif
         osDelay(1);
@@ -126,7 +135,7 @@ void cppCoreStart(void *argument)
 
 }
 
-void StartTask02(void *argument)
+void startLvglTask(void *argument)
 {
 
     // lv_demo_widgets();
@@ -143,13 +152,32 @@ void StartTask02(void *argument)
             g_usart_rx_buf[len] = '\0';     /* 在末尾加入结束符. */
             g_usart_rx_sta = 0;             /* 开启下一次接收 */
             if (std::strcmp((const char*)g_usart_rx_buf, "test") == 0)
-            {
+            {   
+                w25qxx_basic_write(0, (uint8_t*)&wData, sizeof(wData));
+                w25qxx_basic_read(0, (uint8_t*)&rData, sizeof(rData));
+                printf("%lu %s\n",rData.cnt,rData.name);
             }
         }
-     
-       
+        if (L_States.test(10) == true)
+        {
+            if (L_Data.at(0) == "test")
+            {
+
+            }
+            else if (L_Data.at(0) == "erase" and L_States.test(5) != true)
+            {
+                L_States.set(5);
+            }
+            L_Data.at(0).clear();
+            L_States.reset(10);
+        }
+        if (L_States.test(100) == true)
+        {
+            printf("write norlfash done\n");
+            L_States.reset(100);
+        }
         lv_timer_handler();
-        osDelay(1);
+        osDelay(5);
     }
 
 }
@@ -157,12 +185,16 @@ void StartTask02(void *argument)
 
 void StartTask03(void *argument)
 {
-
-
     for(;;)
     {
+        if (L_States.test(5) == true)
+        {
+            printf("erase norflash start\n");
+            norflash_erase_chip();
+            L_States.reset(5);
+            printf("norflash erased\n");
+        }
         osDelay(1);
     }
-
 }
 

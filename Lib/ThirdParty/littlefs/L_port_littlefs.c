@@ -28,6 +28,7 @@ int lfs_prog(const struct lfs_config *c,
 int lfs_erase(const struct lfs_config *c, lfs_block_t block)
 {
     uint32_t sec = (LFS_FLASH_START / 4096) + block;
+
     norflash_erase_sector(sec);
     return 0;
 }
@@ -51,7 +52,7 @@ const struct lfs_config cfg = {
 
     // block device configuration
     .read_size = 16,
-    .prog_size = 16,
+    .prog_size = 256,
     .block_size = 4096,
     .block_count = LFS_FLASH_SIZE / 4096,
     .cache_size = 64,

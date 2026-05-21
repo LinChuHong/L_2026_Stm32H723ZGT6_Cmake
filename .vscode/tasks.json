@@ -1,0 +1,11 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "resume-mcu",
+            "type": "shell",
+            "command": "echo monitor reset run",
+            "problemMatcher": []
+        }
+    ]
+}
